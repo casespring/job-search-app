@@ -1,16 +1,16 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { Outlet } from "react-router-dom";
+import NavBar from "./NavBar";
 
 
-function App() {
-
-  return (
-      <div>
-        <h1>Job Tracker</h1>
-      </div>
-  )
-}
+function App(){
+    return(
+        <>
+            <header>
+                <NavBar />
+            </header>
+            <Outlet />
+        </>
+    );
+};
 
 export default App
