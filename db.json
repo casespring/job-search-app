@@ -1,26 +1,77 @@
 {
-    "jobs": [
+  "jobs": [
       {
-        "jobTitle": "Full Stack Developer",
-        "company": "Tech Solutions Inc.",
-        "dateApplied": "2023-01-15",
-        "status": "No response yet",
-        "jobDescription": "https://example.com/full-stack-developer-job-description"
+          "jobTitle": "Full Stack Developer",
+          "company": "Tech Solutions Inc.",
+          "dateApplied": "2023-01-15",
+          "status": "No response yet",
+          "jobDescription": "https://example.com/full-stack-developer-job-description"
       },
       {
-        "jobTitle": "Software Engineer",
-        "company": "CodeCrafters",
-        "dateApplied": "2023-02-01",
-        "status": "Interview scheduled",
-        "jobDescription": "https://example.com/software-engineer-job-description"
+          "jobTitle": "Software Engineer",
+          "company": "CodeCrafters",
+          "dateApplied": "2023-02-01",
+          "status": "Interview scheduled",
+          "jobDescription": "https://example.com/software-engineer-job-description"
       },
       {
-        "jobTitle": "Frontend Developer",
-        "company": "WebWizards",
-        "dateApplied": "2023-02-20",
-        "status": "Interview complete",
-        "jobDescription": "https://example.com/frontend-developer-job-description"
+          "jobTitle": "Frontend Developer",
+          "company": "WebWizards",
+          "dateApplied": "2023-02-20",
+          "status": "Interview complete",
+          "jobDescription": "https://example.com/frontend-developer-job-description"
       }
-    ]
-  }
-  
+  ],
+  "blogs": [
+      {
+          "author": "Isaiah Hankel",
+          "title": "A Five-Week Guide to Getting a Job",
+          "link": "https://hbr.org/2021/03/a-five-week-guide-to-getting-a-job"
+      },
+      {
+          "author": "Wasim Hajjiri",
+          "title": "How To Land A Job Through Networking",
+          "link": "https://www.forbes.com/sites/forbescoachescouncil/2021/08/12/how-to-land-a-job-through-networking/?sh=be21e6f37a5e"
+      },
+      {
+          "author": "Amy Gallo",
+          "title": "How to Write a Résumé That Stands Out",
+          "link": "https://hbr.org/2014/12/how-to-write-a-resume-that-stands-out?utm_medium=paidsearch&utm_source=google&utm_campaign=domcontent&utm_term=Non-Brand&tpcc=paidsearch.google.dsacontent&gad_source=1&gclid=Cj0KCQiA67CrBhC1ARIsACKAa8TOd5NC8iLXUTh7up9yhdTAowp0JmwcfdVs3nrNCg-NYr1ilIDhlkwaAoYbEALw_wcB"
+      },
+      {
+          "author": "Indeed Editorial Team",
+          "title": "11 Types of Job-Hunting Strategies",
+          "link": "https://www.indeed.com/career-advice/finding-a-job/job-hunting"
+      },
+      {
+          "author": "Indeed Editorial Team",
+          "title": "11 Types of Job-Hunting Strategies",
+          "link": "https://www.indeed.com/career-advice/finding-a-job/job-hunting"
+      },
+      {
+          "author": "How To Find A New Job",
+          "title": "Jack Kelly",
+          "link": "https://www.forbes.com/sites/jackkelly/2023/09/11/how-to-find-a-new-job/?sh=1739b1a51b8b"
+      },
+      {
+          "author": "The Right Way to Make a Big Career Transition",
+          "title": "Utkarsh Amitabh",
+          "link": "https://hbr.org/2021/07/the-right-way-to-make-a-big-career-transition"
+      },
+      {
+          "author": "How to Prepare for a Career Change: Step-By-Step Guide",
+          "title": "Coursera Team",
+          "link": "https://www.coursera.org/articles/career-change"
+      },
+      {
+          "author": "How to Prepare for a Career Change: Step-By-Step Guide",
+          "title": "Coursera Team",
+          "link": "https://www.coursera.org/articles/career-change"
+      },
+      {
+          "author": "Apply to a Job, Even If You Don`t Meet All Criteria",
+          "title": "Coursera Team",
+          "link": "https://hbr.org/2022/07/apply-to-a-job-even-if-you-dont-meet-all-criteria" 
+      }
+  ]
+}
