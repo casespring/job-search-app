@@ -1,0 +1,19 @@
+.form-container {
+    width: 100%;
+    max-width: 400px; 
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+  }
+  
+  /* Media query for smaller screens (e.g., mobile devices) */
+  @media (max-width: 576px) {
+    .form-container {
+      max-width: 100%; 
+    }
+  }
+  
+  .form-group {
+    margin-bottom: 5px;
+  }
