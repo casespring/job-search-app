@@ -5,7 +5,7 @@ import './NewJobForm.css';
 function NewJobForm() {
   const [jobTitle, setJobTitle] = useState("");
   const [company, setCompany] = useState("");
-  const [location, setLocation] = useState("Choose location");
+  const [workLocation, setWorkLocation] = useState("Choose location");
   const [jobDescription, setJobDescription] = useState("");
   const [dateApplied, setDateApplied] = useState("");
   const [status, setStatus] = useState("Choose status");
@@ -32,8 +32,8 @@ function NewJobForm() {
     setCompany(e.target.value);
   }
 
-  function handleLocation(e) {
-    setLocation(e.target.value);
+  function handleWorkLocation(e) {
+    setWorkLocation(e.target.value);
   }
 
   function handleJobDescription(e) {
@@ -61,7 +61,7 @@ function NewJobForm() {
     const newJob = {
       jobTitle,
       company,
-      location,
+      workLocation,
       jobDescription,
       dateApplied,
       status,
@@ -110,7 +110,7 @@ function NewJobForm() {
 
             <Form.Group controlId="formGridLocation" className='form-group'>
               <Form.Label>Work Location</Form.Label>
-              <Form.Select onChange={handleLocation} value={location} required>
+              <Form.Select onChange={handleWorkLocation} value={workLocation} required>
                 <option disabled>Choose location</option>
                 <option>In Person 🏢</option>
                 <option>Hybrid 🖥</option>
