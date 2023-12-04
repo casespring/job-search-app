@@ -5,21 +5,24 @@
           "company": "Tech Solutions Inc.",
           "dateApplied": "2023-01-15",
           "status": "No response yet",
-          "jobDescription": "https://example.com/full-stack-developer-job-description"
+          "jobDescription": "https://example.com/full-stack-developer-job-description",
+          "favorite" : false
       },
       {
           "jobTitle": "Software Engineer",
           "company": "CodeCrafters",
           "dateApplied": "2023-02-01",
           "status": "Interview scheduled",
-          "jobDescription": "https://example.com/software-engineer-job-description"
+          "jobDescription": "https://example.com/software-engineer-job-description",
+          "favorite" : false
       },
       {
           "jobTitle": "Frontend Developer",
           "company": "WebWizards",
           "dateApplied": "2023-02-20",
           "status": "Interview complete",
-          "jobDescription": "https://example.com/frontend-developer-job-description"
+          "jobDescription": "https://example.com/frontend-developer-job-description",
+          "favorite" : false
       }
   ],
   "blogs": [
