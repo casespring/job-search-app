@@ -27,3 +27,7 @@
   .alert-p {
     padding-top: .4em;
   }
+
+  .success-alert {
+    transition: opacity 0.5s ease-in-out; /* Add transition for opacity */
+  }

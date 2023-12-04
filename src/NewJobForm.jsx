@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import { useState, useEffect } from 'react';
 import { Form, Button, Alert} from 'react-bootstrap';
 import './NewJobForm.css';
 
@@ -6,11 +6,24 @@ function NewJobForm() {
 
   const [jobTitle, setJobTitle] = useState("")
   const [company, setCompany] = useState("")
+  const [location, setLocation] = useState("Choose location")
   const [jobDescription, setJobDescription] = useState("")
   const [dateApplied, setDateApplied] = useState("")
   const [status, setStatus] = useState("Choose status")
+  const [notes, setNotes] = useState("")
   const [favorite, setFavorite] = useState(false)
   const [showSuccessAlert, setShowSuccessAlert] = useState(false)
+
+  useEffect(() => {
+    let timeout;
+    if (showSuccessAlert) {
+      timeout = setTimeout(() => {
+        setShowSuccessAlert(false);
+      }, 2000);
+    }
+
+    return () => clearTimeout(timeout); 
+  }, [showSuccessAlert]);
 
   function handleTitle(e) {
     setJobTitle(e.target.value);
@@ -18,6 +31,10 @@ function NewJobForm() {
 
   function handleCompany(e) {
     setCompany(e.target.value);
+  }
+
+  function handleLocation(e) {
+    setLocation(e.target.value)
   }
 
   function handleJobDescription(e) {
@@ -32,6 +49,10 @@ function NewJobForm() {
     setStatus(e.target.value);
   }
 
+  function handleNotes(e) {
+    setNotes(e.target.value)
+  }
+
   function handleFavorite(e) {
     setFavorite(e.target.checked);
   }
@@ -41,9 +62,11 @@ function NewJobForm() {
     const newJob = {
       jobTitle,
       company,
+      location,
+      jobDescription,
       dateApplied,
       status,
-      jobDescription,
+      notes,
       favorite
     }
      fetch('http://localhost:3000/jobs', {
@@ -57,10 +80,19 @@ function NewJobForm() {
       .then((data) => {
         console.log(data);
         setShowSuccessAlert(true);
+        setJobTitle("");
+        setCompany("");
+        setLocation("Choose location");
+        setJobDescription("");
+        setDateApplied("");
+        setStatus("Choose status");
+        setNotes("");
+        setFavorite(false);
       })
       .catch((error) => {
         console.error('Error submitting form:', error);
       });
+
   }
 
   return (
@@ -74,6 +106,16 @@ function NewJobForm() {
         <Form.Group controlId="formGridCompany" className='form-group'>
           <Form.Label>Company</Form.Label>
           <Form.Control onChange={handleCompany} type="text" placeholder="Enter company" value={company} required  />
+        </Form.Group>
+
+        <Form.Group controlId="formGridLocation" className='form-group'>
+          <Form.Label>Work Location</Form.Label>
+          <Form.Select onChange={handleLocation} value={location} required >
+            <option disabled>Choose location</option>
+            <option>In Person 🏢</option>
+            <option>Hybrid 🖥</option>
+            <option>Remote 🏠</option>
+          </Form.Select>
         </Form.Group>
 
         <Form.Group controlId="formGridCompany" className='form-group'>
@@ -95,6 +137,11 @@ function NewJobForm() {
             <option>Interview complete ✅</option>
             <option>Rejected ❌</option>
           </Form.Select>
+        </Form.Group>
+
+        <Form.Group controlId="formGridNotes" className='form-group'>
+          <Form.Label>Notes</Form.Label>
+          <Form.Control onChange={handleNotes} as="textarea" rows={4} placeholder="Add any notes" value={notes} />
         </Form.Group>
 
         <Form.Group controlId="formGridCheckbox" className='form-group'>
