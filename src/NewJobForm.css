@@ -1,6 +1,6 @@
 .form-container {
     width: 100%;
-    max-width: 400px; 
+    max-width: 80vw; 
     margin: auto;
     padding: 15px;
     border: 1px solid #ccc;
@@ -26,4 +26,8 @@
   
   .alert-p {
     padding-top: .4em;
+  }
+
+  .success-alert {
+    transition: opacity 0.5s ease-in-out; /* Add transition for opacity */
   }
