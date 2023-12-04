@@ -3,11 +3,12 @@ import { ListGroup, Card, Button, Dropdown, DropdownButton } from 'react-bootstr
 
 function JobCard({ jobs }) {
     const [favorite, setFavorite] = useState(jobs.favorite)
+    const [currentStatus, setCurrentStatus] = useState(jobs.status);
 
     console.log(jobs)
 
-    function handleSelect(e) {
-        console.log(e.target.value)
+    function handleSelect(selected) {
+        setCurrentStatus(selected)
     }
 
   return (
@@ -17,16 +18,15 @@ function JobCard({ jobs }) {
         <ListGroup.Item>Company: {jobs.company}</ListGroup.Item>
         <ListGroup.Item>Date Applied: {jobs.dateApplied}</ListGroup.Item>
         <ListGroup.Item>Status: {
-            <DropdownButton id="dropdown-button" title={jobs.status} onSelect={handleSelect}>
-                <Dropdown.Item >No response yet</Dropdown.Item>
-                <Dropdown.Item >Follow-up</Dropdown.Item>
-                <Dropdown.Item >Interview scheduled</Dropdown.Item>
-                <Dropdown.Item >Declined</Dropdown.Item>
-                <Dropdown.Item >Accepted</Dropdown.Item>
+            <DropdownButton id="dropdown-button" title={currentStatus} onSelect={handleSelect}>
+                <Dropdown.Item >Applied 💼</Dropdown.Item>
+                <Dropdown.Item >Interview scheduled 🗓</Dropdown.Item>
+                <Dropdown.Item >Interview complete ✅</Dropdown.Item>
+                <Dropdown.Item >Rejected ❌</Dropdown.Item>
             </DropdownButton>}  
         </ListGroup.Item>
         <Card.Text>
-          Notes: ----
+          Notes: {jobs.notes}
         </Card.Text>
         <Card.Link href={jobs.jobDescription}>Link to job description</Card.Link>
         <br/>
