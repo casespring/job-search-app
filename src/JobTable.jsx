@@ -10,7 +10,9 @@ function JobTable({ jobs }) {
 
   let jobTable = jobs.map((job, index) => (
     <React.Fragment key={index}>
-      <tr onClick={() => handleRowClick(job)}>
+      <tr onClick={() => handleRowClick(job)}
+      className={selectedJob === job ? 'table-primary' : ''}
+      style={{ cursor: 'pointer' }}>
         <th scope="row">{index + 1}</th>
         <td>{job.jobTitle}</td>
         <td>{job.company}</td>
@@ -18,8 +20,8 @@ function JobTable({ jobs }) {
         <td>{job.status}</td>
       </tr>
       {selectedJob === job && (
-        <tr>
-          <td colSpan="4">
+        <tr class="table-primary">
+          <td colSpan="5">
           <p><a href={job.jobDescription} target="_blank" rel="noopener noreferrer"><strong>Job Description</strong></a></p>
             <p><strong>Date Applied: </strong>{job.dateApplied}</p>
             <p><strong>Notes: </strong>{job.notes}</p>
