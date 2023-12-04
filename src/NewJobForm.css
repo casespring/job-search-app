@@ -2,7 +2,7 @@
     width: 100%;
     max-width: 400px; 
     margin: auto;
-    padding: 20px;
+    padding: 15px;
     border: 1px solid #ccc;
     border-radius: 8px;
   }
@@ -16,4 +16,14 @@
   
   .form-group {
     margin-bottom: 5px;
+  }
+
+  .success-alert {
+    padding-top: .5em;
+    padding-bottom: .04em;
+    margin: 2em;
+  }
+  
+  .alert-p {
+    padding-top: .4em;
   }

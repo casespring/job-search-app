@@ -26,44 +26,9 @@
       "jobDescription": "https://example.com/frontend-developer-job-description",
       "favorite": false,
       "id": 3
-    },
-    {
-      "jobTitle": "Job Test",
-      "company": "Company Test",
-      "dateApplied": "2023-12-01",
-      "status": "Applied 💼",
-      "jobDescription": "example.com",
-      "favorite": false,
-      "id": 4
-    },
-    {
-      "jobTitle": "Job Test",
-      "company": "Company Test",
-      "dateApplied": "2023-12-01",
-      "status": "Applied 💼",
-      "jobDescription": "example.com",
-      "favorite": false,
-      "id": 5
-    },
-    {
-      "jobTitle": "Job Test",
-      "company": "Company Test",
-      "dateApplied": "2023-12-13",
-      "status": "Interview scheduled 🗓",
-      "jobDescription": "Company Test",
-      "favorite": true,
-      "id": 6
-    },
-    {
-      "jobTitle": "Job Test",
-      "company": "Company Test",
-      "dateApplied": "2023-12-13",
-      "status": "Interview scheduled 🗓",
-      "jobDescription": "Company Test",
-      "favorite": false,
-      "id": 7
     }
   ],
+  
   "blogs": [
     {
       "author": "Isaiah Hankel",
