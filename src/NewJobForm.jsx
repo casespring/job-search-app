@@ -77,11 +77,10 @@ function NewJobForm() {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         setShowSuccessAlert(true);
         setJobTitle("");
         setCompany("");
-        setLocation("Choose location");
+        setWorkLocation("Choose location");
         setJobDescription("");
         setDateApplied("");
         setStatus("Choose status");

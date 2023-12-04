@@ -20,8 +20,8 @@ function JobTable({ jobs }) {
       {selectedJob === job && (
         <tr>
           <td colSpan="4">
+          <p><a href={job.jobDescription} target="_blank" rel="noopener noreferrer"><strong>Job Description</strong></a></p>
             <p><strong>Date Applied: </strong>{job.dateApplied}</p>
-            <p><strong>Job Description: </strong>{job.Description}</p>
             <p><strong>Notes: </strong>{job.notes}</p>
           </td>
         </tr>

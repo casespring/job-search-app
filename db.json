@@ -43,6 +43,28 @@
       "notes": "Notes. Notes. Notes. Notes. Notes.",
       "favorite": true,
       "id": 4
+    },
+    {
+      "jobTitle": "Job Test",
+      "company": "Company B",
+      "workLocation": "In Person 🏢",
+      "jobDescription": "https://www.shecodes.io/athena/34267-how-to-add-a-link-within-a-paragraph-in-html#:~:text=in%203.83%20seconds-,To%20add%20a%20link%20within%20a%20paragraph,can%20use%20HTML%20anchor%20tags.&text=This%20will%20create%20a%20hyperlink,link%20you%20want%20to%20use.",
+      "dateApplied": "2023-12-20",
+      "status": "Interview complete ✅",
+      "notes": "Notes notes",
+      "favorite": true,
+      "id": 5
+    },
+    {
+      "jobTitle": "Job Test",
+      "company": "Company C",
+      "workLocation": "In Person 🏢",
+      "jobDescription": "https://www.shecodes.io/athena/34267-how-to-add-a-link-within-a-paragraph-in-html#:~:text=in%203.83%20seconds-,To%20add%20a%20link%20within%20a%20paragraph,can%20use%20HTML%20anchor%20tags.&text=This%20will%20create%20a%20hyperlink,link%20you%20want%20to%20use.",
+      "dateApplied": "2023-12-22",
+      "status": "Interview scheduled 🗓",
+      "notes": "Nyc notes",
+      "favorite": true,
+      "id": 6
     }
   ],
   "blogs": [
