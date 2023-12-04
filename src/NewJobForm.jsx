@@ -2,51 +2,86 @@ import {useState} from 'react';
 import { Form, Button } from 'react-bootstrap';
 import './NewJobForm.css';
 
-
 function NewJobForm() {
 
   const [jobTitle, setJobTitle] = useState("")
   const [company, setCompany] = useState("")
-  const [dateApplied, setDateApplied] = useState("mm/dd/yyyy")
-  const [status, setStatus] = useState("")
+  const [jobDescription, setJobDescription] = useState("")
+  const [dateApplied, setDateApplied] = useState("")
+  const [status, setStatus] = useState("Applied 💼")
+  const [favorite, setFavorite] = useState(false)
 
-  function handleName(e) {
-    console.log(e.target.value);
+  function handleTitle(e) {
+    setJobTitle(e.target.value);
   }
 
   function handleCompany(e) {
-    console.log(e.target.value);
+    setCompany(e.target.value);
+  }
+
+  function handleJobDescription(e) {
+    setJobDescription(e.target.value);
   }
 
   function handleDate(e) {
-    console.log(e.target.value);
+    setDateApplied(e.target.value);
   }
 
   function handleStatus(e) {
-    console.log(e.target.value);
+    setStatus(e.target.value);
+  }
+
+  function handleFavorite(e) {
+    setFavorite(e.target.checked);
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault()
+    const newJob = {
+      jobTitle,
+      company,
+      dateApplied,
+      status,
+      jobDescription,
+      favorite
+    }
+    fetch('http://localhost:3000/jobs', {
+      method: "POST",
+      headers: {
+        "content-type" : "application/json"
+      },
+      body: JSON.stringify(newJob)
+    })
+    .then(res => res.json())
+    .then(data => console.log(data))
   }
 
   return (
     <div className='form-container'>
-      <Form>
+      <Form onSubmit={handleSubmit}>
         <Form.Group controlId="formGridJobTitle" className='form-group'>
           <Form.Label>Job Title</Form.Label>
-          <Form.Control onChange={handleName} type="text" placeholder="Enter job title" />
+          <Form.Control onChange={handleTitle} type="text" placeholder="Enter job title" value={jobTitle} />
         </Form.Group>
 
         <Form.Group controlId="formGridCompany" className='form-group'>
           <Form.Label>Company</Form.Label>
-          <Form.Control onChange={handleCompany} type="text" placeholder="Enter company" />
+          <Form.Control onChange={handleCompany} type="text" placeholder="Enter company" value={company} />
+        </Form.Group>
+
+        <Form.Group controlId="formGridCompany" className='form-group'>
+          <Form.Label>Job Description</Form.Label>
+          <Form.Control onChange={handleJobDescription} type="text" placeholder="Enter link" value={jobDescription} />
         </Form.Group>
 
         <Form.Group controlId="formGridDateApplied" className='form-group'>
           <Form.Label>Date Applied</Form.Label>
-          <Form.Control onChange={handleDate} type="date" />
+          <Form.Control onChange={handleDate} type="date" value={dateApplied} />
         </Form.Group>
 
         <Form.Group controlId="formGridStatus" className='form-group'>
           <Form.Label>Status</Form.Label>
-          <Form.Select onChange={handleStatus} defaultValue="Choose...">
+          <Form.Select onChange={handleStatus} value={status} >
             <option>Applied 💼</option>
             <option>Interview scheduled 🗓</option>
             <option>Interview complete ✅</option>
@@ -55,7 +90,7 @@ function NewJobForm() {
         </Form.Group>
 
         <Form.Group controlId="formGridCheckbox" className='form-group'>
-          <Form.Check type="checkbox" label="Mark as favorite" />
+          <Form.Check onChange={handleFavorite} type="checkbox" label="Mark as favorite" checked={favorite} />
         </Form.Group>
 
         <Button variant="primary" type="submit">
