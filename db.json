@@ -7,8 +7,8 @@
       "dateApplied": "2023-01-15",
       "status": "Interview scheduled 🗓",
       "jobDescription": "https://example.com/full-stack-developer-job-description",
-      "notes": "Notes. Notes. Notes. Notes. Notes.",
-      "favorite": false,
+      "notes": "More notes, and more notes!!!",
+      "favorite": true,
       "id": 1
     },
     {
@@ -16,7 +16,7 @@
       "company": "CodeCrafters",
       "workLocation": "Remote 🏠",
       "dateApplied": "2023-02-01",
-      "status": "Interview complete ✅",
+      "status": "Interview scheduled 🗓",
       "jobDescription": "https://example.com/software-engineer-job-description",
       "notes": "Notes. Notes. Notes. Notes. Notes.",
       "favorite": false,
@@ -56,15 +56,26 @@
       "id": 5
     },
     {
-      "jobTitle": "Job Test",
-      "company": "Company C",
-      "workLocation": "In Person 🏢",
-      "jobDescription": "https://www.shecodes.io/athena/34267-how-to-add-a-link-within-a-paragraph-in-html#:~:text=in%203.83%20seconds-,To%20add%20a%20link%20within%20a%20paragraph,can%20use%20HTML%20anchor%20tags.&text=This%20will%20create%20a%20hyperlink,link%20you%20want%20to%20use.",
-      "dateApplied": "2023-12-22",
+      "jobTitle": "Job Test 2",
+      "company": "Company Test",
+      "location": "In Person 🏢",
+      "jobDescription": "example.com",
+      "dateApplied": "2023-12-13",
       "status": "Interview scheduled 🗓",
-      "notes": "Nyc notes",
-      "favorite": true,
+      "notes": "Notes. Found on LinkedIn.",
+      "favorite": false,
       "id": 6
+    },
+    {
+      "jobTitle": "Job Test 2",
+      "company": "Company Test",
+      "location": "In Person 🏢",
+      "jobDescription": "example.com",
+      "dateApplied": "2023-12-13",
+      "status": "Interview scheduled 🗓",
+      "notes": "Notes. Found on LinkedIn.",
+      "favorite": true,
+      "id": 7
     }
   ],
   "blogs": [
