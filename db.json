@@ -5,10 +5,10 @@
       "company": "Tech Solutions Inc.",
       "workLocation": "Remote 🏠",
       "dateApplied": "2023-01-15",
-      "status": "No response yet",
+      "status": "Applied 💼",
       "jobDescription": "https://example.com/full-stack-developer-job-description",
-      "notes": "Notes. Notes. Notes. Notes. Notes.",
-      "favorite": false,
+      "notes": "More notes, and more notes!!!",
+      "favorite": true,
       "id": 1
     },
     {
@@ -16,7 +16,7 @@
       "company": "CodeCrafters",
       "workLocation": "Remote 🏠",
       "dateApplied": "2023-02-01",
-      "status": "Interview scheduled",
+      "status": "Interview scheduled 🗓",
       "jobDescription": "https://example.com/software-engineer-job-description",
       "notes": "Notes. Notes. Notes. Notes. Notes.",
       "favorite": false,
@@ -27,7 +27,7 @@
       "company": "WebWizards",
       "workLocation": "Remote 🏠",
       "dateApplied": "2023-02-20",
-      "status": "Interview complete",
+      "status": "Rejected ❌",
       "jobDescription": "https://example.com/frontend-developer-job-description",
       "notes": "Notes. Notes. Notes. Notes. Notes.",
       "favorite": false,
@@ -63,7 +63,7 @@
       "dateApplied": "2023-12-13",
       "status": "Interview scheduled 🗓",
       "notes": "Notes. Found on LinkedIn.",
-      "favorite": true,
+      "favorite": false,
       "id": 6
     },
     {
