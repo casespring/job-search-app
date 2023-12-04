@@ -1,5 +1,5 @@
 .card-display {
     display: flex;
-    
+    display: list-item;
     width: 18rem;
 }
