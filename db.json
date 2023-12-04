@@ -5,7 +5,7 @@
       "company": "Tech Solutions Inc.",
       "workLocation": "Remote 🏠",
       "dateApplied": "2023-01-15",
-      "status": "Applied 💼",
+      "status": "Interview scheduled 🗓",
       "jobDescription": "https://example.com/full-stack-developer-job-description",
       "notes": "More notes, and more notes!!!",
       "favorite": true,
@@ -46,12 +46,12 @@
     },
     {
       "jobTitle": "Job Test",
-      "company": "Company Test",
-      "location": "Hybrid 🖥",
-      "jobDescription": "example.com",
-      "dateApplied": "2023-12-13",
+      "company": "Company B",
+      "workLocation": "In Person 🏢",
+      "jobDescription": "https://www.shecodes.io/athena/34267-how-to-add-a-link-within-a-paragraph-in-html#:~:text=in%203.83%20seconds-,To%20add%20a%20link%20within%20a%20paragraph,can%20use%20HTML%20anchor%20tags.&text=This%20will%20create%20a%20hyperlink,link%20you%20want%20to%20use.",
+      "dateApplied": "2023-12-20",
       "status": "Interview complete ✅",
-      "notes": "Notes. Found on LinkedIn.",
+      "notes": "Notes notes",
       "favorite": true,
       "id": 5
     },
@@ -76,39 +76,6 @@
       "notes": "Notes. Found on LinkedIn.",
       "favorite": true,
       "id": 7
-    },
-    {
-      "jobTitle": "Job Test",
-      "company": "Company Test",
-      "location": "Remote 🏠",
-      "jobDescription": "Company Test",
-      "dateApplied": "2023-12-21",
-      "status": "Interview scheduled 🗓",
-      "notes": "Notes Notes",
-      "favorite": true,
-      "id": 8
-    },
-    {
-      "jobTitle": "Job Test",
-      "company": "Company Test",
-      "location": "Hybrid 🖥",
-      "jobDescription": "Company Test",
-      "dateApplied": "2023-12-29",
-      "status": "Interview scheduled 🗓",
-      "notes": "",
-      "favorite": true,
-      "id": 9
-    },
-    {
-      "jobTitle": "Job Test",
-      "company": "Company Test",
-      "location": "Remote 🏠",
-      "jobDescription": "Company Test",
-      "dateApplied": "2023-12-22",
-      "status": "Interview scheduled 🗓",
-      "notes": "NOtess",
-      "favorite": true,
-      "id": 10
     }
   ],
   "blogs": [
