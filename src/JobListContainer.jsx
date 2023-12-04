@@ -16,18 +16,13 @@ function JobListContainer() {
     }, []);
     
 
-    const displayJobCards = jobs.map(job => {
-          return  <JobCard key={job.id} jobs={job} />
-    })
-    
-    const displayJobTable = jobs.map(job => {
-       return <JobTable key={job.id} jobs={job} />
-    })
+    const displayJobCards = jobs.map(job => <JobCard key={job.id} jobs={job} />)
+
 
     return (
         <div>
             <button onClick={() => setToggle(!toggle)}>{toggle ? "Display card":"Display table"}</button>    
-            {displayJobCards}
+            {toggle ? displayJobCards : <JobTable jobs={jobs} />}
         </div>
     );
 };
