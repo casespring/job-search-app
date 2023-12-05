@@ -8,7 +8,7 @@
       "status": "Interview scheduled 🗓",
       "jobDescription": "https://example.com/full-stack-developer-job-description",
       "notes": "Noteees",
-      "favorite": true,
+      "favorite": false,
       "id": 1
     },
     {
