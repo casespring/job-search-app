@@ -26,7 +26,7 @@ function JobCard({ jobs }) {
             headers: { "content-type": "Application/json" },
             body: JSON.stringify({ favorite: !addFavorite })
         }).then(r => r.json())
-          .then(data => console.log(data))
+          .then(data => setNotes(data.notes))
     }
 
     function handleNotesChange(e) {
@@ -40,7 +40,7 @@ function JobCard({ jobs }) {
     }
 
   return (
-    <Card className='card-display' >
+    <Card className="container" >
       <Card.Body >
         <Card.Title>{jobs.jobTitle}</Card.Title>
         <ListGroup.Item><strong>Company:</strong> {jobs.company}</ListGroup.Item>
