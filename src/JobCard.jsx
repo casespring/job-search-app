@@ -52,6 +52,16 @@ function handleSubmit(e) {
   console.log(updatedCard)
 }
 
+function handleDelete() {
+  const afterDelete = jobs.filter(job => {
+    return jobs.id !== job.id
+  })
+  fetch(`http://localhost:3000/jobs/${jobs.id}`, {
+    method: "DELETE",
+  })
+  console.log(afterDelete)
+}
+
   return (
     <div className="display-cards" >
       <div>
@@ -83,6 +93,7 @@ function handleSubmit(e) {
               <button onClick={handleFavoritedClick}>{addFavorite ? "⭐" : "☆"}</button>
               <br />
               <button onClick={handleEditMode} id="edit-button">Edit Mode</button>
+              <button onClick={handleDelete}>Delete</button>
             </form>
           </div>
         </div>

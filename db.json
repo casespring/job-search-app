@@ -8,7 +8,7 @@
       "status": "Interview complete ✅",
       "jobDescription": "https://example.com/full-stack-developer-job-description",
       "notes": "noted juglg m kjbvkn ,v",
-      "favorite": false,
+      "favorite": true,
       "id": 1
     },
     {
@@ -45,13 +45,13 @@
       "id": 4
     },
     {
-      "jobTitle": "Job",
-      "company": "Job",
+      "jobTitle": "test",
+      "company": "company u",
       "workLocation": "Hybrid 🖥",
-      "jobDescription": "Job",
-      "dateApplied": "2023-12-21",
-      "status": "Rejected ❌",
-      "notes": "notes",
+      "jobDescription": "working",
+      "dateApplied": "2044-02-03",
+      "status": "Interview scheduled 🗓",
+      "notes": "akjei notes",
       "favorite": false,
       "id": 5
     }
