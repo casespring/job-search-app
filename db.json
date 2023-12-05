@@ -54,6 +54,17 @@
       "notes": "notes",
       "favorite": false,
       "id": 5
+    },
+    {
+      "jobTitle": "Software Engineer",
+      "company": "Google",
+      "workLocation": "Hybrid 🖥",
+      "jobDescription": "example.com",
+      "dateApplied": "2023-12-15",
+      "status": "Applied 💼",
+      "notes": "Notes.",
+      "favorite": true,
+      "id": 6
     }
   ],
   "blogs": [
