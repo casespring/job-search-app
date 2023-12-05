@@ -1,58 +1,89 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import "./JobCard.css"
 
-function JobCard({ jobs, editMode }) {
+function JobCard({ jobs}) {
   const [addFavorite, setAddFavorite] = useState(jobs.favorite);
   const [currentStatus, setCurrentStatus] = useState(jobs.status);
   const [notes, setNotes] = useState(jobs.notes);
+  const [editMode, setEditmode] = useState(false)
 
   console.log(jobs);
 
   function handleStatusSelect(selected) {
-    setCurrentStatus(selected);
-    // Replace the fetch call with your actual API endpoint
-    console.log(`Status updated: ${selected}`);
-  }
+    setCurrentStatus(selected)
+    fetch(`http://localhost:3000/jobs/${jobs.id}`, {
+        method: "PATCH",
+        headers: { "content-type": "Application/json" },
+        body: JSON.stringify({status: selected})
+    }).then(r => r.json())
+      .then(data => console.log(data))
+};
 
   function handleFavoritedClick() {
-    setAddFavorite(!addFavorite);
-    // Replace the fetch call with your actual API endpoint
-    console.log(`Favorite status updated: ${!addFavorite}`);
-  }
+    setAddFavorite(!addFavorite)
+    fetch(`http://localhost:3000/jobs/${jobs.id}`, {
+        method: "PATCH",
+        headers: { "content-type": "Application/json" },
+        body: JSON.stringify({ favorite: !addFavorite })
+    }).then(r => r.json())
+      .then(data => console.log(data))
+};
 
-  function handleNotesChange(e) {
-    setNotes(e.target.value);
-    // Replace the fetch call with your actual API endpoint
-    console.log(`Notes updated: ${e.target.value}`);
+function handleNotesChange(e) {
+  setNotes(e.target.value)
+  fetch(`http://localhost:3000/jobs/${jobs.id}`, {
+      method: "PATCH",
+      headers: { "content-type": "Application/json" },
+      body: JSON.stringify({ notes: e.target.value })
+  }).then(r => r.json())
+    .then(data => setNotes(data.notes))
+};
+
+function handleEditMode() {
+  setEditmode(!editMode)
+}
+
+function handleSubmit(e) {
+  e.preventDefault();
+  const updatedCard = {
+    status: currentStatus,
+    notes: notes,
   }
+  console.log(updatedCard)
+}
 
   return (
-    <div style={{ display: 'grid', gap: '20px', gridTemplateColumns: 'repeat(auto-fit, minmax(18rem, 1fr))', padding: '20px' }}>
+    <div className="display-cards" >
       <div>
-        <div style={{ width: '18rem', border: '2px solid #ccc', borderRadius: '10px', padding: '20px' }}>
+        <div className="cardContainer">
           <div>
-            <h5>{jobs.jobTitle}</h5>
-            <div><strong>Company:</strong> {jobs.company}</div>
-            <div><strong>Work Location:</strong> {jobs.workLocation}</div>
-            <div><strong>Date Applied:</strong> {jobs.dateApplied}</div>
-            <div><strong>Status:</strong> {editMode ?
-              <select value={currentStatus} onChange={(e) => handleStatusSelect(e.target.value)}>
-                <option value="Applied 💼">Applied 💼</option>
-                <option value="Interview scheduled 🗓">Interview scheduled 🗓</option>
-                <option value="Interview complete ✅">Interview complete ✅</option>
-                <option value="Rejected ❌">Rejected ❌</option>
-              </select> : jobs.status}
-            </div>
-            <div>
-              <strong>Notes:</strong> {editMode ?
-                <textarea
-                  rows={2}
-                  value={notes}
-                  onChange={handleNotesChange}
-                /> : jobs.notes}
-            </div>
-            <div><a href={jobs.jobDescription}>Link to job description</a></div>
-            <br />
-            <button onClick={handleFavoritedClick}>{addFavorite ? "⭐" : "☆"}</button>
+            <form onSubmit={handleSubmit}>
+              <h2>{jobs.jobTitle}</h2>
+              <p><strong>Company:</strong> {jobs.company}</p>
+              <p><strong>Work Location:</strong> {jobs.workLocation}</p>
+              <p><strong>Date Applied:</strong> {jobs.dateApplied}</p>
+              <p><strong>Status:</strong> {editMode ?
+                <select value={currentStatus} onChange={(e) => handleStatusSelect(e.target.value)}>
+                  <option value="Applied 💼">Applied 💼</option>
+                  <option value="Interview scheduled 🗓">Interview scheduled 🗓</option>
+                  <option value="Interview complete ✅">Interview complete ✅</option>
+                  <option value="Rejected ❌">Rejected ❌</option>
+                </select> : currentStatus}
+              </p>
+              <div>
+                <strong>Notes:</strong> {editMode ?
+                  <textarea
+                    rows={2}
+                    value={notes}
+                    onChange={handleNotesChange}
+                  /> : notes}
+              </div>
+              <p><a href={jobs.jobDescription}>Link to job description</a></p>
+              <br />
+              <button onClick={handleFavoritedClick}>{addFavorite ? "⭐" : "☆"}</button>
+              <br />
+              <button onClick={handleEditMode} id="edit-button">Edit Mode</button>
+            </form>
           </div>
         </div>
       </div>
