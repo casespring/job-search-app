@@ -62,7 +62,9 @@ function handleDelete() {
   console.log(afterDelete)
 }
 
+function JobCard() {
   return (
+    <div></div>
     <div className="display-cards" >
       <div>
         <div className="cardContainer">
