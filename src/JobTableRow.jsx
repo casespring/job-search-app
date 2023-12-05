@@ -1,78 +1,78 @@
 import React, { useState } from 'react';
-import { Form, Button } from 'react-bootstrap';
 
-function JobTableRow({job}) {
-    const [selectedJob, setSelectedJob] = useState(null);
-    const [editMode, setEditMode] = useState(true)
-    const [notes, setNotes] = useState(job.notes)
-  
-    function handleRowClick(job){
-      setSelectedJob(selectedJob === job ? null : job);
-    };
-  
-    function handleEditMode() {
-        setEditMode(!editMode)
-    }
+function JobTableRow({ job, editMode }) {
+  const [selectedJob, setSelectedJob] = useState(null);
 
-    function handleNotesChange(e) {
-        setNotes(e.target.value)
-        fetch(`http://localhost:3000/jobs/${job.id}`, {
-            method: "PATCH",
-            headers: { "content-type": "Application/json" },
-            body: JSON.stringify({ notes: e.target.value })
-        })
-        .then(r => r.json())
-        .then(data => setNotes(data.notes))
-    }
+  function handleRowClick() {
+    setSelectedJob(selectedJob === job ? null : job);
+  }
 
-    function handleSaveClick() {
-            fetch(`http://localhost:3000/jobs/${job.id}`, {
-                method: "PATCH",
-                headers: { "content-type": "Application/json" },
-                body: JSON.stringify({ notes })
-            })
-            .then(r => r.json())
-            .then(data => {
-                setNotes(data.notes);
-                setEditMode(!editMode);  // Move this line inside the then block
-            });
-    }
-    
-    
-
-    return (
-    <React.Fragment>
-     <tr onClick={() => handleRowClick(job)}
-      className={selectedJob === job ? 'table-primary' : ''}
-      style={{ cursor: 'pointer' }}>
+  return (
+    <>
+      <tr
+        onClick={handleRowClick}
+        className={selectedJob === job ? 'table-primary' : ''}
+        style={{ cursor: 'pointer' }}
+      >
         <th scope="row"></th>
+        <td>{job.id}</td>
         <td>{job.jobTitle}</td>
         <td>{job.company}</td>
         <td>{job.workLocation}</td>
-        <td>{job.status}</td>
+        <td>
+          {editMode ? (
+            <div className="dropdown">
+              <button
+                className="btn btn-secondary dropdown-toggle"
+                type="button"
+                id="dropdownMenuButton"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                {job.status}
+              </button>
+              <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <button className="dropdown-item" type="button">
+                  Applied 💼
+                </button>
+                <button className="dropdown-item" type="button">
+                  Interview scheduled 🗓
+                </button>
+                <button className="dropdown-item" type="button">
+                  Interview complete ✅
+                </button>
+                <button className="dropdown-item" type="button">
+                  Rejected ❌
+                </button>
+              </div>
+            </div>
+          ) : (
+            job.status
+          )}
+        </td>
         <td>{job.dateApplied}</td>
       </tr>
       {selectedJob === job && (
         <tr className="table-primary">
-          <td colSpan="6">{
-            editMode ? <p><strong><Button onClick={handleEditMode} size="sm">Edit ✏️</Button> Notes: </strong>{job.notes}</p> :
-            <React.Fragment>
-            <Button onClick={handleEditMode} size="sm">Cancel</Button>
-            <Button onClick={handleSaveClick} size="sm">Save ✏️</Button>
-            <Form.Control
-                as="textarea"
-                rows={2} 
-                value={notes}
-                onChange={handleNotesChange}
-            />
-            </React.Fragment>
-          }
-        
+          <td colSpan="7">
+            {editMode ? (
+              <textarea
+                className="form-control"
+                rows="2"
+                value={job.notes}
+              />
+            ) : (
+              <p>
+                <strong>Notes:</strong> {job.notes}
+              </p>
+            )}
           </td>
         </tr>
       )}
-    </React.Fragment>
-    )
+    </>
+  );
 }
 
-export default JobTableRow
+export default JobTableRow;
+

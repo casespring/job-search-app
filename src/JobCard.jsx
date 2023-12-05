@@ -1,73 +1,89 @@
-import { useState } from 'react';
-import { ListGroup, Card, Button, Dropdown, DropdownButton, Form } from 'react-bootstrap';
+import React, { useState } from 'react';
 import './JobCard.css';
 
 function JobCard({ jobs }) {
-    const [addFavorite, setAddFavorite] = useState(jobs.favorite)
-    const [currentStatus, setCurrentStatus] = useState(jobs.status);
-    const [notes, setNotes] = useState(jobs.notes)
+  const [addFavorite, setAddFavorite] = useState(jobs.favorite);
+  const [currentStatus, setCurrentStatus] = useState(jobs.status);
+  const [notes, setNotes] = useState(jobs.notes);
 
-    console.log(jobs)
+  console.log(jobs);
 
-    function handleStatusSelect(selected) {
-        setCurrentStatus(selected)
-        fetch(`http://localhost:3000/jobs/${jobs.id}`, {
-            method: "PATCH",
-            headers: { "content-type": "Application/json" },
-            body: JSON.stringify({status: selected})
-        }).then(r => r.json())
-          .then(data => console.log(data))
-    }
-        
-    function handleFavoritedClick() {
-        setAddFavorite(!addFavorite)
-        fetch(`http://localhost:3000/jobs/${jobs.id}`, {
-            method: "PATCH",
-            headers: { "content-type": "Application/json" },
-            body: JSON.stringify({ favorite: !addFavorite })
-        }).then(r => r.json())
-          .then(data => setNotes(data.notes))
-    }
+  function handleStatusSelect(selected) {
+    setCurrentStatus(selected);
+    updateJobData({ status: selected });
+  }
 
-    function handleNotesChange(e) {
-        setNotes(e.target.value)
-        fetch(`http://localhost:3000/jobs/${jobs.id}`, {
-            method: "PATCH",
-            headers: { "content-type": "Application/json" },
-            body: JSON.stringify({ notes: e.target.value })
-        }).then(r => r.json())
-          .then(data => console.log(data))
-    }
+  function handleFavoritedClick() {
+    setAddFavorite(!addFavorite);
+    updateJobData({ favorite: !addFavorite });
+  }
+
+  function handleNotesChange(e) {
+    setNotes(e.target.value);
+    updateJobData({ notes: e.target.value });
+  }
+
+  function updateJobData(data) {
+    fetch(`http://localhost:3000/jobs/${jobs.id}`, {
+      method: 'PATCH',
+      headers: { 'content-type': 'Application/json' },
+      body: JSON.stringify(data),
+    })
+      .then((r) => r.json())
+      .then((updatedData) => {
+        setNotes(updatedData.notes);
+        // Add additional state updates as needed
+      });
+  }
 
   return (
-    <Card className="container" >
-      <Card.Body >
-        <Card.Title>{jobs.jobTitle}</Card.Title>
-        <ListGroup.Item><strong>Company:</strong> {jobs.company}</ListGroup.Item>
-        <ListGroup.Item><strong>Work Location:</strong> {jobs.workLocation}</ListGroup.Item>
-        <ListGroup.Item><strong>Date Applied:</strong> {jobs.dateApplied}</ListGroup.Item>
-        <ListGroup.Item><strong>Status:</strong> {
-            <DropdownButton id="dropdown-button" title={currentStatus} onSelect={handleStatusSelect}>
-                <Dropdown.Item eventKey="Applied 💼">Applied 💼</Dropdown.Item>
-                <Dropdown.Item eventKey="Interview scheduled 🗓">Interview scheduled 🗓</Dropdown.Item>
-                <Dropdown.Item eventKey="Interview complete ✅">Interview complete ✅</Dropdown.Item>
-                <Dropdown.Item eventKey="Rejected ❌">Rejected ❌</Dropdown.Item>
-            </DropdownButton>}  
-        </ListGroup.Item>
-            <Card.Text>
-                <strong>Notes:</strong> 
-            </Card.Text>
-            <Form.Control
-                as="textarea"
-                rows={2} 
-                value={notes}
-                onChange={handleNotesChange}
-            />
-        <Card.Link href={jobs.jobDescription}>Link to job description</Card.Link>
-        <br/>
-        <Button variant="primary" onClick={handleFavoritedClick}>{addFavorite ? "Remove from favorite" : "Add to favorite"}</Button>
-      </Card.Body>
-    </Card>
+    <div className="job-card-container">
+      <div className="card">
+        <div className="card-body">
+          <h5 className="card-title">{jobs.jobTitle}</h5>
+          <p className="card-text">
+            <strong>Company:</strong> {jobs.company}
+          </p>
+          <p className="card-text">
+            <strong>Work Location:</strong> {jobs.workLocation}
+          </p>
+          <p className="card-text">
+            <strong>Date Applied:</strong> {jobs.dateApplied}
+          </p>
+          <p className="card-text">
+            <strong>Status:</strong>{' '}
+            <select
+              value={currentStatus}
+              onChange={(e) => handleStatusSelect(e.target.value)}
+            >
+              <option value="Applied 💼">Applied 💼</option>
+              <option value="Interview scheduled 🗓">Interview scheduled 🗓</option>
+              <option value="Interview complete ✅">Interview complete ✅</option>
+              <option value="Rejected ❌">Rejected ❌</option>
+            </select>
+          </p>
+          <p className="card-text">
+            <strong>Notes:</strong>
+          </p>
+          <textarea
+            rows={2}
+            value={notes}
+            onChange={handleNotesChange}
+          />
+          <a href={jobs.jobDescription} className="card-link">
+            Link to job description
+          </a>
+          <br />
+          <button
+            type="button"
+            className="btn btn-primary"
+            onClick={handleFavoritedClick}
+          >
+            {addFavorite ? 'Remove from favorite' : 'Add to favorite'}
+          </button>
+        </div>
+      </div>
+    </div>
   );
 }
 

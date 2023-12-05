@@ -7,7 +7,7 @@
       "dateApplied": "2023-01-15",
       "status": "Interview scheduled 🗓",
       "jobDescription": "https://example.com/full-stack-developer-job-description",
-      "notes": "More notes, w4ew\n\n",
+      "notes": "Noteees",
       "favorite": true,
       "id": 1
     },
@@ -34,48 +34,26 @@
       "id": 3
     },
     {
-      "jobTitle": "Job Test",
-      "company": "Company Test",
-      "workLocation": "Remote 🏠",
-      "dateApplied": "2023-12-27",
-      "status": "Applied 💼",
-      "jobDescription": "Company Test",
-      "notes": "Notes. Notes. Notes. Notes. Notes.",
+      "jobTitle": "Job",
+      "company": "Job",
+      "workLocation": "Hybrid 🖥",
+      "jobDescription": "Job",
+      "dateApplied": "2023-12-14",
+      "status": "Interview scheduled 🗓",
+      "notes": "sdlkgharow;h;iovsdf",
       "favorite": true,
       "id": 4
     },
     {
-      "jobTitle": "Job Test",
-      "company": "Company B",
-      "workLocation": "In Person 🏢",
-      "jobDescription": "https://www.shecodes.io/athena/34267-how-to-add-a-link-within-a-paragraph-in-html#:~:text=in%203.83%20seconds-,To%20add%20a%20link%20within%20a%20paragraph,can%20use%20HTML%20anchor%20tags.&text=This%20will%20create%20a%20hyperlink,link%20you%20want%20to%20use.",
-      "dateApplied": "2023-12-20",
-      "status": "Interview complete ✅",
-      "notes": "Notes notes",
-      "favorite": true,
-      "id": 5
-    },
-    {
-      "jobTitle": "Job Test 2",
-      "company": "Company Test",
-      "location": "In Person 🏢",
-      "jobDescription": "example.com",
-      "dateApplied": "2023-12-13",
-      "status": "Interview scheduled 🗓",
-      "notes": "Notes. Found on LinkedIn.",
+      "jobTitle": "Job",
+      "company": "Job",
+      "workLocation": "Hybrid 🖥",
+      "jobDescription": "Job",
+      "dateApplied": "2023-12-21",
+      "status": "Rejected ❌",
+      "notes": "notes",
       "favorite": false,
-      "id": 6
-    },
-    {
-      "jobTitle": "Job Test 2",
-      "company": "Company Test",
-      "location": "In Person 🏢",
-      "jobDescription": "example.com",
-      "dateApplied": "2023-12-13",
-      "status": "Interview scheduled 🗓",
-      "notes": "Notes. Found on LinkedIn.",
-      "favorite": true,
-      "id": 7
+      "id": 5
     }
   ],
   "blogs": [
