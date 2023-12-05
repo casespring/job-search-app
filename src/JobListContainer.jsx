@@ -27,7 +27,7 @@ function JobListContainer() {
         <div>
             <button onClick={handleEditMode}>{editMode ? "Exist edit mode":"Edit Mode"}</button>
             <button onClick={() => setToggle(!toggle)}>{toggle ? "Display card":"Display table"}</button>    
-            {toggle ? displayJobCards : <JobTable editMode={editMode} jobs={jobs} />}
+            {toggle ? <JobCard /> : <JobTable />}
         </div>
     );
 };
