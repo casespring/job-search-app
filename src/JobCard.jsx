@@ -52,9 +52,7 @@ function handleSubmit(e) {
   console.log(updatedCard)
 }
 
-function JobCard() {
   return (
-    <div></div>
     <div className="display-cards" >
       <div>
         <div className="cardContainer">
