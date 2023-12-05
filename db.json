@@ -1,25 +1,14 @@
 {
   "jobs": [
     {
-      "jobTitle": "Full Stack Developer",
-      "company": "Tech Solutions Inc.",
-      "workLocation": "Remote 🏠",
-      "dateApplied": "2023-01-15",
-      "status": "Interview scheduled 🗓",
-      "jobDescription": "https://example.com/full-stack-developer-job-description",
-      "notes": "Noteees",
-      "favorite": false,
-      "id": 1
-    },
-    {
       "jobTitle": "Software Engineer",
       "company": "CodeCrafters",
       "workLocation": "Remote 🏠",
       "dateApplied": "2023-02-01",
-      "status": "Interview scheduled 🗓",
+      "status": "Interview complete ✅",
       "jobDescription": "https://example.com/software-engineer-job-description",
-      "notes": "Notes. Notes. Notes. Notes. Notes.",
-      "favorite": false,
+      "notes": "TEST",
+      "favorite": true,
       "id": 2
     },
     {

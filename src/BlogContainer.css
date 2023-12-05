@@ -1,0 +1,53 @@
+.container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 20px;
+  }
+  
+  .blog-card {
+    width: 18rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .blog-thumbnail {
+    width: 100%;
+    height: auto;
+    border-radius: 8px 8px 0 0;
+  }
+  
+  .blog-content {
+    padding: 16px;
+    flex: 1;
+  }
+  
+  .blog-title {
+    margin-bottom: 8px;
+  }
+  
+  .blog-author {
+    font-size: 14px;
+    color: #6c757d;
+    margin-bottom: 16px;
+  }
+  
+  .learn-more-link {
+    display: block;
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 4px;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+  }
+  
+  .learn-more-link:hover {
+    background-color: #0056b3;
+  }
+  
