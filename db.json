@@ -81,9 +81,9 @@
   "blogs": [
     {
       "author": "Isaiah Hankel",
-      "title": "A Five-Week Guide to Getting a Job",
+      "title": "A Five-Week Guide to Getting a Job You Want",
       "link": "https://hbr.org/2021/03/a-five-week-guide-to-getting-a-job",
-      "image": "https://hbr.org/resources/images/article_assets/2021/03/A_Mar21_25_1216072801-1024x576.jpg",
+      "image": "https://www.bu.edu/files/2022/03/class-of-2021-Illustration-100.jpg",
       "id": 1
     },
     {
@@ -97,43 +97,50 @@
       "author": "Amy Gallo",
       "title": "How to Write a Résumé That Stands Out",
       "link": "https://hbr.org/2014/12/how-to-write-a-resume-that-stands-out?utm_medium=paidsearch&utm_source=google&utm_campaign=domcontent&utm_term=Non-Brand&tpcc=paidsearch.google.dsacontent&gad_source=1&gclid=Cj0KCQiA67CrBhC1ARIsACKAa8TOd5NC8iLXUTh7up9yhdTAowp0JmwcfdVs3nrNCg-NYr1ilIDhlkwaAoYbEALw_wcB",
-      "image": "https://hbr.org/resources/images/article_assets/2015/05/DEC14_12_73246110-1024x576.jpg",
+      "image": "https://www.personalfinanceforbeginners.com/wp-content/uploads/2020/09/create-resume-stands-out.jpg",
       "id": 3
     },
     {
       "author": "Indeed Editorial Team",
-      "title": "11 Types of Job-Hunting Strategies",
+      "title": "11 Types of Job-Hunting Strategies That you Need to Know",
       "link": "https://www.indeed.com/career-advice/finding-a-job/job-hunting",
-      "image": "https://assets-global.website-files.com/61766c42e8e50c99a04fbd4b/6179a674993a25029d528576_7-Signs-Your-Employees-Are-Job-Hunting.png",
+      "image": "https://images.ctfassets.net/pdf29us7flmy/1QxciPOW9jJtSUYwYiJvKh/a7991c69302cb72262a43d51b7b6e00e/XuUJHMXc.png?w=720&q=100&fm=jpg",
       "id": 4
     },
     {
       "author": "Jack Kelly",
       "title": "How To Get Started Finding A New Job",
       "link": "https://www.forbes.com/sites/jackkelly/2023/09/11/how-to-find-a-new-job/?sh=1739b1a51b8b",
-      "image": "https://uplatz.com/blog/wp-content/uploads/2019/12/A-New-Beginning-1.png",
+      "image": "https://images.ctfassets.net/pdf29us7flmy/4giCnLyCw4I0SdFLGaps0L/847f7c0bcc5d856b352112d9223ca850/McHHSZKQ.png?w=720&q=100&fm=jpg",
       "id": 5
     },
     {
       "author": "Utkarsh Amitabh",
       "title": "The Right Way to Make a Big Career Transition",
       "link": "https://hbr.org/2021/07/the-right-way-to-make-a-big-career-transition",
-      "image": "https://hbr.org/resources/images/article_assets/2021/07/A_Jul21_20_827201156-1024x576.png",
+      "image": "https://images.ctfassets.net/pdf29us7flmy/1gePWfiNwIOtDZ8rADjFHH/4d062567da4c694ba4295e80fd681cfd/epaOUSXr.png?w=720&q=100&fm=jpg",
       "id": 6
     },
     {
       "author": "Coursera Team",
       "title": "How to Prepare for a Career Change: Step-By-Step Guide",
       "link": "https://www.coursera.org/articles/career-change",
-      "image": "https://backend.cleverclipstudios.com/wp-content/uploads/2022/04/Blogpost-E-Learnings-1024x576.jpg",
+      "image": "https://hbr.org/resources/images/article_assets/2021/11/A_Nov21_24_1297460141-01.jpg",
       "id": 7
     },
     {
       "author": "Coursera Team",
-      "title": "Apply to a Job, Even If You Don`t Meet All Criteria",
+      "title": "Try Applying to a Job, Even If You Don`t Meet All Criteria",
       "link": "https://hbr.org/2022/07/apply-to-a-job-even-if-you-dont-meet-all-criteria",
       "image": "https://hbr.org/resources/images/article_assets/2022/07/A_July22_21_1175848946-1024x576.jpg",
       "id": 8
+    },
+    {
+      "link": "https://www.careersindepth.com/post/common-fears-of-career-change-and-how-to-overcome-them",
+      "image": "https://images.summitmedia-digital.com/cosmo/images/2021/08/26/cosmo-coach-lyqa-maravilla-character-reference-main-image-1629959378.jpg",
+      "title": "Common Fears of Career Change and How to Overcome Them",
+      "author": "Careers in Depth",
+      "id": 10
     }
   ]
 }
