@@ -22,6 +22,8 @@
     padding-top: .5em;
     padding-bottom: .04em;
     margin: 2em;
+    background-color: lightgreen;
+    color: white;
   }
   
   .alert-p {

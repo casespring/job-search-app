@@ -1,18 +1,17 @@
+import React from "react";
 import { Outlet } from "react-router-dom";
 import NavBar from "./NavBar";
-import 'bootstrap/dist/css/bootstrap.min.css';
+import './App.css'; // Import your custom styles
 
+function App() {
+  return (
+    <>
+      <header>
+        <NavBar />
+      </header>
+      <Outlet />
+    </>
+  );
+}
 
-
-function App(){
-    return(
-        <>
-            <header>
-                <NavBar />
-            </header>
-            <Outlet />
-        </>
-    );
-};
-
-export default App
+export default App;

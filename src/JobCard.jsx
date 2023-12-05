@@ -1,73 +1,93 @@
-import { useState } from 'react';
-import { ListGroup, Card, Button, Dropdown, DropdownButton, Form } from 'react-bootstrap';
-import './JobCard.css';
+import { useState, useEffect } from 'react';
+import "./JobCard.css"
 
-function JobCard({ jobs }) {
-    const [addFavorite, setAddFavorite] = useState(jobs.favorite)
-    const [currentStatus, setCurrentStatus] = useState(jobs.status);
-    const [notes, setNotes] = useState(jobs.notes)
+function JobCard({ jobs}) {
+  const [addFavorite, setAddFavorite] = useState(jobs.favorite);
+  const [currentStatus, setCurrentStatus] = useState(jobs.status);
+  const [notes, setNotes] = useState(jobs.notes);
+  const [editMode, setEditmode] = useState(false)
 
-    console.log(jobs)
+  console.log(jobs);
 
-    function handleStatusSelect(selected) {
-        setCurrentStatus(selected)
-        fetch(`http://localhost:3000/jobs/${jobs.id}`, {
-            method: "PATCH",
-            headers: { "content-type": "Application/json" },
-            body: JSON.stringify({status: selected})
-        }).then(r => r.json())
-          .then(data => console.log(data))
-    }
-        
-    function handleFavoritedClick() {
-        setAddFavorite(!addFavorite)
-        fetch(`http://localhost:3000/jobs/${jobs.id}`, {
-            method: "PATCH",
-            headers: { "content-type": "Application/json" },
-            body: JSON.stringify({ favorite: !addFavorite })
-        }).then(r => r.json())
-          .then(data => setNotes(data.notes))
-    }
+  function handleStatusSelect(selected) {
+    setCurrentStatus(selected)
+    fetch(`http://localhost:3000/jobs/${jobs.id}`, {
+        method: "PATCH",
+        headers: { "content-type": "Application/json" },
+        body: JSON.stringify({status: selected})
+    }).then(r => r.json())
+      .then(data => console.log(data))
+};
 
-    function handleNotesChange(e) {
-        setNotes(e.target.value)
-        fetch(`http://localhost:3000/jobs/${jobs.id}`, {
-            method: "PATCH",
-            headers: { "content-type": "Application/json" },
-            body: JSON.stringify({ notes: e.target.value })
-        }).then(r => r.json())
-          .then(data => console.log(data))
-    }
+  function handleFavoritedClick() {
+    setAddFavorite(!addFavorite)
+    fetch(`http://localhost:3000/jobs/${jobs.id}`, {
+        method: "PATCH",
+        headers: { "content-type": "Application/json" },
+        body: JSON.stringify({ favorite: !addFavorite })
+    }).then(r => r.json())
+      .then(data => console.log(data))
+};
+
+function handleNotesChange(e) {
+  setNotes(e.target.value)
+  fetch(`http://localhost:3000/jobs/${jobs.id}`, {
+      method: "PATCH",
+      headers: { "content-type": "Application/json" },
+      body: JSON.stringify({ notes: e.target.value })
+  }).then(r => r.json())
+    .then(data => setNotes(data.notes))
+};
+
+function handleEditMode() {
+  setEditmode(!editMode)
+}
+
+function handleSubmit(e) {
+  e.preventDefault();
+  const updatedCard = {
+    status: currentStatus,
+    notes: notes,
+  }
+  console.log(updatedCard)
+}
 
   return (
-    <Card className="container" >
-      <Card.Body >
-        <Card.Title>{jobs.jobTitle}</Card.Title>
-        <ListGroup.Item><strong>Company:</strong> {jobs.company}</ListGroup.Item>
-        <ListGroup.Item><strong>Work Location:</strong> {jobs.workLocation}</ListGroup.Item>
-        <ListGroup.Item><strong>Date Applied:</strong> {jobs.dateApplied}</ListGroup.Item>
-        <ListGroup.Item><strong>Status:</strong> {
-            <DropdownButton id="dropdown-button" title={currentStatus} onSelect={handleStatusSelect}>
-                <Dropdown.Item eventKey="Applied 💼">Applied 💼</Dropdown.Item>
-                <Dropdown.Item eventKey="Interview scheduled 🗓">Interview scheduled 🗓</Dropdown.Item>
-                <Dropdown.Item eventKey="Interview complete ✅">Interview complete ✅</Dropdown.Item>
-                <Dropdown.Item eventKey="Rejected ❌">Rejected ❌</Dropdown.Item>
-            </DropdownButton>}  
-        </ListGroup.Item>
-            <Card.Text>
-                <strong>Notes:</strong> 
-            </Card.Text>
-            <Form.Control
-                as="textarea"
-                rows={2} 
-                value={notes}
-                onChange={handleNotesChange}
-            />
-        <Card.Link href={jobs.jobDescription}>Link to job description</Card.Link>
-        <br/>
-        <Button variant="primary" onClick={handleFavoritedClick}>{addFavorite ? "Remove from favorite" : "Add to favorite"}</Button>
-      </Card.Body>
-    </Card>
+    <div className="display-cards" >
+      <div>
+        <div className="cardContainer">
+          <div>
+            <form onSubmit={handleSubmit}>
+              <h2>{jobs.jobTitle}</h2>
+              <p><strong>Company:</strong> {jobs.company}</p>
+              <p><strong>Work Location:</strong> {jobs.workLocation}</p>
+              <p><strong>Date Applied:</strong> {jobs.dateApplied}</p>
+              <p><strong>Status:</strong> {editMode ?
+                <select value={currentStatus} onChange={(e) => handleStatusSelect(e.target.value)}>
+                  <option value="Applied 💼">Applied 💼</option>
+                  <option value="Interview scheduled 🗓">Interview scheduled 🗓</option>
+                  <option value="Interview complete ✅">Interview complete ✅</option>
+                  <option value="Rejected ❌">Rejected ❌</option>
+                </select> : currentStatus}
+              </p>
+              <div>
+                <strong>Notes:</strong> {editMode ?
+                  <textarea
+                    rows={2}
+                    value={notes}
+                    onChange={handleNotesChange}
+                  /> : notes}
+              </div>
+              <p><a href={jobs.jobDescription}>Link to job description</a></p>
+              <br />
+              <button onClick={handleFavoritedClick}>{addFavorite ? "⭐" : "☆"}</button>
+              <br />
+              <button onClick={handleEditMode} id="edit-button">Edit Mode</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }
 

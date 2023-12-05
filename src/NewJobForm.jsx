@@ -1,5 +1,4 @@
-import { useState, useEffect } from 'react';
-import { Form, Button, Alert, Row, Col } from 'react-bootstrap';
+import React, { useState, useEffect } from 'react';
 import './NewJobForm.css';
 
 function NewJobForm() {
@@ -94,77 +93,123 @@ function NewJobForm() {
 
   return (
     <div className='form-container'>
-      <Form onSubmit={handleSubmit}>
-        <Row>
-          <Col md={6}>
-            <Form.Group controlId="formGridJobTitle" className='form-group'>
-              <Form.Label>Job Title</Form.Label>
-              <Form.Control onChange={handleTitle} type="text" placeholder="Enter job title" value={jobTitle} required />
-            </Form.Group>
+      <form onSubmit={handleSubmit} className='form'>
+        <div className='form-row'>
+          <div className='form-group'>
+            <label htmlFor="jobTitle">Job Title</label>
+            <input
+              id="jobTitle"
+              type="text"
+              placeholder="Enter job title"
+              value={jobTitle}
+              onChange={handleTitle}
+              required
+            />
+          </div>
 
-            <Form.Group controlId="formGridCompany" className='form-group'>
-              <Form.Label>Company</Form.Label>
-              <Form.Control onChange={handleCompany} type="text" placeholder="Enter company" value={company} required />
-            </Form.Group>
+          <div className='form-group'>
+            <label htmlFor="company">Company</label>
+            <input
+              id="company"
+              type="text"
+              placeholder="Enter company"
+              value={company}
+              onChange={handleCompany}
+              required
+            />
+          </div>
 
-            <Form.Group controlId="formGridLocation" className='form-group'>
-              <Form.Label>Work Location</Form.Label>
-              <Form.Select onChange={handleWorkLocation} value={workLocation} required>
-                <option disabled>Choose location</option>
-                <option>In Person 🏢</option>
-                <option>Hybrid 🖥</option>
-                <option>Remote 🏠</option>
-              </Form.Select>
-            </Form.Group>
-          </Col>
+          <div className='form-group'>
+            <label htmlFor="workLocation">Work Location</label>
+            <select
+              id="workLocation"
+              value={workLocation}
+              onChange={handleWorkLocation}
+              required
+            >
+              <option disabled>Choose location</option>
+              <option>In Person 🏢</option>
+              <option>Hybrid 🖥</option>
+              <option>Remote 🏠</option>
+            </select>
+          </div>
+        </div>
 
-          <Col md={6}>
-            <Form.Group controlId="formGridCompany" className='form-group'>
-              <Form.Label>Job Description</Form.Label>
-              <Form.Control onChange={handleJobDescription} type="text" placeholder="Enter link" value={jobDescription} required />
-            </Form.Group>
+        <div className='form-row'>
+          <div className='form-group'>
+            <label htmlFor="jobDescription">Job Description</label>
+            <input
+              id="jobDescription"
+              type="text"
+              placeholder="Enter job description"
+              value={jobDescription}
+              onChange={handleJobDescription}
+              required
+            />
+          </div>
 
-            <Form.Group controlId="formGridDateApplied" className='form-group'>
-              <Form.Label>Date Applied</Form.Label>
-              <Form.Control onChange={handleDate} type="date" value={dateApplied} required />
-            </Form.Group>
+          <div className='form-group'>
+            <label htmlFor="dateApplied">Date Applied</label>
+            <input
+              id="dateApplied"
+              type="date"
+              value={dateApplied}
+              onChange={handleDate}
+              required
+            />
+          </div>
 
-            <Form.Group controlId="formGridStatus" className='form-group'>
-              <Form.Label>Status</Form.Label>
-              <Form.Select onChange={handleStatus} value={status} required>
-                <option disabled>Choose status</option>
-                <option>Applied 💼</option>
-                <option>Interview scheduled 🗓</option>
-                <option>Interview complete ✅</option>
-                <option>Rejected ❌</option>
-              </Form.Select>
-            </Form.Group>
-            </Col>
+          <div className='form-group'>
+            <label htmlFor="status">Status</label>
+            <select
+              id="status"
+              value={status}
+              onChange={handleStatus}
+              required
+            >
+              <option disabled>Choose status</option>
+              <option>Applied 💼</option>
+              <option>Interview scheduled 🗓</option>
+              <option>Interview complete ✅</option>
+              <option>Rejected ❌</option>
+            </select>
+          </div>
+        </div>
 
-            <Form.Group controlId="formGridNotes" className='form-group'>
-              <Form.Label>Notes</Form.Label>
-              <Form.Control onChange={handleNotes} as="textarea" rows={4} placeholder="Add any notes" value={notes} />
-            </Form.Group>
+        <div className='form-group'>
+          <label htmlFor="notes">Notes</label>
+          <textarea
+            id="notes"
+            rows={4}
+            placeholder="Add any notes"
+            value={notes}
+            onChange={handleNotes}
+          />
+        </div>
 
-            <Form.Group controlId="formGridCheckbox" className='form-group'>
-              <Form.Check onChange={handleFavorite} type="checkbox" label="Mark as favorite" checked={favorite} />
-            </Form.Group>
-        
-        </Row>
+        <div className='form-group'>
+          <label>
+            <input
+              type="checkbox"
+              checked={favorite}
+              onChange={handleFavorite}
+            />
+            Mark as favorite
+          </label>
+        </div>
 
-        <Button variant="primary" type="submit">
+        <button type="submit" className='btn-primary'>
           Submit
-        </Button>
+        </button>
 
         {showSuccessAlert && (
-          <Alert variant='success' className='success-alert' onClose={() => setShowSuccessAlert(false)} dismissible>
-            <p className='alert-p'>Your job has been added!</p>
-          </Alert>
+          <div className='success-alert'>
+            <p>Your job has been added!</p>
+          </div>
         )}
-      </Form>
+      </form>
     </div>
   );
 }
 
 export default NewJobForm;
-
