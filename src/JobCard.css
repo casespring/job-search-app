@@ -1,5 +1,29 @@
-.card-display {
-    display: flex;
-    display: list-item;
-    width: 18rem;
-}
+.display-cards {
+  width: 18rem;
+  border: 3px solid #007bff;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: 8px;
+  margin: 5px;
+  }
+
+  .button-class {
+    background-color: rgb(255, 255, 255);
+    color: black;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
+  .button-delete {
+    background-color: rgb(255, 255, 255);
+    color: black;
+    padding: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
+
+  

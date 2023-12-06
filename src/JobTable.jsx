@@ -1,51 +1,36 @@
-import React, { useState } from 'react';
+import {useState, useEffect} from 'react';
+import JobTableRow from './JobTableRow';
+import "./JobTable.css";
 
-function JobTable({ jobs }) {
-  const [selectedJob, setSelectedJob] = useState(null);
+function JobTable() {
+  const [jobs, setJobs] = useState([])
 
-  const handleRowClick = (job) => {
-    // Toggle the selectedJob state when a row is clicked
-    setSelectedJob(selectedJob === job ? null : job);
-  };
+  useEffect(() => {
+    fetch(`http://localhost:3000/jobs`)
+      .then(r => r.json())
+      .then(data => setJobs(data));
+  }, []);
 
-  let jobTable = jobs.map((job, index) => (
-    <React.Fragment key={index}>
-      <tr onClick={() => handleRowClick(job)}
-      className={selectedJob === job ? 'table-primary' : ''}
-      style={{ cursor: 'pointer' }}>
-        <th scope="row">{index + 1}</th>
-        <td>{job.jobTitle}</td>
-        <td>{job.company}</td>
-        <td>{job.workLocation}</td>
-        <td>{job.status}</td>
-      </tr>
-      {selectedJob === job && (
-        <tr className="table-primary">
-          <td colSpan="5">
-          <p><a href={job.jobDescription} target="_blank" rel="noopener noreferrer"><strong>Job Description</strong></a></p>
-            <p><strong>Date Applied: </strong>{job.dateApplied}</p>
-            <p><strong>Notes: </strong>{job.notes}</p>
-          </td>
-        </tr>
-      )}
-    </React.Fragment>
-  ));
+  const displayJobs = jobs.map(job => (
+    <JobTableRow job={job} key={job.id} />
+  ))
 
   return (
-    <div className='container'>
+    <div className="container">
       <table className="table">
         <thead>
           <tr>
-            <th scope="col">#</th>
             <th scope="col">Title</th>
             <th scope="col">Company</th>
             <th scope="col">Work Location</th>
             <th scope="col">Status</th>
+            <th scope="col">Date Applied</th>
+            <th scope="col">Notes</th>
+            <th scope="col">Favorite</th>
+            <th scope="col">Edit</th>
           </tr>
         </thead>
-        <tbody>
-          {jobTable}
-        </tbody>
+        <tbody>{displayJobs}</tbody>
       </table>
     </div>
   );
