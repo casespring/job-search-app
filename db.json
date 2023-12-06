@@ -5,10 +5,10 @@
       "company": "Tech Solutions Inc.",
       "workLocation": "Remote 🏠",
       "dateApplied": "2023-01-15",
-      "status": "Interview complete ✅",
+      "status": "Interview scheduled 🗓",
       "jobDescription": "https://example.com/full-stack-developer-job-description",
       "notes": "noted juglg m kjbvkn ,v",
-      "favorite": false,
+      "favorite": true,
       "id": 1
     },
     {
@@ -30,7 +30,7 @@
       "status": "Rejected ❌",
       "jobDescription": "https://example.com/frontend-developer-job-description",
       "notes": "Notes. Notes. Notes. Notes. Notes.",
-      "favorite": false,
+      "favorite": true,
       "id": 3
     },
     {
@@ -45,15 +45,26 @@
       "id": 4
     },
     {
-      "jobTitle": "Job",
-      "company": "Job",
+      "jobTitle": "test",
+      "company": "company u",
       "workLocation": "Hybrid 🖥",
-      "jobDescription": "Job",
-      "dateApplied": "2023-12-21",
-      "status": "Rejected ❌",
-      "notes": "notes",
+      "jobDescription": "working",
+      "dateApplied": "2044-02-03",
+      "status": "Interview scheduled 🗓",
+      "notes": "akjei notes",
       "favorite": false,
       "id": 5
+    },
+    {
+      "jobTitle": "test",
+      "company": "52y3ygt",
+      "workLocation": "Choose location",
+      "jobDescription": "working",
+      "dateApplied": "2023-12-20",
+      "status": "Interview scheduled 🗓",
+      "notes": "dfqfewqf",
+      "favorite": false,
+      "id": 6
     }
   ],
   "blogs": [
