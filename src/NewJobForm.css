@@ -1,35 +1,91 @@
 .form-container {
-    width: 100%;
-    max-width: 80vw; 
-    margin: auto;
-    padding: 15px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
   }
   
-  /* Media query for smaller screens (e.g., mobile devices) */
-  @media (max-width: 576px) {
-    .form-container {
-      max-width: 100%; 
-    }
+  .form {
+    width: 50%;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
   }
   
   .form-group {
-    margin-bottom: 5px;
-  }
-
-  .success-alert {
-    padding-top: .5em;
-    padding-bottom: .04em;
-    margin: 2em;
-    background-color: lightgreen;
-    color: white;
+    margin-bottom: 15px;
   }
   
-  .alert-p {
-    padding-top: .4em;
+  label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 8px;
   }
-
+  
+  .checkbox-label {
+    display: flex;
+    align-items: center; /* Aligns checkbox vertically in the middle */
+    margin-top: 10px; /* Adjust the value as needed for spacing */
+  }
+  
+  .checkbox-label input {
+    margin-left: 8px; /* Adjust the margin as needed */
+  }
+  
+  input,
+  select,
+  textarea {
+    width: calc(100% - 16px); /* Adjust width and add 16px for padding */
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  select {
+    /* Adjust the font size and padding for select element */
+    font-size: 14px;
+    padding: 10px;
+  }
+  
+  textarea {
+    resize: vertical;
+  }
+  
+  .btn-primary {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0056b3;
+  }
+  
   .success-alert {
-    transition: opacity 0.5s ease-in-out; /* Add transition for opacity */
+    margin-top: 20px;
+    background-color: #d4edda;
+    color: #155724;
+    padding: 15px;
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
   }
+  
+  .success-alert a {
+    color: #155724;
+    font-weight: bold;
+    text-decoration: none;
+    margin-left: 10px;
+  }
+  
+  .form label {
+    margin-top: 10px; /* Adjust the value as needed for your spacing */
+  }
+  

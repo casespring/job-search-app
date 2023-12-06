@@ -7,8 +7,8 @@
       "dateApplied": "2023-01-15",
       "status": "Interview complete ✅",
       "jobDescription": "https://example.com/full-stack-developer-job-description",
-      "notes": "noted juglg m kjbvkn ,v",
-      "favorite": false,
+      "notes": "New Notes",
+      "favorite": true,
       "id": 1
     },
     {
@@ -29,30 +29,30 @@
       "dateApplied": "2023-02-20",
       "status": "Rejected ❌",
       "jobDescription": "https://example.com/frontend-developer-job-description",
-      "notes": "Notes. Notes. Notes. Notes. Notes.",
+      "notes": "Test TEst Test Test TEst TestTest TEst TestTest TEst TestTest TEst TestTest TEst TestTest TEst TestTest TEst TestTest TEst TestTest TEst TestTest TEst TestTest TEst Test",
       "favorite": false,
       "id": 3
     },
     {
-      "jobTitle": "Job",
-      "company": "Job",
-      "workLocation": "Hybrid 🖥",
+      "jobTitle": "SE II",
+      "company": "Google",
+      "workLocation": "In Person 🏢",
       "jobDescription": "Job",
       "dateApplied": "2023-12-14",
-      "status": "Interview scheduled 🗓",
+      "status": "Rejected ❌",
       "notes": "sdlkgharow;h;iovsdf",
       "favorite": true,
       "id": 4
     },
     {
-      "jobTitle": "Job",
-      "company": "Job",
-      "workLocation": "Hybrid 🖥",
+      "jobTitle": "Junior SE",
+      "company": "Meta",
+      "workLocation": "Remote 🏠",
       "jobDescription": "Job",
       "dateApplied": "2023-12-21",
-      "status": "Rejected ❌",
+      "status": "Interview complete ✅",
       "notes": "notes",
-      "favorite": false,
+      "favorite": true,
       "id": 5
     },
     {
@@ -65,6 +65,28 @@
       "notes": "Notes.",
       "favorite": true,
       "id": 6
+    },
+    {
+      "jobTitle": "SE III",
+      "company": "Spotify",
+      "workLocation": "In Person 🏢",
+      "jobDescription": "example.com",
+      "dateApplied": "2023-12-08",
+      "status": "Interview scheduled 🗓",
+      "notes": "Notes",
+      "favorite": true,
+      "id": 7
+    },
+    {
+      "jobTitle": "Intern",
+      "company": "Comapny",
+      "workLocation": "Remote 🏠",
+      "jobDescription": "example.com",
+      "dateApplied": "2023-12-05",
+      "status": "Interview scheduled 🗓",
+      "notes": "Notes",
+      "favorite": true,
+      "id": 8
     }
   ],
   "blogs": [
@@ -123,13 +145,6 @@
       "link": "https://hbr.org/2022/07/apply-to-a-job-even-if-you-dont-meet-all-criteria",
       "image": "https://hbr.org/resources/images/article_assets/2022/07/A_July22_21_1175848946-1024x576.jpg",
       "id": 8
-    },
-    {
-      "link": "https://www.careersindepth.com/post/common-fears-of-career-change-and-how-to-overcome-them",
-      "image": "https://images.summitmedia-digital.com/cosmo/images/2021/08/26/cosmo-coach-lyqa-maravilla-character-reference-main-image-1629959378.jpg",
-      "title": "Common Fears of Career Change and How to Overcome Them",
-      "author": "Careers in Depth",
-      "id": 10
     }
   ]
 }

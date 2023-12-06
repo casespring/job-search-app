@@ -11,7 +11,6 @@ function JobListContainer() {
         fetch("http://localhost:3000/jobs")
         .then(r => r.json())
         .then(jobsData => {
-            // console.log(jobsData)
             setJobs(jobsData)
         })
     }, [toggle]);
@@ -25,7 +24,6 @@ function JobListContainer() {
 
     return (
         <div>
-            <button onClick={handleEditMode}>{editMode ? "Exist edit mode":"Edit Mode"}</button>
             <button onClick={() => setToggle(!toggle)}>{toggle ? "Display card":"Display table"}</button>    
             {toggle ? displayJobCards : <JobTable editMode={editMode} jobs={jobs} />}
         </div>

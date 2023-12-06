@@ -93,122 +93,112 @@ function NewJobForm() {
 
   return (
     <div className='form-container'>
-      <form onSubmit={handleSubmit} className='form'>
-        <div className='form-row'>
-          <div className='form-group'>
-            <label htmlFor="jobTitle">Job Title</label>
-            <input
-              id="jobTitle"
-              type="text"
-              placeholder="Enter job title"
-              value={jobTitle}
-              onChange={handleTitle}
-              required
-            />
-          </div>
+    <form onSubmit={handleSubmit} className='form'>
+      <div className='form-row'>
+        <label htmlFor="jobTitle">Job Title</label>
+        <input
+          id="jobTitle"
+          type="text"
+          placeholder="Enter job title"
+          value={jobTitle}
+          onChange={handleTitle}
+          required
+        />
 
-          <div className='form-group'>
-            <label htmlFor="company">Company</label>
-            <input
-              id="company"
-              type="text"
-              placeholder="Enter company"
-              value={company}
-              onChange={handleCompany}
-              required
-            />
-          </div>
+        <label htmlFor="company">Company</label>
+        <input
+          id="company"
+          type="text"
+          placeholder="Enter company"
+          value={company}
+          onChange={handleCompany}
+          required
+        />
 
-          <div className='form-group'>
-            <label htmlFor="workLocation">Work Location</label>
-            <select
-              id="workLocation"
-              value={workLocation}
-              onChange={handleWorkLocation}
-              required
-            >
-              <option disabled>Choose location</option>
-              <option>In Person 🏢</option>
-              <option>Hybrid 🖥</option>
-              <option>Remote 🏠</option>
-            </select>
-          </div>
+        <label htmlFor="workLocation">Work Location</label>
+        <select
+          id="workLocation"
+          value={workLocation}
+          onChange={handleWorkLocation}
+          required
+        >
+          <option disabled>Choose location</option>
+          <option>In Person 🏢</option>
+          <option>Hybrid 🖥</option>
+          <option>Remote 🏠</option>
+        </select>
+      </div>
+
+      <div className='form-row'>
+        <label htmlFor="jobDescription">Job Description</label>
+        <input
+          id="jobDescription"
+          type="text"
+          placeholder="Enter job description"
+          value={jobDescription}
+          onChange={handleJobDescription}
+          required
+        />
+
+        <label htmlFor="dateApplied">Date Applied</label>
+        <input
+          id="dateApplied"
+          type="date"
+          value={dateApplied}
+          onChange={handleDate}
+          required
+        />
+
+        <label htmlFor="status">Status</label>
+        <select
+          id="status"
+          value={status}
+          onChange={handleStatus}
+          required
+        >
+          <option disabled>Choose status</option>
+          <option>Applied 💼</option>
+          <option>Interview scheduled 🗓</option>
+          <option>Interview complete ✅</option>
+          <option>Rejected ❌</option>
+        </select>
+      </div>
+
+      <div className='form-group'>
+        <label htmlFor="notes">Notes</label>
+        <textarea
+          id="notes"
+          rows={4}
+          placeholder="Add any notes"
+          value={notes}
+          onChange={handleNotes}
+        />
+      </div>
+    
+      <label className='checkbox-label'>
+        <input
+          type="checkbox"
+          checked={favorite}
+          onChange={handleFavorite}
+        />
+      </label>
+      
+      <div className='form-group'>
+        Mark as favorite
+      </div>
+
+      <button type="submit" className='btn-primary'>
+        Submit
+      </button>
+
+      {showSuccessAlert && (
+        <div className='success-alert'>
+          <p>Your job has been added!</p>
+          <a href="./">See post</a>
         </div>
-
-        <div className='form-row'>
-          <div className='form-group'>
-            <label htmlFor="jobDescription">Job Description</label>
-            <input
-              id="jobDescription"
-              type="text"
-              placeholder="Enter job description"
-              value={jobDescription}
-              onChange={handleJobDescription}
-              required
-            />
-          </div>
-
-          <div className='form-group'>
-            <label htmlFor="dateApplied">Date Applied</label>
-            <input
-              id="dateApplied"
-              type="date"
-              value={dateApplied}
-              onChange={handleDate}
-              required
-            />
-          </div>
-
-          <div className='form-group'>
-            <label htmlFor="status">Status</label>
-            <select
-              id="status"
-              value={status}
-              onChange={handleStatus}
-              required
-            >
-              <option disabled>Choose status</option>
-              <option>Applied 💼</option>
-              <option>Interview scheduled 🗓</option>
-              <option>Interview complete ✅</option>
-              <option>Rejected ❌</option>
-            </select>
-          </div>
-        </div>
-
-        <div className='form-group'>
-          <label htmlFor="notes">Notes</label>
-          <textarea
-            id="notes"
-            rows={4}
-            placeholder="Add any notes"
-            value={notes}
-            onChange={handleNotes}
-          />
-        </div>
-
-        <div className='form-group'>
-          <label>
-            <input
-              type="checkbox"
-              checked={favorite}
-              onChange={handleFavorite}
-            />
-            Mark as favorite
-          </label>
-        </div>
-
-        <button type="submit" className='btn-primary'>
-          Submit
-        </button>
-
-        {showSuccessAlert && (
-          <div className='success-alert'>
-            <p>Your job has been added!</p>
-          </div>
-        )}
-      </form>
-    </div>
+      )}
+    </form>
+  </div>
   );
 }
 

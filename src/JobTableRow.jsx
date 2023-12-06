@@ -6,6 +6,12 @@ function JobTableRow({ job }) {
   const [newStatus, setNewStatus] = useState(job.status)
   const [newNotes, setNewNotes] = useState(job.notes)
   const [newFavorite, setNewFavorite] = useState(job.favorite)
+  const [newLocation, setNewLocation] = useState(job.workLocation)
+  const [newCompany, setNewCompany] = useState(job.company)
+  const [newJobTitle, setNewJobTitle] = useState(job.jobTitle)
+  const [tdSelected, setTdSelected] = useState(false);
+  const formattedDate = new Date(job.dateApplied).toLocaleDateString('en-US');
+
 
   function handleEditMode() {
     setEditMode(!editMode)
@@ -19,22 +25,43 @@ function JobTableRow({ job }) {
     setNewNotes(e.target.value)
   }
 
+  function handleNoteDisplay() {
+    setTdSelected(!tdSelected)
+  }
+
   function handleNewFavorite() {
     setNewFavorite(!newFavorite)
   }
 
+  function handleLocationChange(e) {
+    setNewLocation(e.target.value)
+  }
+
+  function handleCompanyChange(e) {
+    setNewCompany(e.target.value)
+  }
+
+  function handleJobTitleChange(e) {
+    setNewJobTitle(e.target.value)
+  }
+
   function handleSaveChanges() {
-    setEditMode(false); // Exit edit mode immediately
+    setEditMode(false); 
     setNewStatus(newStatus);
     setNewNotes(newNotes);
     setNewFavorite(newFavorite);
-  
-    // Make the patch request
+    setNewLocation(newLocation)
+    setNewCompany(newCompany)
+    setNewJobTitle(newJobTitle)
+
     const updatedJob = {
       ...job,
       status: newStatus,
       notes: newNotes,
-      favorite: newFavorite
+      favorite: newFavorite,
+      workLocation: newLocation,
+      company: newCompany,
+      jobTitle: newJobTitle
     };
   
     fetch(`http://localhost:3000/jobs/${job.id}`, {
@@ -49,18 +76,45 @@ function JobTableRow({ job }) {
         setNewStatus(data.status);
         setNewNotes(data.notes);
         setNewFavorite(data.favorite);
+        setNewLocation(data.workLocation)
+        setNewCompany(data.company)
+        setNewJobTitle(data.jobTitle)
       })
   }
-  
-
-
-  
 
   return (
     <tr>
-      <td>{job.jobTitle}</td>
-      <td>{job.company}</td>
-      <td>{job.workLocation}</td>
+      <td>{editMode ? (
+          <textarea 
+          rows={1}
+          value={newJobTitle}
+          onChange={handleJobTitleChange}
+          ></textarea>
+          ) : (
+          newJobTitle
+          )}
+      </td>
+      <td>{editMode ? (
+          <textarea 
+          rows={1}
+          value={newCompany}
+          onChange={handleCompanyChange}
+          ></textarea>
+          ) : (
+          newCompany
+          )}
+      </td>
+      <td>
+        {editMode ? (
+          <select onChange={handleLocationChange} value={newLocation}>
+              <option>In Person 🏢</option>
+              <option>Hybrid 🖥</option>
+              <option>Remote 🏠</option>
+          </select>
+        ) : (
+          newLocation
+          )}
+      </td>
       <td>
         {editMode ? (
           <select onChange={handleStatusChange} value={newStatus}>
@@ -69,24 +123,37 @@ function JobTableRow({ job }) {
             <option>Interview complete ✅</option>
             <option>Rejected ❌</option>
           </select>
-        ) : (newStatus)}
-      </td>
-      <td>{job.dateApplied}</td>
-      <td>{editMode ? 
-          <textarea 
-          rows={2}
-          value={newNotes}
-          onChange={handleNoteChange}
-          ></textarea>
-          :
-          (newNotes)
-          }</td>
-      <td><button onClick={handleNewFavorite}>{(newFavorite) ? "⭐" : "☆"}</button></td>
-      <td>{editMode ? (
-          <button onClick={handleSaveChanges}>Save</button>
         ) : (
-          <button onClick={handleEditMode}>Edit</button>
-        )}</td>
+          newStatus
+          )}
+      </td>
+      <td>{formattedDate}</td>
+      <td onClick={handleNoteDisplay} className={`${tdSelected ? 'td-selected' : ''} notes-hover`}>
+        {editMode ? (
+          <textarea
+            rows={1}
+            value={newNotes}
+            onChange={handleNoteChange}
+          ></textarea>
+        ) : (
+          <div>
+            {newNotes}
+          </div>
+        )}
+      </td>
+      <td>
+          {editMode ? (
+          <button className='job-table-button'  onClick={handleNewFavorite}>{newFavorite ? "⭐" : "☆"}</button>
+          ) : (
+          newFavorite ? "⭐" : "☆"
+          )}
+      </td>
+      <td>{editMode ? (
+          <button className='job-table-button' onClick={handleSaveChanges}>Save</button>
+        ) : (
+          <button className='job-table-button'  onClick={handleEditMode}>Edit</button>
+        )}
+      </td>
     </tr>
   );
 }

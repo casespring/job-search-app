@@ -1,10 +1,28 @@
-.table {
-    overflow-x:auto;
+.container {
+  display: flex;
+  justify-content: center;
 }
 
+.table {
+  overflow-x: auto;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  border-collapse: separate;
+  
+  border-spacing: 0 10px; /* Adjust the second value for the desired row gap */
+  cursor: auto;
+  width: 80vw;
+}
+
+
 th, td {
-    padding: 10px;
+    padding: 1em;
+    margin: 1em;
     text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 15em;
+    cursor: auto;
+    
   }
 
   th {
@@ -12,7 +30,36 @@ th, td {
     color: white;
   }
 
+  .td-selected {
+    white-space: normal;
+  }
+
+
   table, th, td {
-    border: 1px solid;
     border-collapse: collapse;
   }
+
+  textarea {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+
+  select {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+
+  .job-table-button {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: white;
+    border: .20em solid;
+    border-radius: .25em;
+    border-color: #007bff;
+  }
+
+  .notes-hover {
+    cursor: pointer;
+  }
+
+ 
+
+
+

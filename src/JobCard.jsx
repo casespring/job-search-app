@@ -1,13 +1,11 @@
 import { useState, useEffect } from 'react';
 import "./JobCard.css"
 
-function JobCard({ jobs}) {
+function JobCard({ jobs }) {
   const [addFavorite, setAddFavorite] = useState(jobs.favorite);
   const [currentStatus, setCurrentStatus] = useState(jobs.status);
   const [notes, setNotes] = useState(jobs.notes);
   const [editMode, setEditmode] = useState(false)
-
-  console.log(jobs);
 
   function handleStatusSelect(selected) {
     setCurrentStatus(selected)
@@ -80,9 +78,9 @@ function handleSubmit(e) {
               </div>
               <p><a href={jobs.jobDescription}>Link to job description</a></p>
               <br />
-              <button onClick={handleFavoritedClick}>{addFavorite ? "⭐" : "☆"}</button>
+              <button className="job-card-button" onClick={handleFavoritedClick}>{addFavorite ? "⭐" : "☆"}</button>
               <br />
-              <button onClick={handleEditMode} id="edit-button">Edit Mode</button>
+              <button className="job-card-button" onClick={handleEditMode} id="edit-button">Edit Mode</button>
             </form>
           </div>
         </div>
