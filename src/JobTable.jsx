@@ -2,14 +2,7 @@ import {useState, useEffect} from 'react';
 import JobTableRow from './JobTableRow';
 import "./JobTable.css";
 
-function JobTable() {
-  const [jobs, setJobs] = useState([])
-
-  useEffect(() => {
-    fetch(`http://localhost:3000/jobs`)
-      .then(r => r.json())
-      .then(data => setJobs(data));
-  }, []);
+function JobTable({ jobs }) {
 
   const displayJobs = jobs.map(job => (
     <JobTableRow job={job} key={job.id} />
