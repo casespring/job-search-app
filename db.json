@@ -1,17 +1,6 @@
 {
   "jobs": [
     {
-      "jobTitle": "Full Stack Developer",
-      "company": "Tech Solutions Inc.",
-      "workLocation": "Remote 🏠",
-      "dateApplied": "2023-01-15",
-      "status": "Interview scheduled 🗓",
-      "jobDescription": "https://example.com/full-stack-developer-job-description",
-      "notes": "noted juglg m kjbvkn ,v",
-      "favorite": true,
-      "id": 1
-    },
-    {
       "jobTitle": "Software Engineer",
       "company": "CodeCrafters",
       "workLocation": "Remote 🏠",
@@ -19,7 +8,7 @@
       "status": "Interview complete ✅",
       "jobDescription": "https://example.com/software-engineer-job-description",
       "notes": "TEST",
-      "favorite": true,
+      "favorite": false,
       "id": 2
     },
     {
@@ -45,26 +34,15 @@
       "id": 4
     },
     {
-      "jobTitle": "test",
-      "company": "company u",
-      "workLocation": "Hybrid 🖥",
-      "jobDescription": "working",
-      "dateApplied": "2044-02-03",
-      "status": "Interview scheduled 🗓",
-      "notes": "akjei notes",
-      "favorite": false,
-      "id": 5
-    },
-    {
-      "jobTitle": "test",
-      "company": "52y3ygt",
-      "workLocation": "Choose location",
-      "jobDescription": "working",
-      "dateApplied": "2023-12-20",
-      "status": "Interview scheduled 🗓",
-      "notes": "dfqfewqf",
-      "favorite": false,
-      "id": 6
+      "jobTitle": "Marketing and Media Specialist",
+      "company": "MoMA",
+      "workLocation": "In Person 🏢",
+      "jobDescription": "example.com",
+      "dateApplied": "2023-12-14",
+      "status": "Applied 💼",
+      "notes": "MoMA job.",
+      "favorite": true,
+      "id": 7
     }
   ],
   "blogs": [

@@ -1,53 +1,68 @@
 .container {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    padding: 20px;
-  }
-  
-  .blog-card {
-    width: 18rem;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .blog-thumbnail {
-    width: 100%;
-    height: auto;
-    border-radius: 8px 8px 0 0;
-  }
-  
-  .blog-content {
-    padding: 16px;
-    flex: 1;
-  }
-  
-  .blog-title {
-    margin-bottom: 8px;
-  }
-  
-  .blog-author {
-    font-size: 14px;
-    color: #6c757d;
-    margin-bottom: 16px;
-  }
-  
-  .learn-more-link {
-    display: block;
-    padding: 8px 16px;
-    background-color: #007bff;
-    color: #fff;
-    border-radius: 4px;
-    text-decoration: none;
-    text-align: center;
-    cursor: pointer;
-  }
-  
-  .learn-more-link:hover {
-    background-color: #0056b3;
-  }
-  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.form-container {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  width: 400px;
+  text-align: center;
+}
+
+.form-container h2 {
+  margin-bottom: 20px;
+}
+
+.blog-list {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+  padding: 20px;
+  max-width: 1200px;
+}
+
+.blog-item {
+  position: relative;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.blog-image {
+  width: 100%;
+  height: auto;
+}
+
+.blog-content {
+  padding: 15px;
+}
+
+.blog-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.blog-author {
+  font-size: 1rem;
+  color: #6c757d;
+}
+
+.blog-link {
+  font-size: 1rem;
+  color: #007bff;
+  text-decoration: none;
+  margin-right: 10px;
+}
+
+.delete-button {
+  background-color: #fff;
+  color: black;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}

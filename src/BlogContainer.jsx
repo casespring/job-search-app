@@ -59,8 +59,8 @@ function BlogContainer() {
     return (
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: '100vh' }}>
 
-            <div style={{ border: '1px solid #ccc', borderRadius: '8px', padding: '20px', width: '400px', textAlign: 'center' }}>
-                <h2 style={{ marginBottom: '20px' }}>Add a New Blog</h2>
+            <div style={{ border: '1px solid #ccc', borderRadius: '8px', padding: '20px', width: '400px', textAlign: 'center', fontFamily: "'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif" }}>
+                <h2 style={{ marginBottom: '10px' }}>Add a New Blog</h2>
                 <BlogForm addBlog={addBlog} />
             </div>
 
@@ -69,12 +69,12 @@ function BlogContainer() {
                     <div key={blog.id} style={{ position: 'relative', border: '1px solid #ccc', borderRadius: '8px', overflow: 'hidden' }}>
                         {blog.image && <img alt="blog" style={{ width: '100%', height: 'auto' }} src={blog.image} />}
                         <div style={{ padding: '15px' }}>
-                            <div style={{ fontSize: '1.25rem', fontWeight: 'bold' }}>{blog.title}</div>
-                            <div style={{ fontSize: '1rem', color: '#6c757d' }}>{blog.author}</div>
-                            <a href={blog.link} target="_blank" rel="noopener noreferrer" style={{ fontSize: '1rem', color: '#007bff', textDecoration: 'none', marginRight: '10px' }}>
+                            <div style={{ fontSize: '1.25rem', fontWeight: 'bold', fontFamily: "'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif" }}>{blog.title}</div>
+                            <div style={{ fontSize: '1rem', color: '#6c757d', fontFamily: "'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif" }}>{blog.author}</div>
+                            <a href={blog.link} target="_blank" rel="noopener noreferrer" style={{ fontSize: '1rem', color: '#007bff', textDecoration: 'none', marginRight: '10px', fontFamily: "'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif" }}>
                                 Learn More
                             </a>
-                            <button onClick={() => deleteBlog(blog.id)} style={{ backgroundColor: '#fff', color: 'black', padding: '10px', borderRadius: '10px', cursor: 'pointer' }}>
+                            <button onClick={() => deleteBlog(blog.id)} style={{ backgroundColor: '#fff', color: 'black', padding: '10px', borderRadius: '10px', cursor: 'pointer', fontFamily: "'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif" }}>
                                 Delete
                             </button>
                         </div>

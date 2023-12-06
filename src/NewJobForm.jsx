@@ -168,23 +168,11 @@ function NewJobForm() {
         <label htmlFor="notes">Notes</label>
         <textarea
           id="notes"
-          rows={4}
+          rows={3}
           placeholder="Add any notes"
           value={notes}
           onChange={handleNotes}
         />
-      </div>
-    
-      <label className='checkbox-label'>
-        <input
-          type="checkbox"
-          checked={favorite}
-          onChange={handleFavorite}
-        />
-      </label>
-      
-      <div className='form-group'>
-        Mark as favorite
       </div>
 
       <button type="submit" className='btn-primary'>
