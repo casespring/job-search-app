@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import "./JobTable.css";
 
-function JobTableRow({ job, onDelete }) {
+function JobTableRow({ job, handleDeleteCallback }) {
   const [editMode, setEditMode] = useState(false)
   const [newStatus, setNewStatus] = useState(job.status)
   const [newNotes, setNewNotes] = useState(job.notes)
@@ -46,7 +46,7 @@ function JobTableRow({ job, onDelete }) {
   }
 
   function handleDelete() {
-    onDelete(job.id);
+    handleDeleteCallback(job.id)
     fetch(`http://localhost:3000/jobs/${job.id}`, {
       method: "DELETE"
   })

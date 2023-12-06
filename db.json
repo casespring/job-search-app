@@ -1,32 +1,11 @@
 {
   "jobs": [
     {
-      "jobTitle": "Full Stack Developer",
-      "company": "Tech Solutions Inc.",
-      "workLocation": "Remote 🏠",
-      "dateApplied": "2023-01-15",
-      "status": "Interview scheduled 🗓",
-      "jobDescription": "https://example.com/full-stack-developer-job-description",
-      "notes": "noted juglg m kjbvkewrwqrwqn ,v",
-      "favorite": true,
-      "id": 1
-    },
-      "jobTitle": "Software Engineer",
-      "company": "CodeCrafters",
-      "workLocation": "Hybrid 🖥",
-      "dateApplied": "2023-02-01",
-      "status": "Interview complete ✅",
-      "jobDescription": "https://example.com/software-engineer-job-description",
-      "notes": "TEST",
-      "favorite": true,
-      "id": 2
-    },
-    {
       "jobTitle": "Frontend Developer",
       "company": "WebWizards",
       "workLocation": "Remote 🏠",
       "dateApplied": "2023-02-20",
-      "status": "Rejected ❌",
+      "status": "Interview scheduled 🗓",
       "jobDescription": "https://example.com/frontend-developer-job-description",
       "notes": "Test TEst Test Test TEst TestTest TEst TestTest TEst TestTest TEst TestTest TEst TestTest TEst TestTest TEst TestTest TEst TestTest TEst TestTest TEst TestTest TEst Test",
       "favorite": true,
@@ -86,28 +65,6 @@
       "notes": "Complete",
       "favorite": false,
       "id": 10
-    },
-    {
-      "jobTitle": "Job",
-      "company": "Job",
-      "workLocation": "In Person 🏢",
-      "jobDescription": "Applied",
-      "dateApplied": "2023-12-16",
-      "status": "Applied 💼",
-      "notes": "Applied",
-      "favorite": true,
-      "id": 11
-    },
-    {
-      "jobTitle": "eqwtwf",
-      "company": "fqrgfqw",
-      "workLocation": "Hybrid 🖥",
-      "jobDescription": "working",
-      "dateApplied": "2023-12-15",
-      "status": "Choose status",
-      "notes": "",
-      "favorite": false,
-      "id": 7
     }
   ],
   "blogs": [
@@ -166,13 +123,6 @@
       "link": "https://hbr.org/2022/07/apply-to-a-job-even-if-you-dont-meet-all-criteria",
       "image": "https://hbr.org/resources/images/article_assets/2022/07/A_July22_21_1175848946-1024x576.jpg",
       "id": 8
-    },
-    {
-      "link": "https://www.careersindepth.com/post/common-fears-of-career-change-and-how-to-overcome-them",
-      "image": "https://images.summitmedia-digital.com/cosmo/images/2021/08/26/cosmo-coach-lyqa-maravilla-character-reference-main-image-1629959378.jpg",
-      "title": "Common Fears of Career Change and How to Overcome Them",
-      "author": "Careers in Depth",
-      "id": 9
     }
   ]
 }

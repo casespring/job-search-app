@@ -30,7 +30,7 @@ function JobListContainer() {
       }
 
 
-    const displayJobCards = searchJobs.map(job => <JobCard key={job.id} jobs={job} onDelete={handleDeleteCallback}/>)
+    const displayJobCards = searchJobs.map(job => <JobCard key={job.id} jobs={job} onDelete={handleDeleteCallback} />)
 
     return (
         <div>
@@ -38,7 +38,7 @@ function JobListContainer() {
                 <div>
                      <JobCardSearch onSearchTerm={settingSearchTerm} jobs={jobs}/> 
                     <div className="list-container">
-                    {toggle ? displayJobCards : <JobTable jobs={searchJobs} />}
+                    {toggle ? displayJobCards : <JobTable jobs={searchJobs} handleDeleteCallback={handleDeleteCallback} />}
                 </div>
             </div>
         </div>
