@@ -2,19 +2,19 @@
   import JobTableRow from './JobTableRow';
   import './JobTable.css';
   
-  function JobTable({jobs}) {
+  function JobTable({ jobs, handleDeleteCallback }) {
     const [sortFavoriteOrder, setSortFavoriteOrder] = useState(null)
     const [sortFavoriteDirection, setSortFavoriteDirection] = useState('asc')
 
-    useEffect(() => {
-      fetch(`http://localhost:3000/jobs`)
-        .then((r) => r.json())
-        .then((data) => setJobs(data));
-    }, []);
+    // useEffect(() => {
+    //   fetch(`http://localhost:3000/jobs`)
+    //     .then((r) => r.json())
+    //     .then((data) => setJobs(data));
+    // }, []);
   
-    function handleDelete(deletedJobId) {
-      setJobs((prevJobs) => prevJobs.filter((job) => job.id !== deletedJobId));
-    }
+    // function handleDelete(deletedJobId) {
+    //   setJobs((prevJobs) => prevJobs.filter((job) => job.id !== deletedJobId));
+    // }
   
     function handleFavoriteHeaderClick() {
       setSortFavoriteDirection(
@@ -37,7 +37,7 @@
     } 
     
     const displayJobs = sortedJobs.map((job) => (
-      <JobTableRow onDelete={handleDelete} job={job} key={job.id} />
+      <JobTableRow handleDeleteCallback={handleDeleteCallback} job={job} key={job.id} />
     ));
 
   return (
