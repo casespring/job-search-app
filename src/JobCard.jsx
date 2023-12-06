@@ -2,12 +2,11 @@ import { useState, useEffect } from 'react';
 import "./JobCard.css"
 
 function JobCard({ jobs, onDelete }) {
+
   const [addFavorite, setAddFavorite] = useState(jobs.favorite);
   const [currentStatus, setCurrentStatus] = useState(jobs.status);
   const [notes, setNotes] = useState(jobs.notes);
   const [editMode, setEditmode] = useState(false)
-
-  console.log(jobs);
 
   function handleStatusSelect(selected) {
     setCurrentStatus(selected)
