@@ -1,15 +1,12 @@
 .container {
   display: flex;
-  justify-content: center;
   padding-top: 2em;
+  overflow-x:auto;
 }
 
 .table {
-  overflow-x: auto;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   cursor: auto;
-  width: fit-content;
-  height: fit-content;
 }
 
 

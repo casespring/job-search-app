@@ -1,17 +1,26 @@
 .form-container {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  }
-  
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.form {
+  width: 100%; /* Set to 100% width on smaller screens */
+  max-width: 500px; /* Adjust the max-width as needed */
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Media query for smaller screens */
+@media (min-width: 768px) {
   .form {
-    width: 50%;
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    width: 50%; /* Set back to 50% width on larger screens */
   }
+}
+
   
   .form-group {
     margin-bottom: 15px;

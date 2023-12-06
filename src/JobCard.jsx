@@ -84,8 +84,8 @@ function handleDelete() {
         <div className="cardContainer">
           <div>
             <form onSubmit={handleSubmit}>
-              <h2>{editMode ? 
-                  <textarea rows={1} value={jobTitle} onChange={handleJobTitle} />: jobTitle}</h2>
+              <h3>{editMode ? 
+                  <textarea rows={1} value={jobTitle} onChange={handleJobTitle} />: jobTitle}</h3>
               <p><strong>Company:</strong> {editMode ?
                   <textarea rows={1} value={company} onChange={handleCompanyChange} /> : company}</p>
               <p><strong>Work Location:</strong> {editMode ?
@@ -116,7 +116,6 @@ function handleDelete() {
                 <button onClick={toggleFullNotes}>See Notes</button>
               )}
               </div>
-              <p><a href={jobs.jobDescription}>Link to job description</a></p>
               <br className='favorite-div'/>
                 <button className='button-class' onClick={handleFavoritedClick}>{addFavorite ? "⭐" : "☆"}</button>
                 <br />
