@@ -7,7 +7,7 @@
       "dateApplied": "2023-01-15",
       "status": "Interview scheduled 🗓",
       "jobDescription": "https://example.com/full-stack-developer-job-description",
-      "notes": "noted juglg m kjbvkn ,v",
+      "notes": "noted juglg m kjbvkewrwqrwqn ,v",
       "favorite": true,
       "id": 1
     },
@@ -29,7 +29,7 @@
       "dateApplied": "2023-02-20",
       "status": "Rejected ❌",
       "jobDescription": "https://example.com/frontend-developer-job-description",
-      "notes": "Test TEst Test Test TEst TestTest TEst TestTest TEst TestTest TEst TestTest TEst TestTest TEst TestTest TEst TestTest TEst TestTest TEst TestTest TEst TestTest TEst Test",
+      "notes": "Test TEst Test Test TEst TestTest more test and more test ",
       "favorite": false,
       "id": 3
     },
@@ -65,6 +65,17 @@
       "notes": "dfqfewqf",
       "favorite": false,
       "id": 6
+    },
+    {
+      "jobTitle": "eqwtwf",
+      "company": "fqrgfqw",
+      "workLocation": "Hybrid 🖥",
+      "jobDescription": "working",
+      "dateApplied": "2023-12-15",
+      "status": "Choose status",
+      "notes": "",
+      "favorite": false,
+      "id": 7
     }
   ],
   "blogs": [
