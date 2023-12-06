@@ -3,12 +3,12 @@
     {
       "jobTitle": "Software Engineer",
       "company": "CodeCrafters",
-      "workLocation": "Remote 🏠",
+      "workLocation": "Hybrid 🖥",
       "dateApplied": "2023-02-01",
       "status": "Interview complete ✅",
       "jobDescription": "https://example.com/software-engineer-job-description",
       "notes": "TEST",
-      "favorite": false,
+      "favorite": true,
       "id": 2
     },
     {
@@ -19,7 +19,7 @@
       "status": "Rejected ❌",
       "jobDescription": "https://example.com/frontend-developer-job-description",
       "notes": "Test TEst Test Test TEst TestTest TEst TestTest TEst TestTest TEst TestTest TEst TestTest TEst TestTest TEst TestTest TEst TestTest TEst TestTest TEst TestTest TEst Test",
-      "favorite": false,
+      "favorite": true,
       "id": 3
     },
     {
@@ -30,7 +30,7 @@
       "dateApplied": "2023-12-14",
       "status": "Rejected ❌",
       "notes": "sdlkgharow;h;iovsdf",
-      "favorite": true,
+      "favorite": false,
       "id": 4
     },
     {
@@ -43,6 +43,50 @@
       "notes": "MoMA job.",
       "favorite": true,
       "id": 7
+    },
+    {
+      "jobTitle": "Job",
+      "company": "Job",
+      "workLocation": "Hybrid 🖥",
+      "jobDescription": "Job",
+      "dateApplied": "2023-12-15",
+      "status": "Interview scheduled 🗓",
+      "notes": "notes",
+      "favorite": true,
+      "id": 8
+    },
+    {
+      "jobTitle": "Job",
+      "company": "Job",
+      "workLocation": "In Person 🏢",
+      "jobDescription": "Job",
+      "dateApplied": "2023-12-28",
+      "status": "Interview scheduled 🗓",
+      "notes": "Job",
+      "favorite": true,
+      "id": 9
+    },
+    {
+      "jobTitle": "Marketing and Media Specialist",
+      "company": "Job",
+      "workLocation": "Remote 🏠",
+      "jobDescription": "Job",
+      "dateApplied": "2023-01-23",
+      "status": "Interview complete ✅",
+      "notes": "Complete",
+      "favorite": false,
+      "id": 10
+    },
+    {
+      "jobTitle": "Job",
+      "company": "Job",
+      "workLocation": "In Person 🏢",
+      "jobDescription": "Applied",
+      "dateApplied": "2023-12-16",
+      "status": "Applied 💼",
+      "notes": "Applied",
+      "favorite": true,
+      "id": 11
     }
   ],
   "blogs": [
