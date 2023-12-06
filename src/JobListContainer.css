@@ -1,0 +1,6 @@
+.list-container {
+    display: flex;
+    min-height: 100vh;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
