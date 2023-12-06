@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import "./JobTable.css";
 
-function JobTableRow({ job }) {
+function JobTableRow({ job, onDelete }) {
   const [editMode, setEditMode] = useState(false)
   const [newStatus, setNewStatus] = useState(job.status)
   const [newNotes, setNewNotes] = useState(job.notes)
@@ -45,6 +45,13 @@ function JobTableRow({ job }) {
     setNewJobTitle(e.target.value)
   }
 
+  function handleDelete() {
+    onDelete(job.id);
+    fetch(`http://localhost:3000/jobs/${job.id}`, {
+      method: "DELETE"
+  })
+  }
+
   function handleSaveChanges() {
     setEditMode(false); 
     setNewStatus(newStatus);
@@ -84,16 +91,20 @@ function JobTableRow({ job }) {
 
   return (
     <tr>
-      <td>{editMode ? (
-          <textarea 
-          rows={1}
-          value={newJobTitle}
-          onChange={handleJobTitleChange}
-          ></textarea>
-          ) : (
-          newJobTitle
-          )}
-      </td>
+      <td>
+  {editMode ? (
+    <div>
+      <textarea
+        rows={1}
+        value={newJobTitle}
+        onChange={handleJobTitleChange}
+      />
+      <p onClick={handleDelete} style={{color: "red",cursor: 'pointer'}}>Delete 🗑</p>
+    </div>
+  ) : (
+    <span>{newJobTitle}</span>
+  )}
+</td>
       <td>{editMode ? (
           <textarea 
           rows={1}

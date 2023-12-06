@@ -11,10 +11,9 @@
       "favorite": true,
       "id": 1
     },
-    {
       "jobTitle": "Software Engineer",
       "company": "CodeCrafters",
-      "workLocation": "Remote 🏠",
+      "workLocation": "Hybrid 🖥",
       "dateApplied": "2023-02-01",
       "status": "Interview complete ✅",
       "jobDescription": "https://example.com/software-engineer-job-description",
@@ -29,8 +28,8 @@
       "dateApplied": "2023-02-20",
       "status": "Rejected ❌",
       "jobDescription": "https://example.com/frontend-developer-job-description",
-      "notes": "Test TEst Test Test TEst TestTest more test and more test ",
-      "favorite": false,
+      "notes": "Test TEst Test Test TEst TestTest TEst TestTest TEst TestTest TEst TestTest TEst TestTest TEst TestTest TEst TestTest TEst TestTest TEst TestTest TEst TestTest TEst Test",
+      "favorite": true,
       "id": 3
     },
     {
@@ -41,30 +40,63 @@
       "dateApplied": "2023-12-14",
       "status": "Rejected ❌",
       "notes": "sdlkgharow;h;iovsdf",
-      "favorite": true,
+      "favorite": false,
       "id": 4
     },
     {
-      "jobTitle": "test",
-      "company": "company u",
-      "workLocation": "Hybrid 🖥",
-      "jobDescription": "working",
-      "dateApplied": "2044-02-03",
-      "status": "Interview scheduled 🗓",
-      "notes": "akjei notes",
-      "favorite": false,
-      "id": 5
+      "jobTitle": "Marketing and Media Specialist",
+      "company": "MoMA",
+      "workLocation": "In Person 🏢",
+      "jobDescription": "example.com",
+      "dateApplied": "2023-12-14",
+      "status": "Applied 💼",
+      "notes": "MoMA job.",
+      "favorite": true,
+      "id": 7
     },
     {
-      "jobTitle": "test",
-      "company": "52y3ygt",
-      "workLocation": "Choose location",
-      "jobDescription": "working",
-      "dateApplied": "2023-12-20",
+      "jobTitle": "Job",
+      "company": "Job",
+      "workLocation": "Hybrid 🖥",
+      "jobDescription": "Job",
+      "dateApplied": "2023-12-15",
       "status": "Interview scheduled 🗓",
-      "notes": "dfqfewqf",
+      "notes": "notes",
+      "favorite": true,
+      "id": 8
+    },
+    {
+      "jobTitle": "Job",
+      "company": "Job",
+      "workLocation": "In Person 🏢",
+      "jobDescription": "Job",
+      "dateApplied": "2023-12-28",
+      "status": "Interview scheduled 🗓",
+      "notes": "Job",
+      "favorite": true,
+      "id": 9
+    },
+    {
+      "jobTitle": "Marketing and Media Specialist",
+      "company": "Job",
+      "workLocation": "Remote 🏠",
+      "jobDescription": "Job",
+      "dateApplied": "2023-01-23",
+      "status": "Interview complete ✅",
+      "notes": "Complete",
       "favorite": false,
-      "id": 6
+      "id": 10
+    },
+    {
+      "jobTitle": "Job",
+      "company": "Job",
+      "workLocation": "In Person 🏢",
+      "jobDescription": "Applied",
+      "dateApplied": "2023-12-16",
+      "status": "Applied 💼",
+      "notes": "Applied",
+      "favorite": true,
+      "id": 11
     },
     {
       "jobTitle": "eqwtwf",

@@ -1,4 +1,5 @@
 .display-cards {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   width: 18rem;
   border: 3px solid #007bff;
   border-radius: 8px;
@@ -11,6 +12,7 @@
   }
 
   .button-class {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;;
     background-color: rgb(255, 255, 255);
     color: black;
     padding: 10px;
@@ -20,6 +22,7 @@
   }
 
   .button-delete {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;;
     background-color: rgb(255, 255, 255);
     color: rgb(252, 17, 17);
     padding: 10px;
