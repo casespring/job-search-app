@@ -2,9 +2,7 @@
   import JobTableRow from './JobTableRow';
   import './JobTable.css';
   
-  function JobTable() {
-    const [jobs, setJobs] = useState([]);
-
+  function JobTable({jobs}) {
     const [sortFavoriteOrder, setSortFavoriteOrder] = useState(null)
     const [sortFavoriteDirection, setSortFavoriteDirection] = useState('asc')
 
