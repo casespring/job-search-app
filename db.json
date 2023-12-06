@@ -54,17 +54,6 @@
       "notes": "Job",
       "favorite": true,
       "id": 9
-    },
-    {
-      "jobTitle": "Marketing and Media Specialist",
-      "company": "Job",
-      "workLocation": "Remote 🏠",
-      "jobDescription": "Job",
-      "dateApplied": "2023-01-23",
-      "status": "Interview complete ✅",
-      "notes": "Complete",
-      "favorite": false,
-      "id": 10
     }
   ],
   "blogs": [

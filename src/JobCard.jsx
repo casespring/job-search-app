@@ -105,12 +105,16 @@ function handleDelete() {
                 </select> : currentStatus}
               </p>
               <div>
-                <strong>Notes:</strong> {editMode ?
-                  <textarea
-                    rows={2}
-                    value={notes}
-                    onChange={handleNotesChange}
-                  /> : notes}
+              <strong>Notes:</strong>{" "}
+              {editMode ? (
+                <textarea rows={2} value={notes} onChange={handleNotesChange} />
+              ) : fullNotes ? (
+                <>
+                  {notes} <button onClick={toggleFullNotes}>Hide Notes</button>
+                </>
+              ) : (
+                <button onClick={toggleFullNotes}>See Notes</button>
+              )}
               </div>
               <p><a href={jobs.jobDescription}>Link to job description</a></p>
               <br className='favorite-div'/>

@@ -6,15 +6,6 @@
     const [sortFavoriteOrder, setSortFavoriteOrder] = useState(null)
     const [sortFavoriteDirection, setSortFavoriteDirection] = useState('asc')
 
-    // useEffect(() => {
-    //   fetch(`http://localhost:3000/jobs`)
-    //     .then((r) => r.json())
-    //     .then((data) => setJobs(data));
-    // }, []);
-  
-    // function handleDelete(deletedJobId) {
-    //   setJobs((prevJobs) => prevJobs.filter((job) => job.id !== deletedJobId));
-    // }
   
     function handleFavoriteHeaderClick() {
       setSortFavoriteDirection(
