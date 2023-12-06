@@ -13,28 +13,19 @@ function BlogForm({ addBlog }) {
         setFormData({ ...formData, [name]: value });
     };
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault();
 
-        try {
-            const response = await fetch('http://localhost:3000/blogs', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(formData),
-            });
+        const newBlog = {
+            link: formData.link,
+            image: formData.image,
+            title: formData.title,
+            author: formData.author,
+        };
 
-            if (response.ok) {
-                const newBlog = await response.json();
-                addBlog(newBlog);
-                setFormData({ link: '', image: '', title: '', author: '' });
-            } else {
-                console.error('Failed to add blog:', response.statusText);
-            }
-        } catch (error) {
-            console.error('Error submitting form:', error);
-        }
+        addBlog(newBlog);
+
+        setFormData({ link: '', image: '', title: '', author: '' });
     };
 
     return (
