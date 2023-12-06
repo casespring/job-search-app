@@ -52,19 +52,7 @@ function handleSubmit(e) {
   console.log(updatedCard)
 }
 
-function handleDelete() {
-  const afterDelete = jobs.filter(job => {
-    return jobs.id !== job.id
-  })
-  fetch(`http://localhost:3000/jobs/${jobs.id}`, {
-    method: "DELETE",
-  })
-  console.log(afterDelete)
-}
-
-function JobCard() {
   return (
-    <div></div>
     <div className="display-cards" >
       <div>
         <div className="cardContainer">
