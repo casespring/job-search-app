@@ -1,16 +1,20 @@
 import React, { useState, useEffect } from 'react';
+<<<<<<< HEAD
 
+=======
+>>>>>>> main
 import BlogForm from './BlogForm';
 
 function BlogContainer() {
-  const [blogs, setBlogs] = useState([]);
+    const [blogs, setBlogs] = useState([]);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch('http://localhost:3000/blogs');
-        const data = await response.json();
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await fetch('http://localhost:3000/blogs');
+                const data = await response.json();
 
+<<<<<<< HEAD
         const blogArray = Object.keys(data).map((key) => data[key]);
 
         setBlogs(blogArray);
@@ -19,12 +23,15 @@ function BlogContainer() {
       }
     };
 
+=======
+>>>>>>> main
                 setBlogs(data);
             } catch (error) {
                 console.error('Error fetching data:', error);
             }
         };
 
+<<<<<<< HEAD
     fetchData();
   }, []);
 
@@ -62,6 +69,10 @@ function BlogContainer() {
               Learn More!
             </a>
           </div>
+=======
+        fetchData();
+    }, []);
+>>>>>>> main
 
     const addBlog = async (newBlog) => {
         try {

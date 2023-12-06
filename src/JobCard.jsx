@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import "./JobCard.css"
 
-function JobCard({ jobs}) {
+function JobCard({ jobs, onDelete }) {
   const [addFavorite, setAddFavorite] = useState(jobs.favorite);
   const [currentStatus, setCurrentStatus] = useState(jobs.status);
   const [notes, setNotes] = useState(jobs.notes);
@@ -53,15 +53,15 @@ function handleSubmit(e) {
 }
 
 function handleDelete() {
-  const afterDelete = jobs.filter(job => {
-    return jobs.id !== job.id
-  })
   fetch(`http://localhost:3000/jobs/${jobs.id}`, {
     method: "DELETE",
-  })
-  console.log(afterDelete)
+  }).then(r => r.json())
+    .then(data => {
+      onDelete(jobs.id)
+      console.log(data)
+    })
+  
 }
-
   return (
     <div className="display-cards" >
       <div>
@@ -90,10 +90,10 @@ function handleDelete() {
               </div>
               <p><a href={jobs.jobDescription}>Link to job description</a></p>
               <br />
-              <button onClick={handleFavoritedClick}>{addFavorite ? "⭐" : "☆"}</button>
+              <button className='button-class' onClick={handleFavoritedClick}>{addFavorite ? "⭐" : "☆"}</button>
               <br />
-              <button onClick={handleEditMode} id="edit-button">Edit Mode</button>
-              <button onClick={handleDelete}>Delete</button>
+              <button className='button-class' onClick={handleEditMode} id="edit-button">{editMode ? "Save": "Edit"}</button>
+              <button className='button-delete' onClick={handleDelete}>Delete</button>
             </form>
           </div>
         </div>
