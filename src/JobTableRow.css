@@ -58,3 +58,14 @@ h3 a {
   .job-title-link a:hover::before {
     opacity: 1;
   }
+
+  .delete-button {
+    margin-top: 5px;
+    color: red;
+  }
+
+  .delete-button:hover {
+    margin-top: 5px;
+    font-weight: bold;
+    cursor: pointer;
+  }

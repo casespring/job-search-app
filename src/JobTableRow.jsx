@@ -101,7 +101,7 @@ function JobTableRow({ job, handleDeleteCallback, onJobSave }) {
         value={newJobTitle}
         onChange={handleJobTitleChange}
       />
-      <p onClick={handleDelete} style={{color: "red",cursor: 'pointer'}}>Delete 🗑</p>
+      <p className='delete-button' onClick={handleDelete}>Delete 🗑</p>
       </div>
   ) : (
     <span className="job-title-link">

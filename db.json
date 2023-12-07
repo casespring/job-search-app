@@ -1,28 +1,6 @@
 {
   "jobs": [
     {
-      "jobTitle": "Software Engineer",
-      "company": "ABC",
-      "workLocation": "In Person 🏢",
-      "jobDescription": "https://jobs.disneycareers.com/job/lake-buena-vista/wdw-operations-research-engineering-intern-summer-fall-2024/391/57383990592",
-      "dateApplied": "2023-12-14",
-      "status": "Interview complete ✅",
-      "notes": "Waiting for offer. ",
-      "favorite": false,
-      "id": 2
-    },
-    {
-      "jobTitle": "Frontend Developer",
-      "company": "WebWizards",
-      "workLocation": "Remote 🏠",
-      "dateApplied": "2023-02-20",
-      "status": "Interview scheduled 🗓",
-      "jobDescription": "https://example.com/frontend-developer-job-description",
-      "notes": "At WebWizards, we pride ourselves on being the modern enchanters of the digital realm. Nestled in the heart of Silicon Enclave, our mystical headquarters is where innovation meets sorcery. We are a diverse coven of creative minds, coding wizards, and UX enchanters who come together to conjure up the most awe-inspiring web experiences.\n\nOur magical potions include a blend of cutting-edge technologies, user-centric design spells, and a touch of whimsical creativity. Whether you're a brave startup adventurer seeking an enchanted online presence or an established kingdom aiming to transform your digital fortress, WebWizards is here to weave spells tailored to your every need.\n\nOur spellbook includes an array of services, from spellbinding website development to captivating app creation. We specialize in crafting intuitive user interfaces that leave a lasting enchantment on anyone who dares to visit. Our SEO sorcerers ensure that your online kingdom reigns supreme in the enchanted realms of search engines.",
-      "favorite": true,
-      "id": 3
-    },
-    {
       "jobTitle": "SE II",
       "company": "Google",
       "workLocation": "In Person 🏢",
@@ -94,7 +72,7 @@
       "workLocation": "In Person 🏢",
       "jobDescription": "https://learning.flatironschool.com/",
       "dateApplied": "2023-12-07",
-      "status": "Applied 💼",
+      "status": "Interview scheduled 🗓",
       "notes": "Notes.",
       "favorite": true,
       "id": 11
