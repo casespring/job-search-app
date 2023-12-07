@@ -5,6 +5,9 @@ import './NavBar.css';
 function NavBar() {
   return (
     <nav>
+      <div className="nav-title">
+      JobQuest
+      </div>
       <Link to="/">
         My Jobs
       </Link>
@@ -19,4 +22,6 @@ function NavBar() {
 }
 
 export default NavBar;
+
+
 
