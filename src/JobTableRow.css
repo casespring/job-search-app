@@ -9,25 +9,11 @@ h3 a {
     position: relative; 
   }
   
-  h3 a:hover::before {
-    content: 'Visit Site'; 
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 0.5rem;
-    background-color: #007bff; 
-    color: #ffffff; 
-    border-radius: 4px;
-    font-size: 10px;
-    white-space: nowrap; 
-    opacity: 0; 
-    transition: opacity 0.3s ease; 
+  h3 a:hover {
+    text-decoration: underline;
   }
   
-  h3 a:hover::before {
-    opacity: 1; 
-  }
+
 
   .job-title-link a {
     color: #007bff;
@@ -35,29 +21,11 @@ h3 a {
     cursor: pointer;
     position: relative;
   }
-  
-  .job-title-link a:hover::before {
-    content: 'Visit Site';
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    padding-top: 0.2rem;
-    padding-bottom: 0.2rem;
-    padding-left: 0.4rem;
-    padding-right: 0.4rem;
-    background-color: #007bff;
-    color: #ffffff;
-    border-radius: 4px;
-    font-size: 10px;
-    white-space: nowrap;
-    opacity: 0;
-    transition: opacity 0.3s ease;
+
+  .job-title-link a:hover {
+    text-decoration: underline;
   }
   
-  .job-title-link a:hover::before {
-    opacity: 1;
-  }
 
   .delete-button {
     margin-top: 5px;

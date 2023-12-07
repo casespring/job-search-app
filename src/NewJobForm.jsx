@@ -10,6 +10,7 @@ function NewJobForm() {
   const [status, setStatus] = useState("Choose status");
   const [notes, setNotes] = useState("");
   const [favorite, setFavorite] = useState(false);
+  const [salary, setSalary] = useState("");
   const [showSuccessAlert, setShowSuccessAlert] = useState(false);
 
   useEffect(() => {
@@ -51,8 +52,8 @@ function NewJobForm() {
     setNotes(e.target.value);
   }
 
-  function handleFavorite(e) {
-    setFavorite(e.target.checked);
+  function handleSalary(e) {
+    setSalary(e.target.value)
   }
 
   function handleSubmit(e) {
@@ -65,7 +66,8 @@ function NewJobForm() {
       dateApplied,
       status,
       notes,
-      favorite
+      favorite,
+      salary
     };
     fetch('http://localhost:3000/jobs', {
       method: 'POST',
@@ -84,6 +86,7 @@ function NewJobForm() {
         setDateApplied("");
         setStatus("Choose status");
         setNotes("");
+        setSalary("");
         setFavorite(false);
       })
       .catch((error) => {
@@ -93,14 +96,6 @@ function NewJobForm() {
 
   return (
     <>
-    <div className='success-alert-container'>
-      {showSuccessAlert && (
-        <div className='success-alert'>
-          <p>Your job has been added!</p>
-          <a href="./">See post</a>
-        </div>
-      )}
-    </div>
     <div className='form-container'>
     <form onSubmit={handleSubmit} className='form'>
       <div className='form-row'>
@@ -124,6 +119,16 @@ function NewJobForm() {
           required
         />
 
+        <label htmlFor="salary">Salary</label>
+        <input
+          id="salary"
+          type="text"
+          placeholder="Enter salary"
+          value={salary}
+          onChange={handleSalary}
+          required
+        />
+
         <label htmlFor="workLocation">Work Location</label>
         <select
           id="workLocation"
@@ -139,11 +144,11 @@ function NewJobForm() {
       </div>
 
       <div className='form-row'>
-        <label htmlFor="jobDescription">Job Description</label>
+        <label htmlFor="jobDescription">Job Description Link</label>
         <input
           id="jobDescription"
           type="text"
-          placeholder="Enter job description"
+          placeholder="Link to job description"
           value={jobDescription}
           onChange={handleJobDescription}
           required
@@ -177,7 +182,7 @@ function NewJobForm() {
         <label htmlFor="notes">Notes</label>
         <textarea
           id="notes"
-          rows={3}
+          rows={2}
           placeholder="Add any notes"
           value={notes}
           onChange={handleNotes}
@@ -189,7 +194,18 @@ function NewJobForm() {
       </button>
     </form>
   </div>
+    <>
+    <div className='success-alert-container'>
+      {showSuccessAlert && (
+        <div className='success-alert'>
+          <p>Your job has been added!</p>
+          <a href="./">See post</a>
+        </div>
+      )}
+    </div>
+    </>
   </>
+  
   );
 }
 

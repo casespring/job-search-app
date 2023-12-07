@@ -9,6 +9,7 @@ function JobCard({ jobs, onDelete, onJobSave }) {
   const [workLocation, setWorkLocation] = useState(jobs.workLocation);
   const [currentStatus, setCurrentStatus] = useState(jobs.status);
   const [notes, setNotes] = useState(jobs.notes);
+  const [salary, setSalary] = useState(jobs.salary);
   const [editMode, setEditmode] = useState(false);
   const [fullNotes, setFullNotes] = useState(false);
   const formattedDate = new Date(jobs.dateApplied).toLocaleDateString('en-US');
@@ -38,6 +39,10 @@ function JobCard({ jobs, onDelete, onJobSave }) {
     setNotes(e.target.value);
   };
 
+  function handleSalaryChange(e) {
+    setSalary(e.target.value)
+  }
+
 function handleEditMode() {
     setEditmode(!editMode)
 };
@@ -58,9 +63,8 @@ function handleSaveChanges() {
     workLocation: workLocation,
     company: company,
     jobTitle: jobTitle,
+    salary: salary
   };
-
-  console.log(updatedJob);
 
   fetch(`http://localhost:3000/jobs/${jobs.id}`, {
     method: "PATCH",
@@ -75,6 +79,7 @@ function handleSaveChanges() {
       setAddFavorite(data.favorite);
       setNotes(data.notes);
       setWorkLocation(data.workLocation);
+      setSalary(data.salary)
       onJobSave(prev => !prev);
     })
 }
@@ -101,6 +106,8 @@ function handleDelete() {
               </h3>
               <p><strong>Company:</strong> {editMode ?
                   <textarea rows={1} value={company} onChange={handleCompanyChange} /> : company}</p>
+              <p><strong>Salary: </strong> {editMode ?
+                  <textarea rows={1} value={salary} onChange={handleSalaryChange} /> : salary}</p>
               <p><strong>Work Location:</strong> {editMode ?
                 <select value={workLocation} onChange={handleWorklocation}>
                     <option value="In Person 🏢">In Person 🏢</option>

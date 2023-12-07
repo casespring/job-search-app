@@ -9,6 +9,7 @@
       "status": "Rejected ❌",
       "notes": "Must wait 6 months to apply again.",
       "favorite": true,
+      "salary": "100,000",
       "id": 4
     },
     {
@@ -19,7 +20,8 @@
       "dateApplied": "2023-12-14",
       "status": "Applied 💼",
       "notes": "MoMA job. Social media focus. ",
-      "favorite": false,
+      "favorite": true,
+      "salary": "120,000",
       "id": 7
     },
     {
@@ -31,6 +33,7 @@
       "status": "Applied 💼",
       "notes": "Connected with Recruiter on LinkedIn.",
       "favorite": false,
+      "salary": "150,000",
       "id": 8
     },
     {
@@ -42,6 +45,7 @@
       "status": "Interview complete ✅",
       "notes": "Waiting for offer or rejection.",
       "favorite": false,
+      "salary": "100,000",
       "id": 9
     },
     {
@@ -52,7 +56,8 @@
       "dateApplied": "2023-01-23",
       "status": "Interview scheduled 🗓",
       "notes": "Study algorithms. ",
-      "favorite": false,
+      "favorite": true,
+      "salary": "100,000",
       "id": 10
     },
     {
@@ -64,6 +69,7 @@
       "status": "Interview scheduled 🗓",
       "notes": "Meeting with John Doe, SE manager. Research company values. Study algos. ",
       "favorite": true,
+      "salary": "100,000",
       "id": 6
     },
     {
@@ -75,7 +81,80 @@
       "status": "Interview scheduled 🗓",
       "notes": "Notes.",
       "favorite": true,
+      "salary": "100,000",
       "id": 11
+    },
+    {
+      "jobTitle": "SE II",
+      "company": "Google",
+      "workLocation": "Remote 🏠",
+      "jobDescription": "example.com",
+      "dateApplied": "2023-07-03",
+      "status": "Applied 💼",
+      "notes": "Notes. Notes. Notes. Notes.",
+      "favorite": false,
+      "salary": "100,000",
+      "id": 12
+    },
+    {
+      "jobTitle": "Job",
+      "company": "Job",
+      "workLocation": "Hybrid 🖥",
+      "jobDescription": "example.com",
+      "dateApplied": "2023-12-24",
+      "status": "Interview scheduled 🗓",
+      "notes": "Salary low.",
+      "favorite": false,
+      "salary": "100,000",
+      "id": 13
+    },
+    {
+      "jobTitle": "Job",
+      "company": "Job",
+      "workLocation": "Hybrid 🖥",
+      "jobDescription": "example.com",
+      "dateApplied": "2023-12-07",
+      "status": "Interview complete ✅",
+      "notes": "",
+      "favorite": false,
+      "salary": "100,000",
+      "id": 14
+    },
+    {
+      "jobTitle": "Job",
+      "company": "job",
+      "workLocation": "Hybrid 🖥",
+      "jobDescription": "example.com",
+      "dateApplied": "2023-12-04",
+      "status": "Interview scheduled 🗓",
+      "notes": "",
+      "favorite": false,
+      "salary": "100,000",
+      "id": 15
+    },
+    {
+      "jobTitle": "Job",
+      "company": "Job",
+      "workLocation": "Hybrid 🖥",
+      "jobDescription": "example.com",
+      "dateApplied": "2023-12-15",
+      "status": "Interview complete ✅",
+      "notes": "Notes",
+      "favorite": false,
+      "salary": "150,000",
+      "id": 16
+    },
+    {
+      "jobTitle": "Job",
+      "company": "Job",
+      "workLocation": "Hybrid 🖥",
+      "jobDescription": "example.com",
+      "dateApplied": "2023-12-18",
+      "status": "Interview scheduled 🗓",
+      "notes": "asdfghjkl",
+      "favorite": false,
+      "salary": "150,000",
+      "id": 17
     }
   ],
   "blogs": [

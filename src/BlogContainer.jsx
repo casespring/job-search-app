@@ -50,12 +50,11 @@ function BlogContainer() {
   return (
     <div className="container">
       <button className="toggle-button" onClick={() => setShowBlogForm(!showBlogForm)}>
-        {showBlogForm ? 'Hide Blog Form' : 'Show Blog Form'}
+        {showBlogForm ? 'Hide blog form' : 'Add new blog'}
       </button>
 
       {showBlogForm && (
         <div className="blog-form-container">
-          <h2 className="blog-form-heading">Add a New Blog</h2>
           <BlogForm addBlog={addBlog} />
         </div>
       )}
@@ -68,10 +67,10 @@ function BlogContainer() {
               <div className="blog-title">{blog.title}</div>
               <div className="blog-author">{blog.author}</div>
               <a href={blog.link} target="_blank" rel="noopener noreferrer" className="learn-more-link">
-                Learn More
+                Read 📚
               </a>
-              <button onClick={() => deleteBlog(blog.id)} className="delete-button">
-                Delete
+              <button onClick={() => deleteBlog(blog.id)} className="button-delete">
+                Delete 🗑️
               </button>
             </div>
           </div>
