@@ -1,0 +1,20 @@
+nav {
+  display: flex;
+  justify-content: left;
+  background-color: #007bff;
+  padding: 15px; /* Increase the padding for a thicker navigation bar */
+  margin: 1em;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 16px;
+}
+
+nav a:hover,
+nav a:active {
+  text-decoration: underline;
+}

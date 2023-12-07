@@ -17,7 +17,7 @@ function NewJobForm() {
     if (showSuccessAlert) {
       timeout = setTimeout(() => {
         setShowSuccessAlert(false);
-      }, 2000);
+      }, 4000);
     }
 
     return () => clearTimeout(timeout);
@@ -92,6 +92,15 @@ function NewJobForm() {
   }
 
   return (
+    <>
+    <div className='success-alert-container'>
+      {showSuccessAlert && (
+        <div className='success-alert'>
+          <p>Your job has been added!</p>
+          <a href="./">See post</a>
+        </div>
+      )}
+    </div>
     <div className='form-container'>
     <form onSubmit={handleSubmit} className='form'>
       <div className='form-row'>
@@ -178,15 +187,9 @@ function NewJobForm() {
       <button type="submit" className='btn-primary'>
         Submit
       </button>
-
-      {showSuccessAlert && (
-        <div className='success-alert'>
-          <p>Your job has been added!</p>
-          <a href="./">See post</a>
-        </div>
-      )}
     </form>
   </div>
+  </>
   );
 }
 

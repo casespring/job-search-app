@@ -15,7 +15,7 @@ function JobCardSearch({ onSearchTerm }) {
             <input
             type="text"
             id="search"
-            placeholder="search... 🔍"
+            placeholder="search company or job status... 🔍"
             value={typeValue}
             onChange={handleChange}
             />

@@ -12,6 +12,7 @@ function JobCard({ jobs, onDelete }) {
   const [notes, setNotes] = useState(jobs.notes);
   const [editMode, setEditmode] = useState(false);
   const [fullNotes, setFullNotes] = useState(false);
+  
 
   const handleUpdate = (fieldsToUpdate) => {
     fetch(`http://localhost:3000/jobs/${jobs.id}`, {

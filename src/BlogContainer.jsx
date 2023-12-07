@@ -3,6 +3,7 @@ import BlogForm from './BlogForm';
 
 function BlogContainer() {
     const [blogs, setBlogs] = useState([]);
+    const [showBlogForm, setShowBlogForm] = useState(false);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -59,10 +60,27 @@ function BlogContainer() {
     return (
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: '100vh' }}>
 
-            <div style={{ border: '1px solid #ccc', borderRadius: '8px', padding: '20px', width: '400px', textAlign: 'center', fontFamily: "'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif" }}>
-                <h2 style={{ marginBottom: '10px' }}>Add a New Blog</h2>
-                <BlogForm addBlog={addBlog} />
-            </div>
+            <button
+                onClick={() => setShowBlogForm(!showBlogForm)}
+                style={{
+                    backgroundColor: '#007bff',
+                    color: '#fff',
+                    padding: '10px',
+                    borderRadius: '5px',
+                    cursor: 'pointer',
+                    marginTop: '20px',
+                    fontFamily: 'Gill Sans, "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif'
+                }}
+            >
+                {showBlogForm ? 'Hide Blog Form' : 'Show Blog Form'}
+            </button>
+
+            {showBlogForm && (
+                <div style={{ border: '1px solid #ccc', borderRadius: '8px', padding: '20px', width: '400px', textAlign: 'center', fontFamily: "'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif" }}>
+                    <h2 style={{ marginBottom: '10px' }}>Add a New Blog</h2>
+                    <BlogForm addBlog={addBlog} />
+                </div>
+            )}
 
             <div style={{ display: 'grid', gap: '20px', gridTemplateColumns: 'repeat(auto-fill, minmax(18rem, 1fr))', padding: '20px', maxWidth: '1200px' }}>
                 {blogs.map((blog) => (

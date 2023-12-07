@@ -1,16 +1,17 @@
 import React from "react";
 import { Link } from 'react-router-dom';
+import './NavBar.css'; 
 
 function NavBar() {
   return (
-    <nav style={{ display: 'flex', justifyContent: 'center' }}>
-      <Link to="/" style={{ padding: '10px', textDecoration: 'none', color: 'inherit' }}>
+    <nav>
+      <Link to="/">
         My Jobs
       </Link>
-      <Link to="/add-job" style={{ padding: '10px', textDecoration: 'none', color: 'inherit' }}>
+      <Link to="/add-job">
         Add Job
       </Link>
-      <Link to="/learn" style={{ padding: '10px', textDecoration: 'none', color: 'inherit' }}>
+      <Link to="/learn" >
         Learn
       </Link>
     </nav>
@@ -18,3 +19,4 @@ function NavBar() {
 }
 
 export default NavBar;
+

@@ -73,8 +73,17 @@ function BlogForm({ addBlog }) {
                 placeholder="Enter the author"
                 required
             />
-
-            <button type="submit" style={{ backgroundColor: '#007bff', color: '#fff', padding: '10px', borderRadius: '5px', cursor: 'pointer' }}>
+            <button
+                type="submit"
+                style={{
+                    backgroundColor: '#007bff',
+                    color: '#fff',
+                    padding: '10px',
+                    borderRadius: '5px',
+                    cursor: 'pointer',
+                    fontFamily: 'Gill Sans, "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif'
+                }}
+            >
                 Add Blog
             </button>
         </form>

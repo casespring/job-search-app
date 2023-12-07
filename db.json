@@ -1,17 +1,6 @@
 {
   "jobs": [
     {
-      "jobTitle": "Frontend Developer",
-      "company": "WebWizards",
-      "workLocation": "Remote 🏠",
-      "dateApplied": "2023-02-20",
-      "status": "Interview scheduled 🗓",
-      "jobDescription": "https://example.com/frontend-developer-job-description",
-      "notes": "Test TEst Test Test TEst TestTest TEst TestTest TEst TestTest TEst TestTest TEst TestTest TEst TestTest TEst TestTest TEst TestTest TEst TestTest TEst TestTest TEst Test",
-      "favorite": true,
-      "id": 1
-    },
-    {
       "jobTitle": "SE II",
       "company": "Google",
       "workLocation": "In Person 🏢",
@@ -21,17 +10,6 @@
       "notes": "Notes. Notes. Notes. Notes. Notes. Notes. Notes. Notes. Notes. Notes. Notes. Notes. Notes. Notes. Notes. Notes. Notes. ",
       "favorite": false,
       "id": 2
-    },
-    {
-      "jobTitle": "Marketing Media Specialist",
-      "company": "MoMA",
-      "workLocation": "In Person 🏢",
-      "jobDescription": "example.com",
-      "dateApplied": "2023-12-14",
-      "status": "Applied 💼",
-      "notes": "MoMA job.",
-      "favorite": true,
-      "id": 3
     },
     {
       "jobTitle": "Job",
@@ -219,6 +197,83 @@
       "notes": "Notes",
       "favorite": false,
       "id": 20
+    },
+    {
+      "jobTitle": "Job",
+      "company": "Job",
+      "workLocation": "Hybrid 🖥",
+      "jobDescription": "example.com",
+      "dateApplied": "2023-12-21",
+      "status": "Applied 💼",
+      "notes": "note",
+      "favorite": false,
+      "id": 21
+    },
+    {
+      "jobTitle": "Job Job",
+      "company": "Company",
+      "workLocation": "Remote 🏠",
+      "jobDescription": "example.com",
+      "dateApplied": "2023-12-06",
+      "status": "Interview scheduled 🗓",
+      "notes": "Notes",
+      "favorite": false,
+      "id": 22
+    },
+    {
+      "jobTitle": "Job",
+      "company": "Job",
+      "workLocation": "In Person 🏢",
+      "jobDescription": "example.com",
+      "dateApplied": "2023-12-29",
+      "status": "Applied 💼",
+      "notes": "Job",
+      "favorite": false,
+      "id": 23
+    },
+    {
+      "jobTitle": "Job",
+      "company": "Job",
+      "workLocation": "Hybrid 🖥",
+      "jobDescription": "example.com",
+      "dateApplied": "2023-12-06",
+      "status": "Applied 💼",
+      "notes": "j",
+      "favorite": false,
+      "id": 24
+    },
+    {
+      "jobTitle": "Job",
+      "company": "Job",
+      "workLocation": "In Person 🏢",
+      "jobDescription": "example.com",
+      "dateApplied": "2023-12-28",
+      "status": "Applied 💼",
+      "notes": "h",
+      "favorite": false,
+      "id": 25
+    },
+    {
+      "jobTitle": "Job",
+      "company": "Job",
+      "workLocation": "Remote 🏠",
+      "jobDescription": "example.com",
+      "dateApplied": "2023-12-14",
+      "status": "Interview complete ✅",
+      "notes": "f",
+      "favorite": false,
+      "id": 26
+    },
+    {
+      "jobTitle": "Job",
+      "company": "Job",
+      "workLocation": "Hybrid 🖥",
+      "jobDescription": "example.com",
+      "dateApplied": "2023-12-18",
+      "status": "Rejected ❌",
+      "notes": "f",
+      "favorite": false,
+      "id": 28
     }
   ],
   "blogs": [
