@@ -8,6 +8,8 @@ function JobListContainer() {
   const [jobs, setJobs] = useState([]);
   const [toggle, setToggle] = useState(true);
   const [searchTerm, setSearchTerm] = useState("");
+  const [refreshJobs, setRefreshJobs] = useState(false);
+  
 
   useEffect(() => {
     fetch("http://localhost:3000/jobs")
@@ -15,7 +17,7 @@ function JobListContainer() {
       .then(jobsData => {
         setJobs(jobsData);
       });
-  }, [toggle]);
+  }, [toggle, refreshJobs]);
 
   function handleToggle() {
     setToggle(!toggle)
@@ -38,7 +40,7 @@ function JobListContainer() {
   }
 
   const displayJobCards = searchJobs.map(job => (
-    <JobCard key={job.id} jobs={job} onDelete={handleDeleteCallback} />
+    <JobCard key={job.id} jobs={job} onJobSave={setRefreshJobs} onDelete={handleDeleteCallback} />
   ));
 
   return (
@@ -50,7 +52,7 @@ function JobListContainer() {
           </button>
         </div>
         <div className="list-container">
-          {toggle ? displayJobCards : <JobTable jobs={searchJobs} handleDeleteCallback={handleDeleteCallback} />}
+          {toggle ? displayJobCards : <JobTable jobs={searchJobs} onJobSave={setRefreshJobs} handleDeleteCallback={handleDeleteCallback} />}
         </div>
       </div>
   );

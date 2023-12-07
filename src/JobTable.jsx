@@ -2,7 +2,7 @@
   import JobTableRow from './JobTableRow';
   import './JobTable.css';
   
-  function JobTable({ jobs, handleDeleteCallback }) {
+  function JobTable({ jobs, handleDeleteCallback, onJobSave }) {
     const [sortFavoriteOrder, setSortFavoriteOrder] = useState(null)
     const [sortFavoriteDirection, setSortFavoriteDirection] = useState('asc')
 
@@ -28,7 +28,7 @@
     } 
     
     const displayJobs = sortedJobs.map((job) => (
-      <JobTableRow handleDeleteCallback={handleDeleteCallback} job={job} key={job.id} />
+      <JobTableRow handleDeleteCallback={handleDeleteCallback} onJobSave={onJobSave} job={job} key={job.id} />
     ));
 
   return (

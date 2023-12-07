@@ -1,8 +1,7 @@
 import { useState } from 'react';
 import "./JobCard.css"
-import { redirect } from 'react-router';
 
-function JobCard({ jobs, onDelete }) {
+function JobCard({ jobs, onDelete, onJobSave }) {
 
   const [addFavorite, setAddFavorite] = useState(jobs.favorite);
   const [jobTitle, setJobTitle] = useState(jobs.jobTitle);
@@ -12,6 +11,7 @@ function JobCard({ jobs, onDelete }) {
   const [notes, setNotes] = useState(jobs.notes);
   const [editMode, setEditmode] = useState(false);
   const [fullNotes, setFullNotes] = useState(false);
+  
 
   function handleJobTitle(e) {
     setJobTitle(e.target.value)
@@ -25,8 +25,8 @@ function JobCard({ jobs, onDelete }) {
     setWorkLocation(e.target.value)
   };
 
-  function handleStatusSelect(selected) {
-    setCurrentStatus(selected);
+  function handleStatusSelect(e) {
+    setCurrentStatus(e.target.value);
   };
 
   function handleFavoritedClick() {
@@ -38,21 +38,16 @@ function JobCard({ jobs, onDelete }) {
   };
 
 function handleEditMode() {
-  setEditmode(!editMode)
+    setEditmode(!editMode)
 };
 
 function toggleFullNotes() {
-  setFullNotes(!fullNotes)
+    setFullNotes(!fullNotes)
 }
 
+
 function handleSaveChanges() {
-  setEditmode(!editMode)
-  setJobTitle(jobTitle)
-  setCompany(company)
-  setCurrentStatus(currentStatus)
-  setAddFavorite(addFavorite)
-  setNotes(notes)
-  setWorkLocation(workLocation)
+  setEditmode(!editMode);
 
   const updatedJob = {
     ...jobs,
@@ -62,24 +57,27 @@ function handleSaveChanges() {
     workLocation: workLocation,
     company: company,
     jobTitle: jobTitle,
-  }
+  };
+
+  console.log(updatedJob);
 
   fetch(`http://localhost:3000/jobs/${jobs.id}`, {
-      method: "PATCH",
-      headers: { "content-type": "application/json" },
-      body: JSON.stringify(updatedJob)
+    method: "PATCH",
+    headers: { "content-type": "application/json" },
+    body: JSON.stringify(updatedJob),
+  })
+    .then((r) => r.json())
+    .then((data) => {
+      setJobTitle(data.jobTitle);
+      setCompany(data.company);
+      setCurrentStatus(data.status);
+      setAddFavorite(data.favorite);
+      setNotes(data.notes);
+      setWorkLocation(data.workLocation);
+      onJobSave(prev => !prev);
     })
-      .then(r => r.json())
-      .then(data => {
-        setJobTitle(data.jobTitle)
-        setCompany(data.company)
-        setCurrentStatus(data.status)
-        setAddFavorite(data.favorite)
-        setNotes(data.notes)
-        setWorkLocation(data.workLocation)
-      })
-      .catch(error => console.error("Error updating job:", error));
-};
+}
+
 
 function handleDelete() {
   onDelete(jobs.id)
@@ -106,7 +104,7 @@ function handleDelete() {
               </p>
               <p><strong>Date Applied:</strong> {jobs.dateApplied}</p>
               <p><strong>Status:</strong> {editMode ?
-                <select value={currentStatus} onChange={(e) => handleStatusSelect(e.target.value)}>
+                <select value={currentStatus} onChange={handleStatusSelect}>
                   <option value="Applied 💼">Applied 💼</option>
                   <option value="Interview scheduled 🗓">Interview scheduled 🗓</option>
                   <option value="Interview complete ✅">Interview complete ✅</option>

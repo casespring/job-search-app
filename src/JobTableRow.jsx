@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import "./JobTable.css";
 
-function JobTableRow({ job, handleDeleteCallback }) {
+function JobTableRow({ job, handleDeleteCallback, onJobSave }) {
   const [editMode, setEditMode] = useState(false)
   const [newStatus, setNewStatus] = useState(job.status)
   const [newNotes, setNewNotes] = useState(job.notes)
@@ -86,6 +86,7 @@ function JobTableRow({ job, handleDeleteCallback }) {
         setNewLocation(data.workLocation)
         setNewCompany(data.company)
         setNewJobTitle(data.jobTitle)
+        onJobSave(prev => !prev)
       })
   }
 
