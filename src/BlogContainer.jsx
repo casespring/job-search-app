@@ -60,20 +60,22 @@ function BlogContainer() {
     return (
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: '100vh' }}>
 
-            <button
-                onClick={() => setShowBlogForm(!showBlogForm)}
-                style={{
-                    backgroundColor: '#007bff',
-                    color: '#fff',
-                    padding: '10px',
-                    borderRadius: '5px',
-                    cursor: 'pointer',
-                    marginTop: '20px',
-                    fontFamily: 'Gill Sans, "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif'
-                }}
-            >
-                {showBlogForm ? 'Hide Blog Form' : 'Show Blog Form'}
-            </button>
+        <button
+        style={{
+            marginTop: '0.6em',
+            fontFamily: "'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif",
+            backgroundColor: 'white',
+            border: '2px solid #007bff',
+            color: '#007bff',
+            padding: '5px 8px',
+            marginBottom: '1em',
+            cursor: 'pointer',
+        }}
+        onClick={() => setShowBlogForm(!showBlogForm)}
+        >
+        {showBlogForm ? 'Hide Blog Form' : 'Show Blog Form'}
+        </button>
+
 
             {showBlogForm && (
                 <div style={{ border: '1px solid #ccc', borderRadius: '8px', padding: '20px', width: '400px', textAlign: 'center', fontFamily: "'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif" }}>
