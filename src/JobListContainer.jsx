@@ -59,7 +59,7 @@ function JobListContainer() {
           className="toggle-button"
           onClick={() => setShowFavorites(!showFavorites)}
         >
-          {showFavorites ? "Show All Jobs" : "Show ⭐ Only"}
+          {showFavorites ? "Show all jobs" : "Show ⭐ Only"}
         </button>
         </div>
         <div className="list-container">
