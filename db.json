@@ -9,7 +9,7 @@
       "status": "Rejected ❌",
       "notes": "Must wait 6 months to apply again.",
       "favorite": true,
-      "salary": "100,000",
+      "salary": "150,000",
       "id": 4
     },
     {
@@ -19,9 +19,9 @@
       "jobDescription": "https://recruiting.ultipro.com/MUS1002MOMA/JobBoard/9dbfa465-a36a-46c3-b31e-4929830ab266/OpportunityDetail?opportunityId=5abec346-835a-412c-a06e-c267ad111909",
       "dateApplied": "2023-12-14",
       "status": "Applied 💼",
-      "notes": "MoMA job. Social media focus. ",
+      "notes": "Social media focus. Need to learn art.",
       "favorite": true,
-      "salary": "120,000",
+      "salary": "80,000",
       "id": 7
     },
     {
@@ -33,7 +33,7 @@
       "status": "Applied 💼",
       "notes": "Connected with Recruiter on LinkedIn.",
       "favorite": false,
-      "salary": "150,000",
+      "salary": "200,000",
       "id": 8
     },
     {
@@ -43,9 +43,9 @@
       "jobDescription": "https://app.careerpuck.com/job-board/lyft/job/6895506002?gh_jid=6895506002",
       "dateApplied": "2023-12-28",
       "status": "Interview complete ✅",
-      "notes": "Waiting for offer or rejection.",
+      "notes": "Thank you email sent. Waiting for offer.",
       "favorite": false,
-      "salary": "100,000",
+      "salary": "145,000",
       "id": 9
     },
     {
@@ -55,9 +55,9 @@
       "jobDescription": "https://www.metacareers.com/jobs/999489031322161/",
       "dateApplied": "2023-01-23",
       "status": "Interview scheduled 🗓",
-      "notes": "Study algorithms. ",
+      "notes": "Study algorithms. Connected with Flatiron alum working on my future team.",
       "favorite": true,
-      "salary": "100,000",
+      "salary": "120,000",
       "id": 10
     },
     {
@@ -67,9 +67,9 @@
       "jobDescription": "https://aexp.eightfold.ai/careers/job?pid=19468960",
       "dateApplied": "2023-12-12",
       "status": "Interview scheduled 🗓",
-      "notes": "Meeting with John Doe, SE manager. Research company values. Study algos. ",
+      "notes": "Meeting with John Doe, SE manager. Research company values.",
       "favorite": true,
-      "salary": "100,000",
+      "salary": "130,000",
       "id": 6
     },
     {
@@ -79,9 +79,9 @@
       "jobDescription": "https://learning.flatironschool.com/",
       "dateApplied": "2023-12-07",
       "status": "Interview scheduled 🗓",
-      "notes": "Notes.",
+      "notes": "Ask about Denver office placement.",
       "favorite": true,
-      "salary": "100,000",
+      "salary": "115,000",
       "id": 11
     },
     {
@@ -91,70 +91,10 @@
       "jobDescription": "example.com",
       "dateApplied": "2023-07-03",
       "status": "Applied 💼",
-      "notes": "Notes. Notes. Notes. Notes.",
+      "notes": "Recruiter reached out. Waiting to hear back.",
       "favorite": false,
       "salary": "100,000",
       "id": 12
-    },
-    {
-      "jobTitle": "Job",
-      "company": "Job",
-      "workLocation": "Hybrid 🖥",
-      "jobDescription": "example.com",
-      "dateApplied": "2023-12-24",
-      "status": "Interview scheduled 🗓",
-      "notes": "Salary low.",
-      "favorite": false,
-      "salary": "100,000",
-      "id": 13
-    },
-    {
-      "jobTitle": "Job",
-      "company": "Job",
-      "workLocation": "Hybrid 🖥",
-      "jobDescription": "example.com",
-      "dateApplied": "2023-12-07",
-      "status": "Interview complete ✅",
-      "notes": "",
-      "favorite": false,
-      "salary": "100,000",
-      "id": 14
-    },
-    {
-      "jobTitle": "Job",
-      "company": "job",
-      "workLocation": "Hybrid 🖥",
-      "jobDescription": "example.com",
-      "dateApplied": "2023-12-04",
-      "status": "Interview scheduled 🗓",
-      "notes": "",
-      "favorite": false,
-      "salary": "100,000",
-      "id": 15
-    },
-    {
-      "jobTitle": "Job",
-      "company": "Job",
-      "workLocation": "Hybrid 🖥",
-      "jobDescription": "example.com",
-      "dateApplied": "2023-12-15",
-      "status": "Interview complete ✅",
-      "notes": "Notes",
-      "favorite": false,
-      "salary": "150,000",
-      "id": 16
-    },
-    {
-      "jobTitle": "Job",
-      "company": "Job",
-      "workLocation": "Hybrid 🖥",
-      "jobDescription": "example.com",
-      "dateApplied": "2023-12-18",
-      "status": "Interview scheduled 🗓",
-      "notes": "asdfghjkl",
-      "favorite": false,
-      "salary": "150,000",
-      "id": 17
     }
   ],
   "blogs": [
