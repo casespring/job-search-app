@@ -129,13 +129,13 @@ function handleDelete() {
                 <button className='job-table-button' onClick={toggleFullNotes}>Show</button>
               )}
               </div>
-              {editMode ? <button className='button-class' onClick={handleFavoritedClick}>{addFavorite ? "⭐" : "☆"}</button>
+              {editMode ? <button className='job-table-button' onClick={handleFavoritedClick}>{addFavorite ? "⭐" : "☆"}</button>
               : <p>{jobs.favorite ? "⭐" : "☆"}</p>}
               <div className='button-div'>{
                 editMode ? (
                   <button className='job-table-button' onClick={handleSaveChanges}>Save</button>
                 ) : (
-                  <button  className='button-class' onClick={handleEditMode} id="edit-button">Edit</button>
+                  <button  className='job-table-button' onClick={handleEditMode} id="edit-button">Edit</button>
                 )
               } 
                 {editMode ? <button  className='button-delete' onClick={handleDelete} >Delete 🗑️</button>: null }
