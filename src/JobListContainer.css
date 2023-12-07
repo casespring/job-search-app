@@ -28,7 +28,10 @@
   color: #007bff; /* Text color */
   padding: 5px 8px; /* Adjust padding as needed */
   cursor: pointer;
+  margin-left: 1em;
+  margin-right: 1em;
 }
+
 
 .toggle-button:hover {
   background-color: #007bff;

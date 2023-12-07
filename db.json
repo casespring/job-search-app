@@ -41,7 +41,7 @@
       "dateApplied": "2023-12-14",
       "status": "Applied 💼",
       "notes": "MoMA job. Social media focus. ",
-      "favorite": true,
+      "favorite": false,
       "id": 7
     },
     {
@@ -52,7 +52,7 @@
       "dateApplied": "2023-12-15",
       "status": "Applied 💼",
       "notes": "Connected with Recruiter on LinkedIn.",
-      "favorite": true,
+      "favorite": false,
       "id": 8
     },
     {
@@ -63,7 +63,7 @@
       "dateApplied": "2023-12-28",
       "status": "Interview complete ✅",
       "notes": "Waiting for offer or rejection.",
-      "favorite": true,
+      "favorite": false,
       "id": 9
     },
     {

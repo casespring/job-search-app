@@ -8,6 +8,7 @@ function JobListContainer() {
   const [jobs, setJobs] = useState([]);
   const [toggle, setToggle] = useState(true);
   const [searchTerm, setSearchTerm] = useState("");
+  const [showFavorites, setShowFavorites] = useState(false);
   const [refreshJobs, setRefreshJobs] = useState(false);
   
 
@@ -21,25 +22,29 @@ function JobListContainer() {
 
   function handleToggle() {
     setToggle(!toggle)
-    console.log('toggle');
   }
 
   function settingSearchTerm(search) {
     setSearchTerm(search);
   }
 
-  const searchJobs = jobs.filter(job => {
-    return (
+  const filteredJobs = jobs.filter(job => {
+    const matchesSearchTerm =
       job.company.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      job.status.toLowerCase().includes(searchTerm.toLowerCase())
-    );
+      job.status.toLowerCase().includes(searchTerm.toLowerCase());
+
+    if (showFavorites) {
+      return job.favorite && matchesSearchTerm;
+    }
+
+    return matchesSearchTerm;
   });
 
   function handleDeleteCallback(deletedJobId) {
     setJobs(jobs => jobs.filter(job => job.id !== deletedJobId));
   }
 
-  const displayJobCards = searchJobs.map(job => (
+  const displayJobCards = filteredJobs.map(job => (
     <JobCard key={job.id} jobs={job} onJobSave={setRefreshJobs} onDelete={handleDeleteCallback} />
   ));
 
@@ -50,9 +55,15 @@ function JobListContainer() {
           <button className="toggle-button" onClick={handleToggle}>
             {toggle ? "View as table" : "View as cards"}
           </button>
+          <button
+          className="toggle-button"
+          onClick={() => setShowFavorites(!showFavorites)}
+        >
+          {showFavorites ? "Show All Jobs" : "Show ⭐ Only"}
+        </button>
         </div>
         <div className="list-container">
-          {toggle ? displayJobCards : <JobTable jobs={searchJobs} onJobSave={setRefreshJobs} handleDeleteCallback={handleDeleteCallback} />}
+          {toggle ? displayJobCards : <JobTable jobs={filteredJobs} onJobSave={setRefreshJobs} handleDeleteCallback={handleDeleteCallback} />}
         </div>
       </div>
   );
