@@ -1,37 +1,103 @@
 {
   "jobs": [
     {
-      "jobTitle": "TEST",
-      "company": "TEST",
-      "workLocation": "Hybrid 🖥",
-      "jobDescription": "Job",
+      "jobTitle": "Software Engineer",
+      "company": "ABC",
+      "workLocation": "In Person 🏢",
+      "jobDescription": "https://jobs.disneycareers.com/job/lake-buena-vista/wdw-operations-research-engineering-intern-summer-fall-2024/391/57383990592",
       "dateApplied": "2023-12-14",
-      "status": "Rejected ❌",
-      "notes": "TEST",
-      "favorite": true,
+      "status": "Interview complete ✅",
+      "notes": "Waiting for offer. ",
+      "favorite": false,
       "id": 2
     },
     {
-      "jobTitle": "Job",
-      "company": "Job",
-      "workLocation": "Hybrid 🖥",
-      "jobDescription": "Job",
-      "dateApplied": "2023-12-15",
+      "jobTitle": "Frontend Developer",
+      "company": "WebWizards",
+      "workLocation": "Remote 🏠",
+      "dateApplied": "2023-02-20",
       "status": "Interview scheduled 🗓",
-      "notes": "notes",
+      "jobDescription": "https://example.com/frontend-developer-job-description",
+      "notes": "At WebWizards, we pride ourselves on being the modern enchanters of the digital realm. Nestled in the heart of Silicon Enclave, our mystical headquarters is where innovation meets sorcery. We are a diverse coven of creative minds, coding wizards, and UX enchanters who come together to conjure up the most awe-inspiring web experiences.\n\nOur magical potions include a blend of cutting-edge technologies, user-centric design spells, and a touch of whimsical creativity. Whether you're a brave startup adventurer seeking an enchanted online presence or an established kingdom aiming to transform your digital fortress, WebWizards is here to weave spells tailored to your every need.\n\nOur spellbook includes an array of services, from spellbinding website development to captivating app creation. We specialize in crafting intuitive user interfaces that leave a lasting enchantment on anyone who dares to visit. Our SEO sorcerers ensure that your online kingdom reigns supreme in the enchanted realms of search engines.",
       "favorite": true,
+      "id": 3
+    },
+    {
+      "jobTitle": "SE II",
+      "company": "Google",
+      "workLocation": "In Person 🏢",
+      "jobDescription": "https://www.google.com/about/careers/applications/jobs/results/110720748940600006-staff-software-engineer-large-language-models",
+      "dateApplied": "2023-12-14",
+      "status": "Rejected ❌",
+      "notes": "Must wait 6 months to apply again.",
+      "favorite": false,
       "id": 4
     },
     {
-      "jobTitle": "Job",
-      "company": "Job",
+      "jobTitle": "Marketing Specialist",
+      "company": "MoMA",
+      "workLocation": "Hybrid 🖥",
+      "jobDescription": "https://recruiting.ultipro.com/MUS1002MOMA/JobBoard/9dbfa465-a36a-46c3-b31e-4929830ab266/OpportunityDetail?opportunityId=5abec346-835a-412c-a06e-c267ad111909",
+      "dateApplied": "2023-12-14",
+      "status": "Applied 💼",
+      "notes": "MoMA job. Social media focus. ",
+      "favorite": true,
+      "id": 7
+    },
+    {
+      "jobTitle": "Back-End Dev",
+      "company": "Google",
+      "workLocation": "In Person 🏢",
+      "jobDescription": "https://www.google.com/about/careers/applications/jobs/results/106847000630043334-global-partner-gtm-leader-aiml-google-cloud?hl=_fr&page=4",
+      "dateApplied": "2023-12-15",
+      "status": "Applied 💼",
+      "notes": "Connected with Recruiter on LinkedIn.",
+      "favorite": true,
+      "id": 8
+    },
+    {
+      "jobTitle": "Front-End Dev",
+      "company": "Lyft",
       "workLocation": "Remote 🏠",
-      "jobDescription": "example.com",
-      "dateApplied": "2023-12-22",
+      "jobDescription": "https://app.careerpuck.com/job-board/lyft/job/6895506002?gh_jid=6895506002",
+      "dateApplied": "2023-12-28",
+      "status": "Interview complete ✅",
+      "notes": "Waiting for offer or rejection.",
+      "favorite": true,
+      "id": 9
+    },
+    {
+      "jobTitle": "SE Internship",
+      "company": "Meta",
+      "workLocation": "Hybrid 🖥",
+      "jobDescription": "https://www.metacareers.com/jobs/999489031322161/",
+      "dateApplied": "2023-01-23",
       "status": "Interview scheduled 🗓",
-      "notes": "Notes",
+      "notes": "Study algorithms. ",
       "favorite": false,
-      "id": 5
+      "id": 10
+    },
+    {
+      "jobTitle": "SE Apprentice",
+      "company": "American Express",
+      "workLocation": "Hybrid 🖥",
+      "jobDescription": "https://aexp.eightfold.ai/careers/job?pid=19468960",
+      "dateApplied": "2023-12-12",
+      "status": "Interview scheduled 🗓",
+      "notes": "Meeting with John Doe, SE manager. Research company values. Study algos. ",
+      "favorite": true,
+      "id": 6
+    },
+    {
+      "jobTitle": "Instructor",
+      "company": "Flatiron School",
+      "workLocation": "In Person 🏢",
+      "jobDescription": "https://learning.flatironschool.com/",
+      "dateApplied": "2023-12-07",
+      "status": "Applied 💼",
+      "notes": "",
+      "favorite": false,
+      "id": 11
     }
   ],
   "blogs": [

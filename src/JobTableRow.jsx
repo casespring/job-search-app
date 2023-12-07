@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import "./JobTable.css";
+import "./JobTableRow.css";
 
 function JobTableRow({ job, handleDeleteCallback, onJobSave }) {
   const [editMode, setEditMode] = useState(false)
@@ -93,18 +94,22 @@ function JobTableRow({ job, handleDeleteCallback, onJobSave }) {
   return (
     <tr>
       <td>
-  {editMode ? (
-    <div>
+      {editMode ? (
+      <div>
       <textarea
         rows={1}
         value={newJobTitle}
         onChange={handleJobTitleChange}
       />
       <p onClick={handleDelete} style={{color: "red",cursor: 'pointer'}}>Delete 🗑</p>
-    </div>
+      </div>
   ) : (
-    <span>{newJobTitle}</span>
-  )}
+    <span className="job-title-link">
+      <a href={job.jobDescription} target="_blank" rel="noopener noreferrer">
+        {newJobTitle}
+      </a>
+    </span>
+  )}  
 </td>
       <td>{editMode ? (
           <textarea 

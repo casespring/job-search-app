@@ -11,6 +11,7 @@ function JobCard({ jobs, onDelete, onJobSave }) {
   const [notes, setNotes] = useState(jobs.notes);
   const [editMode, setEditmode] = useState(false);
   const [fullNotes, setFullNotes] = useState(false);
+  const formattedDate = new Date(jobs.dateApplied).toLocaleDateString('en-US');
   
 
   function handleJobTitle(e) {
@@ -92,7 +93,12 @@ function handleDelete() {
         <div className="cardContainer">
           <div>
               <h3>{editMode ? 
-                  <textarea rows={1} value={jobTitle} onChange={handleJobTitle} />: jobTitle}</h3>
+                  <textarea rows={1} value={jobTitle} onChange={handleJobTitle} />
+                  :
+                  <a href={jobs.jobDescription} target="_blank" rel="noopener noreferrer">
+                  {jobTitle}
+                </a>}
+              </h3>
               <p><strong>Company:</strong> {editMode ?
                   <textarea rows={1} value={company} onChange={handleCompanyChange} /> : company}</p>
               <p><strong>Work Location:</strong> {editMode ?
@@ -102,7 +108,7 @@ function handleDelete() {
                     <option value="Remote 🏠">Remote 🏠</option>
                   </select> : workLocation}
               </p>
-              <p><strong>Date Applied:</strong> {jobs.dateApplied}</p>
+              <p><strong>Date Applied: </strong>{formattedDate}</p>
               <p><strong>Status:</strong> {editMode ?
                 <select value={currentStatus} onChange={handleStatusSelect}>
                   <option value="Applied 💼">Applied 💼</option>
@@ -123,9 +129,8 @@ function handleDelete() {
                 <button className='job-table-button' onClick={toggleFullNotes}>Show</button>
               )}
               </div>
-              <br className='favorite-div'/>
-                <button className='button-class' onClick={handleFavoritedClick}>{addFavorite ? "⭐" : "☆"}</button>
-                <br />
+              {editMode ? <button className='button-class' onClick={handleFavoritedClick}>{addFavorite ? "⭐" : "☆"}</button>
+              : <p>{jobs.favorite ? "⭐" : "☆"}</p>}
               <div className='button-div'>{
                 editMode ? (
                   <button className='job-table-button' onClick={handleSaveChanges}>Save</button>
