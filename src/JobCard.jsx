@@ -12,18 +12,6 @@ function JobCard({ jobs, onDelete }) {
   const [notes, setNotes] = useState(jobs.notes);
   const [editMode, setEditmode] = useState(false);
   const [fullNotes, setFullNotes] = useState(false);
-  
-
-  const handleUpdate = (fieldsToUpdate) => {
-    fetch(`http://localhost:3000/jobs/${jobs.id}`, {
-      method: "PATCH",
-      headers: { "content-type": "Application/json" },
-      body: JSON.stringify(fieldsToUpdate)
-    })
-      .then(r => r.json())
-      .then(data => console.log(data))
-      .catch(error => console.error("Error updating job:", error));
-  };
 
   function handleJobTitle(e) {
     setJobTitle(e.target.value)
@@ -39,17 +27,14 @@ function JobCard({ jobs, onDelete }) {
 
   function handleStatusSelect(selected) {
     setCurrentStatus(selected);
-    handleUpdate({ status: selected });
   };
 
   function handleFavoritedClick() {
     setAddFavorite(!addFavorite);
-    handleUpdate({ favorite: !addFavorite });
   };
 
   function handleNotesChange(e) {
     setNotes(e.target.value);
-    handleUpdate({ notes: e.target.value });
   };
 
 function handleEditMode() {
@@ -60,23 +45,47 @@ function toggleFullNotes() {
   setFullNotes(!fullNotes)
 }
 
-function handleSubmit(e) {
-  e.preventDefault();
-  const updatedCard = {
+function handleSaveChanges() {
+  setEditmode(!editMode)
+  setJobTitle(jobTitle)
+  setCompany(company)
+  setCurrentStatus(currentStatus)
+  setAddFavorite(addFavorite)
+  setNotes(notes)
+  setWorkLocation(workLocation)
+
+  const updatedJob = {
+    ...jobs,
     status: currentStatus,
     notes: notes,
+    favorite: addFavorite,
+    workLocation: workLocation,
+    company: company,
+    jobTitle: jobTitle,
   }
-  console.log(updatedCard)
+
+  fetch(`http://localhost:3000/jobs/${jobs.id}`, {
+      method: "PATCH",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify(updatedJob)
+    })
+      .then(r => r.json())
+      .then(data => {
+        setJobTitle(data.jobTitle)
+        setCompany(data.company)
+        setCurrentStatus(data.status)
+        setAddFavorite(data.favorite)
+        setNotes(data.notes)
+        setWorkLocation(data.workLocation)
+      })
+      .catch(error => console.error("Error updating job:", error));
 };
 
 function handleDelete() {
+  onDelete(jobs.id)
   fetch(`http://localhost:3000/jobs/${jobs.id}`, {
     method: "DELETE",
-  }).then(r => r.json())
-    .then(data => {
-      onDelete(jobs.id)
-      console.log(data)
-    })
+  })
 };
 
   return (
@@ -84,7 +93,6 @@ function handleDelete() {
       <div>
         <div className="cardContainer">
           <div>
-            <form onSubmit={handleSubmit}>
               <h3>{editMode ? 
                   <textarea rows={1} value={jobTitle} onChange={handleJobTitle} />: jobTitle}</h3>
               <p><strong>Company:</strong> {editMode ?
@@ -111,20 +119,24 @@ function handleDelete() {
                 <textarea rows={2} value={notes} onChange={handleNotesChange} />
               ) : fullNotes ? (
                 <>
-                  {notes} <button onClick={toggleFullNotes}>Hide Notes</button>
+                  {notes} <button className='job-table-button' onClick={toggleFullNotes}>Hide</button>
                 </>
               ) : (
-                <button onClick={toggleFullNotes}>See Notes</button>
+                <button className='job-table-button' onClick={toggleFullNotes}>Show</button>
               )}
               </div>
               <br className='favorite-div'/>
                 <button className='button-class' onClick={handleFavoritedClick}>{addFavorite ? "⭐" : "☆"}</button>
                 <br />
-              <div className='button-div'>
-                <button  className='button-class' onClick={handleEditMode} id="edit-button">{editMode ? "Save": "Edit"}</button>
+              <div className='button-div'>{
+                editMode ? (
+                  <button className='job-table-button' onClick={handleSaveChanges}>Save</button>
+                ) : (
+                  <button  className='button-class' onClick={handleEditMode} id="edit-button">Edit</button>
+                )
+              } 
                 {editMode ? <button  className='button-delete' onClick={handleDelete} >Delete 🗑️</button>: null }
               </div>
-            </form>
           </div>
         </div>
       </div>

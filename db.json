@@ -1,14 +1,14 @@
 {
   "jobs": [
     {
-      "jobTitle": "SE II",
-      "company": "Google",
+      "jobTitle": "TEST!",
+      "company": "TEST!",
       "workLocation": "In Person 🏢",
       "jobDescription": "Job",
       "dateApplied": "2023-12-14",
-      "status": "Rejected ❌",
-      "notes": "Notes. Notes. Notes. Notes. Notes. Notes. Notes. Notes. Notes. Notes. Notes. Notes. Notes. Notes. Notes. Notes. Notes. ",
-      "favorite": false,
+      "status": "Interview scheduled 🗓",
+      "notes": "TEST!",
+      "favorite": true,
       "id": 2
     },
     {
@@ -271,8 +271,8 @@
       "jobDescription": "example.com",
       "dateApplied": "2023-12-18",
       "status": "Rejected ❌",
-      "notes": "f",
-      "favorite": false,
+      "notes": "TEST.",
+      "favorite": true,
       "id": 28
     }
   ],

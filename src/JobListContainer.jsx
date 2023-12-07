@@ -17,6 +17,11 @@ function JobListContainer() {
       });
   }, [toggle]);
 
+  function handleToggle() {
+    setToggle(!toggle)
+    console.log('toggle');
+  }
+
   function settingSearchTerm(search) {
     setSearchTerm(search);
   }
@@ -40,7 +45,7 @@ function JobListContainer() {
     <div>
         <JobCardSearch onSearchTerm={settingSearchTerm} jobs={jobs} />
         <div className="display-button-div">
-          <button className="toggle-button" onClick={() => setToggle(!toggle)}>
+          <button className="toggle-button" onClick={handleToggle}>
             {toggle ? "View as table" : "View as cards"}
           </button>
         </div>
