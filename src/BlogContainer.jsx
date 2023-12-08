@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import BlogForm from './BlogForm';
-import './BlogContainer.css'; // Assuming you save the provided CSS in a file named BlogContainer.css
+import './BlogContainer.css';
 
 function BlogContainer() {
   const [blogs, setBlogs] = useState([]);
