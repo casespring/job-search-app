@@ -13,7 +13,7 @@ function JobListContainer() {
   
 
   useEffect(() => {
-    fetch("http://localhost:3000/jobs")
+    fetch("https://jobquest-e7ho.onrender.com/jobs")
       .then(r => r.json())
       .then(jobsData => {
         setJobs(jobsData);

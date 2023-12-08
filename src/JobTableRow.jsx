@@ -53,7 +53,7 @@ function JobTableRow({ job, handleDeleteCallback, onJobSave }) {
 
   function handleDelete() {
     handleDeleteCallback(job.id)
-    fetch(`http://localhost:3000/jobs/${job.id}`, {
+    fetch(`https://jobquest-e7ho.onrender.com/jobs/${job.id}`, {
       method: "DELETE"
   })
   }
@@ -79,7 +79,7 @@ function JobTableRow({ job, handleDeleteCallback, onJobSave }) {
       salary: newSalary
     };
   
-    fetch(`http://localhost:3000/jobs/${job.id}`, {
+    fetch(`https://jobquest-e7ho.onrender.com/jobs/${job.id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json"
