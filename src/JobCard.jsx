@@ -1,8 +1,7 @@
 import { useState } from 'react';
 import "./JobCard.css"
-import { redirect } from 'react-router';
 
-function JobCard({ jobs, onDelete }) {
+function JobCard({ jobs, onDelete, onJobSave }) {
 
   const [addFavorite, setAddFavorite] = useState(jobs.favorite);
   const [jobTitle, setJobTitle] = useState(jobs.jobTitle);
@@ -10,19 +9,11 @@ function JobCard({ jobs, onDelete }) {
   const [workLocation, setWorkLocation] = useState(jobs.workLocation);
   const [currentStatus, setCurrentStatus] = useState(jobs.status);
   const [notes, setNotes] = useState(jobs.notes);
+  const [salary, setSalary] = useState(jobs.salary);
   const [editMode, setEditmode] = useState(false);
   const [fullNotes, setFullNotes] = useState(false);
-
-  const handleUpdate = (fieldsToUpdate) => {
-    fetch(`http://localhost:3000/jobs/${jobs.id}`, {
-      method: "PATCH",
-      headers: { "content-type": "Application/json" },
-      body: JSON.stringify(fieldsToUpdate)
-    })
-      .then(r => r.json())
-      .then(data => console.log(data))
-      .catch(error => console.error("Error updating job:", error));
-  };
+  const formattedDate = new Date(jobs.dateApplied).toLocaleDateString('en-US');
+  
 
   function handleJobTitle(e) {
     setJobTitle(e.target.value)
@@ -36,46 +27,69 @@ function JobCard({ jobs, onDelete }) {
     setWorkLocation(e.target.value)
   };
 
-  function handleStatusSelect(selected) {
-    setCurrentStatus(selected);
-    handleUpdate({ status: selected });
+  function handleStatusSelect(e) {
+    setCurrentStatus(e.target.value);
   };
 
   function handleFavoritedClick() {
     setAddFavorite(!addFavorite);
-    handleUpdate({ favorite: !addFavorite });
   };
 
   function handleNotesChange(e) {
     setNotes(e.target.value);
-    handleUpdate({ notes: e.target.value });
   };
 
+  function handleSalaryChange(e) {
+    setSalary(e.target.value)
+  }
+
 function handleEditMode() {
-  setEditmode(!editMode)
+    setEditmode(!editMode)
 };
 
 function toggleFullNotes() {
-  setFullNotes(!fullNotes)
+    setFullNotes(!fullNotes)
 }
 
-function handleSubmit(e) {
-  e.preventDefault();
-  const updatedCard = {
+
+function handleSaveChanges() {
+  setEditmode(!editMode);
+
+  const updatedJob = {
+    ...jobs,
     status: currentStatus,
     notes: notes,
-  }
-  console.log(updatedCard)
-};
+    favorite: addFavorite,
+    workLocation: workLocation,
+    company: company,
+    jobTitle: jobTitle,
+    salary: salary
+  };
+
+  fetch(`http://localhost:3000/jobs/${jobs.id}`, {
+    method: "PATCH",
+    headers: { "content-type": "application/json" },
+    body: JSON.stringify(updatedJob),
+  })
+    .then((r) => r.json())
+    .then((data) => {
+      setJobTitle(data.jobTitle);
+      setCompany(data.company);
+      setCurrentStatus(data.status);
+      setAddFavorite(data.favorite);
+      setNotes(data.notes);
+      setWorkLocation(data.workLocation);
+      setSalary(data.salary)
+      onJobSave(prev => !prev);
+    })
+}
+
 
 function handleDelete() {
+  onDelete(jobs.id)
   fetch(`http://localhost:3000/jobs/${jobs.id}`, {
     method: "DELETE",
-  }).then(r => r.json())
-    .then(data => {
-      onDelete(jobs.id)
-      console.log(data)
-    })
+  })
 };
 
   return (
@@ -83,11 +97,17 @@ function handleDelete() {
       <div>
         <div className="cardContainer">
           <div>
-            <form onSubmit={handleSubmit}>
-              <h2>{editMode ? 
-                  <textarea rows={1} value={jobTitle} onChange={handleJobTitle} />: jobTitle}</h2>
+              <h3>{editMode ? 
+                  <textarea rows={1} value={jobTitle} onChange={handleJobTitle} />
+                  :
+                  <a href={jobs.jobDescription} target="_blank" rel="noopener noreferrer">
+                  {jobTitle}
+                </a>}
+              </h3>
               <p><strong>Company:</strong> {editMode ?
                   <textarea rows={1} value={company} onChange={handleCompanyChange} /> : company}</p>
+              <p><strong>Salary: </strong> {editMode ?
+                  <textarea rows={1} value={salary} onChange={handleSalaryChange} /> : salary}</p>
               <p><strong>Work Location:</strong> {editMode ?
                 <select value={workLocation} onChange={handleWorklocation}>
                     <option value="In Person 🏢">In Person 🏢</option>
@@ -95,9 +115,9 @@ function handleDelete() {
                     <option value="Remote 🏠">Remote 🏠</option>
                   </select> : workLocation}
               </p>
-              <p><strong>Date Applied:</strong> {jobs.dateApplied}</p>
+              <p><strong>Date Applied: </strong>{formattedDate}</p>
               <p><strong>Status:</strong> {editMode ?
-                <select value={currentStatus} onChange={(e) => handleStatusSelect(e.target.value)}>
+                <select value={currentStatus} onChange={handleStatusSelect}>
                   <option value="Applied 💼">Applied 💼</option>
                   <option value="Interview scheduled 🗓">Interview scheduled 🗓</option>
                   <option value="Interview complete ✅">Interview complete ✅</option>
@@ -105,22 +125,28 @@ function handleDelete() {
                 </select> : currentStatus}
               </p>
               <div>
-                <strong>Notes:</strong> {editMode ?
-                  <textarea
-                    rows={2}
-                    value={notes}
-                    onChange={handleNotesChange}
-                  /> : notes}
+              <strong>Notes:</strong>{" "}
+              {editMode ? (
+                <textarea rows={2} value={notes} onChange={handleNotesChange} />
+              ) : fullNotes ? (
+                <>
+                  {notes} <button className='job-table-button' onClick={toggleFullNotes}>Hide</button>
+                </>
+              ) : (
+                <button className='job-table-button' onClick={toggleFullNotes}>Show</button>
+              )}
               </div>
-              <p><a href={jobs.jobDescription}>Link to job description</a></p>
-              <br className='favorite-div'/>
-                <button className='button-class' onClick={handleFavoritedClick}>{addFavorite ? "⭐" : "☆"}</button>
-                <br />
-              <div className='button-div'>
-                <button  className='button-class' onClick={handleEditMode} id="edit-button">{editMode ? "Save": "Edit"}</button>
+              {editMode ? <button className='job-table-button' onClick={handleFavoritedClick}>{addFavorite ? "⭐" : "☆"}</button>
+              : <p>{jobs.favorite ? "⭐" : "☆"}</p>}
+              <div className='button-div'>{
+                editMode ? (
+                  <button className='job-table-button' onClick={handleSaveChanges}>Save</button>
+                ) : (
+                  <button  className='job-table-button' onClick={handleEditMode} id="edit-button">Edit</button>
+                )
+              } 
                 {editMode ? <button  className='button-delete' onClick={handleDelete} >Delete 🗑️</button>: null }
               </div>
-            </form>
           </div>
         </div>
       </div>

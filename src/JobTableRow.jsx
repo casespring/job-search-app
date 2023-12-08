@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import "./JobTable.css";
+import "./JobTableRow.css";
 
-function JobTableRow({ job, handleDeleteCallback }) {
+function JobTableRow({ job, handleDeleteCallback, onJobSave }) {
   const [editMode, setEditMode] = useState(false)
   const [newStatus, setNewStatus] = useState(job.status)
   const [newNotes, setNewNotes] = useState(job.notes)
@@ -9,6 +10,7 @@ function JobTableRow({ job, handleDeleteCallback }) {
   const [newLocation, setNewLocation] = useState(job.workLocation)
   const [newCompany, setNewCompany] = useState(job.company)
   const [newJobTitle, setNewJobTitle] = useState(job.jobTitle)
+  const [newSalary, setNewSalary] = useState(job.salary)
   const [tdSelected, setTdSelected] = useState(false);
   const formattedDate = new Date(job.dateApplied).toLocaleDateString('en-US');
 
@@ -45,6 +47,10 @@ function JobTableRow({ job, handleDeleteCallback }) {
     setNewJobTitle(e.target.value)
   }
 
+  function handleSalaryChange(e) {
+    setNewSalary(e.target.value)
+  }
+
   function handleDelete() {
     handleDeleteCallback(job.id)
     fetch(`http://localhost:3000/jobs/${job.id}`, {
@@ -60,6 +66,7 @@ function JobTableRow({ job, handleDeleteCallback }) {
     setNewLocation(newLocation)
     setNewCompany(newCompany)
     setNewJobTitle(newJobTitle)
+    setNewSalary(newSalary)
 
     const updatedJob = {
       ...job,
@@ -68,7 +75,8 @@ function JobTableRow({ job, handleDeleteCallback }) {
       favorite: newFavorite,
       workLocation: newLocation,
       company: newCompany,
-      jobTitle: newJobTitle
+      jobTitle: newJobTitle,
+      salary: newSalary
     };
   
     fetch(`http://localhost:3000/jobs/${job.id}`, {
@@ -86,25 +94,31 @@ function JobTableRow({ job, handleDeleteCallback }) {
         setNewLocation(data.workLocation)
         setNewCompany(data.company)
         setNewJobTitle(data.jobTitle)
+        setNewSalary(data.salary)
+        onJobSave(prev => !prev)
       })
   }
 
   return (
     <tr>
       <td>
-  {editMode ? (
-    <div>
+      {editMode ? (
+      <div>
       <textarea
         rows={1}
         value={newJobTitle}
         onChange={handleJobTitleChange}
       />
-      <p onClick={handleDelete} style={{color: "red",cursor: 'pointer'}}>Delete 🗑</p>
-    </div>
-  ) : (
-    <span>{newJobTitle}</span>
-  )}
-</td>
+      <p className='delete-button' onClick={handleDelete}>Delete 🗑</p>
+      </div>
+      ) : (
+      <span className="job-title-link">
+      <a href={job.jobDescription} target="_blank" rel="noopener noreferrer">
+        {newJobTitle}
+      </a>
+      </span>
+      )}  
+      </td>
       <td>{editMode ? (
           <textarea 
           rows={1}
@@ -113,6 +127,16 @@ function JobTableRow({ job, handleDeleteCallback }) {
           ></textarea>
           ) : (
           newCompany
+          )}
+      </td>
+      <td>{editMode ? (
+          <textarea 
+          rows={1}
+          value={newSalary}
+          onChange={handleSalaryChange}
+          ></textarea>
+          ) : (
+          newSalary
           )}
       </td>
       <td>

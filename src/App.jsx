@@ -1,7 +1,8 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
 import NavBar from "./NavBar";
-import './App.css'; // Import your custom styles
+import Footer from "./Footer"; // Import your Footer component
+import "./App.css"; // Import your custom styles
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
         <NavBar />
       </header>
       <Outlet />
+      <Footer /> 
     </>
   );
 }

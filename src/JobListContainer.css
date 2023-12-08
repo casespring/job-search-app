@@ -1,8 +1,38 @@
 .list-container {
-    display: flex;
-    min-height: 100vh;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    align-items: flex-start;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;;
-  }
+  display: flex;
+  flex-wrap: wrap;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  padding: 10px;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 90vw;
+  justify-content: center;
+  margin: 20px auto 0; 
+  overflow-x:auto;
+}
+
+.display-button-div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-top: .5em;
+}
+
+.toggle-button {
+  margin-top: 0.6em;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  background-color: white;
+  border: 2px solid #007bff;
+  color: #007bff; /* Text color */
+  padding: 5px 8px; /* Adjust padding as needed */
+  cursor: pointer;
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
+
+.toggle-button:hover {
+  background-color: #007bff;
+  color: white;
+}

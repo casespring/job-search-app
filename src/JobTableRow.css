@@ -1,3 +1,39 @@
 .table-row {
     overflow-x:auto;
 }
+
+h3 a {
+    color: #007bff; 
+    text-decoration: none; 
+    cursor: pointer; 
+    position: relative; 
+  }
+  
+  h3 a:hover {
+    text-decoration: underline;
+  }
+  
+
+
+  .job-title-link a {
+    color: #007bff;
+    text-decoration: none;
+    cursor: pointer;
+    position: relative;
+  }
+
+  .job-title-link a:hover {
+    text-decoration: underline;
+  }
+  
+
+  .delete-button {
+    margin-top: 5px;
+    color: red;
+  }
+
+  .delete-button:hover {
+    margin-top: 5px;
+    font-weight: bold;
+    cursor: pointer;
+  }

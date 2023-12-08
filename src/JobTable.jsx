@@ -1,57 +1,44 @@
-  import { useState, useEffect } from 'react';
+  import { useState } from 'react';
   import JobTableRow from './JobTableRow';
   import './JobTable.css';
   
-  function JobTable({ jobs, handleDeleteCallback }) {
-    const [sortFavoriteOrder, setSortFavoriteOrder] = useState(null)
-    const [sortFavoriteDirection, setSortFavoriteDirection] = useState('asc')
+  function JobTable({ jobs, handleDeleteCallback, onJobSave }) {
+    const [sortBy, setSortBy] = useState(null);
 
-    // useEffect(() => {
-    //   fetch(`http://localhost:3000/jobs`)
-    //     .then((r) => r.json())
-    //     .then((data) => setJobs(data));
-    // }, []);
-  
-    // function handleDelete(deletedJobId) {
-    //   setJobs((prevJobs) => prevJobs.filter((job) => job.id !== deletedJobId));
-    // }
-  
-    function handleFavoriteHeaderClick() {
-      setSortFavoriteDirection(
-          sortFavoriteOrder === 'favorite' && sortFavoriteDirection === 'asc' ? 'desc' : 'asc'
-        )
-      setSortFavoriteOrder('favorite')
-      console.log(sortFavoriteOrder);
-      console.log(sortFavoriteDirection);
-    }
+    const handleSortByDate = () => {
+      setSortBy(sortBy === 'asc' ? 'desc' : 'asc');
+    };
 
-    const favoriteOrder = [true, false]
+    const sortedJobs = [...jobs].sort((a, b) => {
+      const dateA = new Date(a.dateApplied);
+      const dateB = new Date(b.dateApplied);
   
-    const sortedJobs = [...jobs];
-    
-    if (sortFavoriteOrder === 'favorite') {
-      sortedJobs.sort((a, b) => {
-        const order = sortFavoriteDirection === 'asc' ? 1 : -1;
-        return order * (favoriteOrder.indexOf(a.favorite) - favoriteOrder.indexOf(b.favorite));
-      });
-    } 
+      if (sortBy === 'asc') {
+        return dateA - dateB;
+      } else {
+        return dateB - dateA;
+      }
+    });
     
     const displayJobs = sortedJobs.map((job) => (
-      <JobTableRow handleDeleteCallback={handleDeleteCallback} job={job} key={job.id} />
+      <JobTableRow handleDeleteCallback={handleDeleteCallback} onJobSave={onJobSave} job={job} key={job.id} />
     ));
 
   return (
-    <div className="container">
+    <div id="table-container">
       <table className="table">
         <thead>
           <tr>
             <th scope="col">Title</th>
             <th scope="col">Company</th>
+            <th scope="col">Salary</th>
             <th scope="col">Work Location</th>
             <th scope="col">Status</th>
-            <th scope="col">Date Applied</th>
+            <th scope="col" onClick={handleSortByDate} style={{ cursor: 'pointer' }}>
+              Date Applied
+            </th>
             <th scope="col">Notes</th>
-            <th scope="col" onClick={handleFavoriteHeaderClick}>Favorite</th>
+            <th scope="col">Favorite</th>
             <th scope="col">Edit</th>
           </tr>
         </thead>

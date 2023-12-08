@@ -1,70 +1,100 @@
 {
   "jobs": [
     {
-      "jobTitle": "Frontend Developer",
-      "company": "WebWizards",
-      "workLocation": "Remote 🏠",
-      "dateApplied": "2023-02-20",
-      "status": "Interview scheduled 🗓",
-      "jobDescription": "https://example.com/frontend-developer-job-description",
-      "notes": "Test TEst Test Test TEst TestTest TEst TestTest TEst TestTest TEst TestTest TEst TestTest TEst TestTest TEst TestTest TEst TestTest TEst TestTest TEst TestTest TEst Test",
+      "jobTitle": "SE II",
+      "company": "Google",
+      "workLocation": "In Person 🏢",
+      "jobDescription": "https://www.google.com/about/careers/applications/jobs/results/110720748940600006-staff-software-engineer-large-language-models",
+      "dateApplied": "2023-12-14",
+      "status": "Rejected ❌",
+      "notes": "Must wait 6 months to apply again.",
       "favorite": true,
-      "id": 3
+      "salary": "150,000",
+      "id": 4
+    },
+    {
+      "jobTitle": "Marketing Specialist",
+      "company": "MoMA",
+      "workLocation": "Hybrid 🖥",
+      "jobDescription": "https://recruiting.ultipro.com/MUS1002MOMA/JobBoard/9dbfa465-a36a-46c3-b31e-4929830ab266/OpportunityDetail?opportunityId=5abec346-835a-412c-a06e-c267ad111909",
+      "dateApplied": "2023-12-14",
+      "status": "Applied 💼",
+      "notes": "Social media focus. Need to learn art.",
+      "favorite": true,
+      "salary": "80,000",
+      "id": 7
+    },
+    {
+      "jobTitle": "Back-End Dev",
+      "company": "Google",
+      "workLocation": "In Person 🏢",
+      "jobDescription": "https://www.google.com/about/careers/applications/jobs/results/106847000630043334-global-partner-gtm-leader-aiml-google-cloud?hl=_fr&page=4",
+      "dateApplied": "2023-12-15",
+      "status": "Applied 💼",
+      "notes": "Connected with Recruiter on LinkedIn.",
+      "favorite": false,
+      "salary": "200,000",
+      "id": 8
+    },
+    {
+      "jobTitle": "Front-End Dev",
+      "company": "Lyft",
+      "workLocation": "Remote 🏠",
+      "jobDescription": "https://app.careerpuck.com/job-board/lyft/job/6895506002?gh_jid=6895506002",
+      "dateApplied": "2023-12-28",
+      "status": "Interview complete ✅",
+      "notes": "Thank you email sent. Waiting for offer.",
+      "favorite": false,
+      "salary": "145,000",
+      "id": 9
+    },
+    {
+      "jobTitle": "SE Internship",
+      "company": "Meta",
+      "workLocation": "Hybrid 🖥",
+      "jobDescription": "https://www.metacareers.com/jobs/999489031322161/",
+      "dateApplied": "2023-01-23",
+      "status": "Interview scheduled 🗓",
+      "notes": "Study algorithms. Connected with Flatiron alum working on my future team.",
+      "favorite": true,
+      "salary": "120,000",
+      "id": 10
+    },
+    {
+      "jobTitle": "SE Apprentice",
+      "company": "American Express",
+      "workLocation": "Hybrid 🖥",
+      "jobDescription": "https://aexp.eightfold.ai/careers/job?pid=19468960",
+      "dateApplied": "2023-12-12",
+      "status": "Interview scheduled 🗓",
+      "notes": "Meeting with John Doe, SE manager. Research company values.",
+      "favorite": true,
+      "salary": "130,000",
+      "id": 6
+    },
+    {
+      "jobTitle": "Instructor",
+      "company": "Flatiron School",
+      "workLocation": "In Person 🏢",
+      "jobDescription": "https://learning.flatironschool.com/",
+      "dateApplied": "2023-12-07",
+      "status": "Interview scheduled 🗓",
+      "notes": "Ask about Denver office placement.",
+      "favorite": true,
+      "salary": "115,000",
+      "id": 11
     },
     {
       "jobTitle": "SE II",
       "company": "Google",
-      "workLocation": "In Person 🏢",
-      "jobDescription": "Job",
-      "dateApplied": "2023-12-14",
-      "status": "Rejected ❌",
-      "notes": "sdlkgharow;h;iovsdf",
-      "favorite": false,
-      "id": 4
-    },
-    {
-      "jobTitle": "Marketing and Media Specialist",
-      "company": "MoMA",
-      "workLocation": "In Person 🏢",
-      "jobDescription": "example.com",
-      "dateApplied": "2023-12-14",
-      "status": "Applied 💼",
-      "notes": "MoMA job.",
-      "favorite": true,
-      "id": 7
-    },
-    {
-      "jobTitle": "Job",
-      "company": "Job",
-      "workLocation": "Hybrid 🖥",
-      "jobDescription": "Job",
-      "dateApplied": "2023-12-15",
-      "status": "Interview scheduled 🗓",
-      "notes": "notes",
-      "favorite": true,
-      "id": 8
-    },
-    {
-      "jobTitle": "Job",
-      "company": "Job",
-      "workLocation": "In Person 🏢",
-      "jobDescription": "Job",
-      "dateApplied": "2023-12-28",
-      "status": "Interview scheduled 🗓",
-      "notes": "Job",
-      "favorite": true,
-      "id": 9
-    },
-    {
-      "jobTitle": "Marketing and Media Specialist",
-      "company": "Job",
       "workLocation": "Remote 🏠",
-      "jobDescription": "Job",
-      "dateApplied": "2023-01-23",
-      "status": "Interview complete ✅",
-      "notes": "Complete",
+      "jobDescription": "example.com",
+      "dateApplied": "2023-07-03",
+      "status": "Applied 💼",
+      "notes": "Recruiter reached out. Waiting to hear back.",
       "favorite": false,
-      "id": 10
+      "salary": "100,000",
+      "id": 12
     }
   ],
   "blogs": [

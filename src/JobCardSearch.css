@@ -1,23 +1,39 @@
+/* Default styles for larger screens */
 .searchbar {
-    flex: 1 1 auto;
-    margin: 0 1rem;
-    display: flex;
-    justify-content: center;
+  flex: 1 1 auto;
+  margin: 0 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.searchbar input {
+  width: 28%;
+  font-size: 1rem;
+  height: 2rem;
+  margin-right: 0.5rem;
+  border: 2px solid #007bff;
+  border-radius: 15px;
+  padding-left: 0.5rem;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+}
+
+.searchbar button {
+  padding: 0 0.25rem;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 768px) {
+  .searchbar {
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
   }
-  
+
   .searchbar input {
-    width: 28%;
-    font-size: 1rem;
-    height: 2rem;
-    margin-right: 0.5rem;
-    border: 2px solid #007bff;
-    border-radius: 15px;
-    padding-left: 0.5rem;
+    width: 100%; /* Full width for smaller screens */
+    margin-right: 0; /* No right margin */
+    margin-bottom: 0.5rem; /* Add some space between input and button */
   }
-  
-  .searchbar button {
-    padding: 0 0.25rem;
-    background: white;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-  }
+}
