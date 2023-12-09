@@ -1,4 +1,5 @@
 import App from "./App";
+import Home from "./Home";
 import JobListContainer from "./JobListContainer";
 import NewJobForm from "./NewJobForm"
 import BlogContainer from "./BlogContainer";
@@ -10,8 +11,12 @@ const routes = [
         element: <App />,
         errorElement: <ErrorPage />,
         children: [
-             {
+            {
                 path: "/",
+                element: <Home />
+            },
+            {
+                path: "/jobs",
                 element: <JobListContainer />
             }, 
             {
