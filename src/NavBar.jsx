@@ -9,6 +9,9 @@ function NavBar() {
       JobQuest
       </div>
       <Link to="/">
+        Home
+      </Link>
+      <Link to="/jobs">
         My Jobs
       </Link>
       <Link to="/add-job">
@@ -22,6 +25,4 @@ function NavBar() {
 }
 
 export default NavBar;
-
-
 
