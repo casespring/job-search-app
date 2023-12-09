@@ -23,7 +23,6 @@ nav a {
   
     /* Media query for screens up to 390x844 */
     @media (max-width: 390px) and (max-height: 844px) {
-      
       font-size: 14px; 
       margin-left: 1em; 
     }

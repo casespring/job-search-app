@@ -11,14 +11,20 @@
     margin: 20px auto 0;
     overflow-x: auto;
   }
+
+  .button-section {
+    text-align: center;
+    margin-top: 2em;
+    margin-bottom: 2em;
+  }
   
   .section {
     text-align: center;
-    margin-bottom: 15px;
   }
   
   .section h1 {
     color: #007bff;
+    margin: 5px
   }
   
   .section h2 {
