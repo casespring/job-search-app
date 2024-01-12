@@ -66,7 +66,7 @@ function handleSaveChanges() {
     salary: salary
   };
 
-  fetch(`http://localhost:3000/jobs/${jobs.id}`, {
+  fetch(`https://jobquest-e7ho.onrender.com/jobs/${jobs.id}`, {
     method: "PATCH",
     headers: { "content-type": "application/json" },
     body: JSON.stringify(updatedJob),
@@ -87,7 +87,7 @@ function handleSaveChanges() {
 
 function handleDelete() {
   onDelete(jobs.id)
-  fetch(`http://localhost:3000/jobs/${jobs.id}`, {
+  fetch(`https://jobquest-e7ho.onrender.com/jobs/${jobs.id}`, {
     method: "DELETE",
   })
 };
