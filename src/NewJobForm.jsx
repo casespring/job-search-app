@@ -69,7 +69,7 @@ function NewJobForm() {
       favorite,
       salary
     };
-    fetch('https://jobquest-e7ho.onrender.com/jobs', {
+    fetch('http://localhost:3000/jobs/', {
       method: 'POST',
       headers: {
         'content-type': 'application/json',

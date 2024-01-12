@@ -7,14 +7,14 @@ function BlogContainer() {
   const [showBlogForm, setShowBlogForm] = useState(false);
 
   useEffect(() => {
-    fetch('https://jobquest-e7ho.onrender.com/blogs')
+    fetch('http://localhost:3000/blogs')
       .then(response => response.json())
       .then(data => setBlogs(data))
       .catch(error => console.error('Error fetching data:', error));
   }, []);
 
   const addBlog = (newBlog) => {
-    fetch('https://jobquest-e7ho.onrender.com/blogs', {
+    fetch('http://localhost:3000/blogs', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -33,7 +33,7 @@ function BlogContainer() {
   };
 
   const deleteBlog = (id) => {
-    fetch(`https://jobquest-e7ho.onrender.com/blogs/${id}`, {
+    fetch(`http://localhost:3000/blogs/${id}`, {
       method: 'DELETE',
     })
       .then(response => {
