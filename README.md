@@ -2,7 +2,7 @@
 
 =======
 
-## Overview
+## O verview
 
 Welcome to JobQuest, your go-to companion for managing your job search efficiently. This React app is designed to streamline the job hunting process, providing a centralized hub for tracking job applications and saving useful articles for future reference.
 
